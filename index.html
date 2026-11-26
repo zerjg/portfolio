@@ -66,14 +66,13 @@
     }
     .project {
       position: relative;
-      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
+      background: var(--surface); border: 5px solid #000;
       border-radius: var(--radius); overflow: hidden;
       opacity: 0; transform: translateY(36px);
-      transition: opacity .7s ease, transform .7s ease, border-color .25s ease, box-shadow .25s ease;
+      transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease;
     }
     .project.in { opacity: 1; transform: translateY(0); }
     .project.in:hover {
-      border-color: rgba(216,255,62,.45);
       box-shadow: 0 28px 70px rgba(0,0,0,.5);
       transform: translateY(-5px) rotate(0deg) !important;
     }
@@ -89,17 +88,12 @@
       padding: 76px 16px 14px; display: flex; flex-direction: column; gap: 7px;
       background: linear-gradient(180deg, rgba(14,14,17,0) 0%, rgba(14,14,17,.25) 18%, rgba(14,14,17,.62) 36%, rgba(14,14,17,.86) 52%, rgba(14,14,17,.97) 70%, rgba(14,14,17,1) 100%);
     }
-    .browser-bar {
-      position: absolute; top: 0; left: 0; right: 0; z-index: 2;
-      display: flex; align-items: center; gap: 7px;
-      padding: 11px 16px;
-      background: rgba(16,16,20,.72); backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .browser-bar i { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-    .browser-bar span {
-      margin-left: 10px; font-size: 12px; color: var(--muted);
-      background: rgba(255,255,255,.07); padding: 3px 14px; border-radius: 6px;
+    .domain-tag {
+      position: absolute; top: 10px; right: 10px; z-index: 2;
+      font-size: 11px; font-weight: 500; color: var(--text);
+      background: rgba(10,10,12,.78); backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 5px 12px; border-radius: 100px;
     }
     .project-info h3 { font-size: 17px; }
     .project-info p { color: #c9c8d2; font-size: 12.5px; }
@@ -139,7 +133,7 @@
     .footer-line .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .footer-line a:hover { color: var(--accent); }
 
-    @media (max-width: 1599px) {
+    @media (max-width: 1999px) {
       .projects { grid-template-columns: repeat(3, 1fr); }
       .project-info { padding: 110px 24px 20px; gap: 9px; }
       .project-info h3 { font-size: 21px; }
@@ -147,7 +141,7 @@
       .card-tags span { font-size: 12px; padding: 4px 12px; }
       .project-link { font-size: 13.5px; }
     }
-    @media (max-width: 1099px) {
+    @media (max-width: 1199px) {
       .projects { grid-template-columns: repeat(2, 1fr); }
       .project-info { padding: 130px 26px 22px; gap: 10px; }
       .project-info h3 { font-size: 24px; }
@@ -162,7 +156,7 @@
       .nav-links { gap: 18px; }
       .logo { font-size: 13px; }
     }
-    @media (max-width: 699px) {
+    @media (max-width: 759px) {
       .projects { grid-template-columns: 1fr; gap: 22px; padding: 0 16px; }
       .section-head { padding: 0 16px; }
       .project-info { padding: 120px 24px 22px; }
@@ -196,10 +190,7 @@
 
       <a class="project vert tilt-l" href="project.html?p=kord">
         <img class="project-img" src="assets/kord.jpg" alt="Сайт креативно-технологического квартала «Фабрика КОРД»" loading="lazy">
-        <div class="browser-bar">
-          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-          <span>fabrikakord.com</span>
-        </div>
+        <span class="domain-tag">fabrikakord.com</span>
         <div class="project-info">
           <h3>Фабрика КОРД</h3>
           <p>Креативно-технологический квартал в Ярославле</p>
@@ -210,10 +201,7 @@
 
       <a class="project vert tilt-r" href="project.html?p=cifra">
         <img class="project-img" src="assets/cifra.jpg" alt="Сайт SaaS-платформы «Цифра» для управления бетонным заводом" loading="lazy">
-        <div class="browser-bar">
-          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-          <span>cifra.ai</span>
-        </div>
+        <span class="domain-tag">cifra.ai</span>
         <div class="project-info">
           <h3>Цифра</h3>
           <p>SaaS-платформа управления бетонным заводом</p>
@@ -224,10 +212,7 @@
 
       <a class="project vert tilt-r" href="project.html?p=krista">
         <img class="project-img" src="assets/krista.jpg" alt="Сайт НПО «Криста» — разработчика цифровых платформ для госуправления" loading="lazy">
-        <div class="browser-bar">
-          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-          <span>krista.ru</span>
-        </div>
+        <span class="domain-tag">krista.ru</span>
         <div class="project-info">
           <h3>НПО Криста</h3>
           <p>Цифровые платформы для государственного управления</p>
@@ -238,10 +223,7 @@
 
       <a class="project vert tilt-l" href="project.html?p=goodgrad">
         <img class="project-img" src="assets/goodgrad.jpg" alt="Сайт застройщика «Гудград» — каталог новостроек Ярославля" loading="lazy">
-        <div class="browser-bar">
-          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-          <span>goodgrad.ru</span>
-        </div>
+        <span class="domain-tag">goodgrad.ru</span>
         <div class="project-info">
           <h3>Гудград</h3>
           <p>Застройщик Ярославля: каталог новостроек и подбор квартир</p>
@@ -252,10 +234,7 @@
 
       <a class="project vert tilt-l" href="project.html?p=tenderland">
         <img class="project-img" src="assets/tenderland.jpg" alt="Сайт системы поиска и анализа тендеров TenderLand" loading="lazy">
-        <div class="browser-bar">
-          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-          <span>tenderland.ru</span>
-        </div>
+        <span class="domain-tag">tenderland.ru</span>
         <div class="project-info">
           <h3>TenderLand</h3>
           <p>Система точного поиска и анализа тендеров</p>
@@ -266,10 +245,7 @@
 
       <a class="project vert tilt-r" href="project.html?p=hopmalt">
         <img class="project-img" src="assets/hopmalt.jpg" alt="Сайт крафтовой пивоварни ХОПМОЛТ (HOPMALT) в Ярославле" loading="lazy">
-        <div class="browser-bar">
-          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-          <span>hopmalt.ru</span>
-        </div>
+        <span class="domain-tag">hopmalt.ru</span>
         <div class="project-info">
           <h3>ХОПМОЛТ</h3>
           <p>Крафтовая пивоварня Ярославля: каталог живого пива</p>

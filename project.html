@@ -245,9 +245,51 @@ const PROJECTS = {
       ["assets/krista-5.jpg", "Медиа и новости"],
       ["assets/krista-6.jpg", "Карьера"]
     ]
+  },
+  goodgrad: {
+    num: "04", title: "Гудград",
+    desc: "Застройщик Ярославля: каталог новостроек и подбор квартир",
+    url: "https://goodgrad.ru/", domain: "goodgrad.ru",
+    tags: ["Веб-дизайн", "Недвижимость"],
+    shots: [
+      ["assets/goodgrad-1.jpg", "Главный экран"],
+      ["assets/goodgrad-2.jpg", "Подбор квартиры"],
+      ["assets/goodgrad-3.jpg", "Новостройки Ярославля"],
+      ["assets/goodgrad-4.jpg", "Способы покупки"],
+      ["assets/goodgrad-5.jpg", "Пентхаус в 360°"],
+      ["assets/goodgrad-6.jpg", "Управляющая компания"]
+    ]
+  },
+  tenderland: {
+    num: "05", title: "TenderLand",
+    desc: "Система точного поиска и анализа тендеров",
+    url: "https://tenderland.ru/", domain: "tenderland.ru",
+    tags: ["Продуктовый дизайн", "SaaS"],
+    shots: [
+      ["assets/tenderland-1.jpg", "Главный экран"],
+      ["assets/tenderland-2.jpg", "Улучшенные фильтры"],
+      ["assets/tenderland-3.jpg", "Поиск тендеров"],
+      ["assets/tenderland-4.jpg", "Проверка контрагентов"],
+      ["assets/tenderland-5.jpg", "Отзывы клиентов"],
+      ["assets/tenderland-6.jpg", "Тестовый доступ"]
+    ]
+  },
+  hopmalt: {
+    num: "06", title: "ХОПМОЛТ",
+    desc: "Крафтовая пивоварня Ярославля: каталог живого пива",
+    url: "https://hopmalt.ru/", domain: "hopmalt.ru",
+    tags: ["Бренд-сайт", "Крафт"],
+    shots: [
+      ["assets/hopmalt-1.jpg", "Главный экран"],
+      ["assets/hopmalt-2.jpg", "Каталог сортов"],
+      ["assets/hopmalt-3.jpg", "Опт для баров"],
+      ["assets/hopmalt-4.jpg", "Две линейки"],
+      ["assets/hopmalt-5.jpg", "Как мы варим"],
+      ["assets/hopmalt-6.jpg", "Где купить"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];

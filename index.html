@@ -30,6 +30,7 @@
       font-family: var(--font-body), system-ui, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      min-height: 100dvh; display: flex; flex-direction: column;
     }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
     h1, h2, h3 { font-family: var(--font-display), sans-serif; line-height: 1.2; }
@@ -49,7 +50,7 @@
     .nav-links a:hover { color: var(--text); }
 
     /* ---------- projects gallery ---------- */
-    section { padding: 72px 0 88px; scroll-margin-top: 72px; position: relative; }
+    section { padding: 72px 0 88px; scroll-margin-top: 72px; position: relative; flex: 1; display: flex; flex-direction: column; }
     section::before {
       content: ''; position: absolute; top: -120px; right: -160px;
       width: 480px; height: 480px; border-radius: 50%;
@@ -58,15 +59,15 @@
     }
     .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 12px; }
     .section-sub { color: var(--muted); margin-bottom: 48px; max-width: 560px; }
-    .section-head { padding: 0 24px; }
+    .section-head { padding: 0 24px; margin-top: auto; }
 
     .projects {
       display: grid; grid-template-columns: repeat(6, 1fr);
-      gap: 24px; padding: 0 24px;
+      gap: 24px; padding: 0 24px; margin-bottom: auto;
     }
     .project {
       position: relative;
-      background: var(--surface); border: 5px solid #000;
+      background: var(--surface); border: 6px solid var(--surface);
       border-radius: var(--radius); overflow: hidden;
       opacity: 0; transform: translateY(36px);
       transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease;

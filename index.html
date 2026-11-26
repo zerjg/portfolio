@@ -84,6 +84,10 @@
       position: absolute; inset: 0; width: 100%; height: 100%;
       object-fit: cover; object-position: top center;
     }
+    .project::after {
+      content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      box-shadow: inset 0 0 0 2px var(--surface);
+    }
     .project-info {
       position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
       padding: 76px 16px 14px; display: flex; flex-direction: column; gap: 7px;
@@ -175,10 +179,6 @@
 <nav id="top">
   <div class="wrap">
     <a class="logo" href="#top">ИГОРЬ ПОНОМАРЕВ<span>.</span></a>
-    <div class="nav-links">
-      <a href="#works">Проекты</a>
-      <a href="https://github.com/zerjg" target="_blank" rel="noopener">GitHub</a>
-    </div>
   </div>
 </nav>
 
@@ -264,7 +264,7 @@
       <div class="fact"><b>Локация</b><span>Ярославль, Россия</span></div>
       <div class="fact"><b>Фокус</b><span>Брендинг · UI/UX · Веб</span></div>
       <div class="fact"><b>Формат</b><span>Проекты и сотрудничество</span></div>
-      <div class="fact"><b>GitHub</b><span><a href="https://github.com/zerjg" target="_blank" rel="noopener">@zerjg ↗</a></span></div>
+      <div class="fact"><b>Telegram</b><span><a href="https://t.me/zerjg" target="_blank" rel="noopener">@zerjg ↗</a></span></div>
     </div>
   </div>
   <div class="footer-line">

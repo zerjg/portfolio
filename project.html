@@ -21,7 +21,6 @@
       --font-body: 'Golos Text';
       --glass-tint: rgba(235,235,245,.3);
     }
-    @view-transition { navigation: auto; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; overflow-x: clip; }
     body {
@@ -56,21 +55,14 @@
     .back:hover { color: var(--text); background: rgba(235,235,245,.12); border-color: rgba(255,255,255,.24); }
 
     /* ---------- project header ---------- */
-    header { padding: 72px 0 56px; position: relative; }
+    header { padding: 72px 0 56px; position: relative; overflow-x: clip; }
     .glow {
       position: absolute; top: -140px; left: 50%;
       width: 780px; height: 540px; border-radius: 50%;
       transform: translateX(-50%);
       background: radial-gradient(circle, rgba(123,108,255,.22), rgba(216,255,62,.05) 44%, transparent 68%);
       pointer-events: none;
-      view-transition-name: glow;
     }
-    @keyframes glow-enter {
-      from { transform: translate(38vw, -24vh) scale(1.15); opacity: 0; }
-      30% { opacity: 1; }
-      to { transform: translateX(-50%) scale(1); opacity: 1; }
-    }
-    .glow--enter { animation: glow-enter 1s ease-out both; }
     header .wrap {
       position: relative; display: flex; flex-direction: column;
       align-items: center; text-align: center;
@@ -110,13 +102,13 @@
     }
     figure.shot {
       position: relative;
-      aspect-ratio: 1200 / 585;
+      aspect-ratio: 16 / 9;
       padding: 6px;
       background: var(--glass-tint);
       backdrop-filter: blur(10px) saturate(1.6);
       border-radius: var(--radius); overflow: hidden;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), inset 0 0 14px rgba(255,255,255,.1);
-      cursor: zoom-in;
+      cursor: pointer;
       -webkit-user-select: none; user-select: none;
       opacity: 0; transform: translateY(36px);
       transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease;
@@ -128,8 +120,6 @@
     }
     figure.shot:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
     figure.shot.wide { grid-column: 1 / -1; }
-    figure.shot.tilt-l.in { transform: rotate(-.7deg); }
-    figure.shot.tilt-r.in { transform: rotate(.7deg); }
     /* screenshot sits inside the frame, never blurred by the card's backdrop-filter */
     figure.shot > img {
       position: absolute; inset: 6px;
@@ -243,22 +233,56 @@
     .p-nav a:hover b { color: var(--accent); }
     .p-nav .next { text-align: right; align-items: flex-end; }
 
+    /* ---------- facts footer band ---------- */
+    .facts-band {
+      background: var(--surface);
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .facts-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .fact {
+      padding: 44px 32px;
+      border-left: 1px solid rgba(255,255,255,.07);
+    }
+    .fact:first-child { border-left: none; }
+    .fact b {
+      display: block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .fact span { font-family: var(--font-display); font-size: 16px; line-height: 1.45; display: block; }
+    .fact a { color: var(--text); }
+    .fact a:hover { color: var(--accent); }
+    .footer-line {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 22px 0; font-size: 13px; color: var(--muted);
+    }
+    .footer-line .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-line a:hover { color: var(--accent); }
+
     @media (max-width: 860px) {
       header { padding: 48px 0 40px; }
       .gallery { grid-template-columns: 1fr; gap: 24px; }
-      figure.shot.tilt-l.in, figure.shot.tilt-r.in { transform: none; }
       figure.shot.in:hover { transform: translateY(-3px) rotate(0deg) !important; }
       .p-nav { grid-template-columns: 1fr; gap: 12px; padding-bottom: 56px; }
       .p-nav .next { text-align: left; align-items: flex-start; }
       .lb-prev { left: 8px; }
       .lb-next { right: 8px; }
       .lb-btn { width: 42px; height: 42px; }
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+      .fact { padding: 28px 24px; }
+      .fact:nth-child(3) { border-left: none; }
+      .fact:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.07); }
     }
     @media (max-width: 480px) {
       .p-desc { font-size: 16px; }
       figure.shot .shot-cap { left: 12px; right: auto; bottom: 12px; max-width: calc(100% - 24px); padding: 8px 12px; }
       figure.shot .shot-cap .t { font-size: 12px; }
       .lb-bar { padding: 9px 14px; }
+      .facts-grid { grid-template-columns: 1fr; }
+      .fact { border-left: none; border-top: 1px solid rgba(255,255,255,.07); }
+      .fact:first-child { border-top: none; }
     }
   </style>
 </head>
@@ -288,6 +312,23 @@
   <div class="p-nav" id="pNav"></div>
 </main>
 
+<footer class="facts-band">
+  <div class="wrap">
+    <div class="facts-grid">
+      <div class="fact"><b>Локация</b><span>Ярославль, Россия</span></div>
+      <div class="fact"><b>Фокус</b><span>UI/UX · Веб-разработка</span></div>
+      <div class="fact"><b>Формат</b><span>Проекты и сотрудничество</span></div>
+      <div class="fact"><b>Telegram</b><span><a href="https://t.me/zerjg" target="_blank" rel="noopener">@zerjg ↗</a></span></div>
+    </div>
+  </div>
+  <div class="footer-line">
+    <div class="wrap">
+      <span>© 2026 Игорь Пономарев</span>
+      <a href="mailto:igor_p@live.ru">igor_p@live.ru</a>
+    </div>
+  </div>
+</footer>
+
 <div class="lightbox" id="lightbox">
   <button class="lb-close" id="lbClose" aria-label="Закрыть">✕</button>
   <button class="lb-btn lb-prev" id="lbPrev" aria-label="Предыдущий">‹</button>
@@ -300,12 +341,6 @@
 </div>
 
 <script>
-// cross-document view transitions: fallback entrance when PageRevealEvent is unsupported
-if (!window.PageRevealEvent) {
-  const glow = document.querySelector(".glow");
-  if (glow) glow.classList.add("glow--enter");
-}
-
 const PROJECTS = {
   kord: {
     num: "01", title: "Фабрика КОРД",
@@ -405,7 +440,7 @@ const site = document.getElementById("pSite");
 site.href = p.url;
 
 // collage layout: wide / staggered pair / staggered pair / wide
-const LAYOUT = ["wide", "", "tilt-r", "tilt-l", "", "wide"];
+const LAYOUT = ["wide", "", "", "", "", "wide"];
 const gallery = document.getElementById("gallery");
 p.shots.forEach(([src, cap], i) => {
   const fig = document.createElement("figure");

@@ -24,7 +24,6 @@
     }
     h1, h2, h3, .logo { font-weight: 400; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    @view-transition { navigation: auto; }
     html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       background: var(--bg);
@@ -55,18 +54,14 @@
     /* ---------- projects gallery ---------- */
     section { padding: 0 0 88px; scroll-margin-top: 72px; position: relative; flex: 1; display: flex; flex-direction: column; }
     .glow {
-      position: absolute; top: -120px; right: -160px;
-      width: 480px; height: 480px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(123,108,255,.22), transparent 65%);
+      position: absolute; top: -140px; left: 50%;
+      width: 780px; height: 540px; border-radius: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(123,108,255,.22), rgba(216,255,62,.05) 44%, transparent 68%);
       pointer-events: none;
-      view-transition-name: glow;
     }
-    @keyframes glow-leave {
-      to { transform: translate(38vw, -24vh) scale(1.15); opacity: 0; }
-    }
-    .glow--leave { animation: glow-leave .3s ease-in forwards; }
-    .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 0; }
-    .section-head { padding: 48px 24px; margin: auto 0; text-align: center; }
+    .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 0; position: relative; }
+    .section-head { padding: 48px 24px; margin: auto 0; text-align: center; position: relative; overflow-x: clip; }
 
     .projects {
       display: grid; grid-template-columns: repeat(3, 360px);
@@ -75,6 +70,7 @@
     }
     .project {
       position: relative;
+      display: flex; flex-direction: column; gap: 6px;
       padding: 6px;
       background: var(--glass-tint);
       backdrop-filter: blur(10px) saturate(1.6);
@@ -88,13 +84,10 @@
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.45), inset 0 0 18px rgba(255,255,255,.16), 0 28px 70px rgba(0,0,0,.5);
       transform: translateY(-5px) rotate(0deg) !important;
     }
-    .project.vert { aspect-ratio: 1 / 1; }
-    .project.tilt-r.in { transform: rotate(.7deg); }
-    .project.tilt-l.in { transform: rotate(-.7deg); }
     .project-img {
-      position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px);
+      width: 100%; aspect-ratio: 16 / 9; height: auto;
       object-fit: cover; object-position: top center;
-      border-radius: 14px;
+      border-radius: 14px; display: block; flex-shrink: 0;
     }
     /* liquid glass: specular sheen */
     .project::before {
@@ -103,16 +96,16 @@
       background: linear-gradient(135deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 26%, rgba(255,255,255,0) 46%);
     }
     .project-info {
-      position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 2;
+      position: static; margin: 0; flex: 1;
       padding: 16px 18px; display: flex; flex-direction: column; gap: 8px;
-      border-radius: 16px;
+      border-radius: 14px;
       background: linear-gradient(180deg, rgba(16,16,22,.62) 0%, rgba(12,12,16,.8) 100%);
       backdrop-filter: blur(18px) saturate(1.5);
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 8px 24px rgba(0,0,0,.35);
     }
     .domain-tag {
-      position: absolute; top: 12px; right: 12px; z-index: 2;
+      position: absolute; top: 12px; right: 12px; z-index: 4;
       font-size: 11px; font-weight: 500; color: #fff;
       text-shadow: 0 1px 6px rgba(0,0,0,.45);
       background: linear-gradient(var(--glass-tint), var(--glass-tint)) var(--bg);
@@ -167,7 +160,6 @@
     @media (max-width: 819px) {
       .projects { grid-template-columns: min(360px, calc(100vw - 32px)); gap: 22px; }
       .section-head { padding: 32px 16px; }
-      .project.tilt-r.in, .project.tilt-l.in { transform: none; }
     }
     @media (max-width: 480px) {
       .facts-grid { grid-template-columns: 1fr; }
@@ -185,13 +177,13 @@
 </nav>
 
 <section id="works">
-  <div class="glow" aria-hidden="true"></div>
   <div class="section-head">
+    <div class="glow" aria-hidden="true"></div>
     <h2 class="section-title">Проекты</h2>
   </div>
   <div class="projects">
 
-      <a class="project vert tilt-l" href="project.html?p=kord">
+      <a class="project" href="project.html?p=kord">
         <img class="project-img" src="assets/kord.jpg" alt="Сайт креативно-технологического квартала «Фабрика КОРД»" loading="lazy">
         <span class="domain-tag">fabrikakord.com</span>
         <div class="project-info">
@@ -201,7 +193,7 @@
         </div>
       </a>
 
-      <a class="project vert tilt-r" href="project.html?p=cifra">
+      <a class="project" href="project.html?p=cifra">
         <img class="project-img" src="assets/cifra.jpg" alt="Сайт SaaS-платформы «Цифра» для управления бетонным заводом" loading="lazy">
         <span class="domain-tag">cifra.ai</span>
         <div class="project-info">
@@ -211,7 +203,7 @@
         </div>
       </a>
 
-      <a class="project vert tilt-r" href="project.html?p=krista">
+      <a class="project" href="project.html?p=krista">
         <img class="project-img" src="assets/krista.jpg" alt="Сайт НПО «Криста» — разработчика цифровых платформ для госуправления" loading="lazy">
         <span class="domain-tag">krista.ru</span>
         <div class="project-info">
@@ -221,7 +213,7 @@
         </div>
       </a>
 
-      <a class="project vert tilt-l" href="project.html?p=goodgrad">
+      <a class="project" href="project.html?p=goodgrad">
         <img class="project-img" src="assets/goodgrad.jpg" alt="Сайт застройщика «Гудград» — каталог новостроек Ярославля" loading="lazy">
         <span class="domain-tag">goodgrad.ru</span>
         <div class="project-info">
@@ -231,7 +223,7 @@
         </div>
       </a>
 
-      <a class="project vert tilt-l" href="project.html?p=tenderland">
+      <a class="project" href="project.html?p=tenderland">
         <img class="project-img" src="assets/tenderland.jpg" alt="Сайт системы поиска и анализа тендеров TenderLand" loading="lazy">
         <span class="domain-tag">tenderland.ru</span>
         <div class="project-info">
@@ -241,7 +233,7 @@
         </div>
       </a>
 
-      <a class="project vert tilt-r" href="project.html?p=hopmalt">
+      <a class="project" href="project.html?p=hopmalt">
         <img class="project-img" src="assets/hopmalt.jpg" alt="Сайт крафтовой пивоварни ХОПМОЛТ (HOPMALT) в Ярославле" loading="lazy">
         <span class="domain-tag">hopmalt.ru</span>
         <div class="project-info">
@@ -304,24 +296,6 @@ window.addEventListener("resize", () => {
       cols = c;
     }
     saved = now;
-  });
-});
-
-// cross-document view transitions: fallback glow exit when PageRevealEvent is unsupported
-let leaving = false;
-document.querySelectorAll(".project").forEach(card => {
-  card.addEventListener("click", e => {
-    if (window.PageRevealEvent) return;
-    const href = card.getAttribute("href");
-    if (!href) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    e.preventDefault();
-    if (leaving) return;
-    leaving = true;
-    const glow = document.querySelector(".glow");
-    if (!glow) { location.href = href; return; }
-    glow.classList.add("glow--leave");
-    setTimeout(() => { location.href = href; }, 300);
   });
 });
 </script>

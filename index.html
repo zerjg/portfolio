@@ -58,6 +58,7 @@
 
     .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 28px; }
     .project {
+      position: relative;
       background: var(--surface); border: 1px solid rgba(255,255,255,.07);
       border-radius: var(--radius); overflow: hidden;
       opacity: 0; transform: translateY(36px);
@@ -69,38 +70,43 @@
       box-shadow: 0 28px 70px rgba(0,0,0,.5);
       transform: translateY(-5px) rotate(0deg) !important;
     }
-    .project.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.55fr 1fr; }
-    .project.vert { display: flex; flex-direction: column; }
+    .project.wide { grid-column: 1 / -1; height: 430px; }
+    .project.vert { height: 460px; }
     .project.shift { margin-top: 72px; }
     .project.tilt-r.in { transform: rotate(.7deg); }
     .project.tilt-l.in { transform: rotate(-.7deg); }
-    .project-shot { background: var(--surface-2); overflow: hidden; }
+    .project-img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      transition: transform .6s ease;
+    }
+    .project-info {
+      position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+      padding: 24px 30px 26px; display: flex; flex-direction: column; gap: 10px;
+      background: #0e0e11;
+    }
+    .project-info::before {
+      content: ''; position: absolute; left: 0; right: 0; bottom: 100%;
+      height: 120px; pointer-events: none;
+      background: linear-gradient(180deg, rgba(14,14,17,0) 0%, rgba(14,14,17,1) 100%);
+    }
     .browser-bar {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 2;
       display: flex; align-items: center; gap: 7px;
-      padding: 11px 16px; background: #101014;
-      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 11px 16px;
+      background: rgba(16,16,20,.72); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
     .browser-bar i { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
     .browser-bar span {
       margin-left: 10px; font-size: 12px; color: var(--muted);
-      background: rgba(255,255,255,.05); padding: 3px 14px; border-radius: 6px;
+      background: rgba(255,255,255,.07); padding: 3px 14px; border-radius: 6px;
     }
-    .project-shot img {
-      width: 100%; display: block; object-fit: cover; object-position: top;
-      transition: transform .6s ease;
-    }
-    .project.wide .project-shot img { height: 330px; }
-    .project.vert .project-shot img { height: 250px; }
-    .project:hover .project-shot img { transform: scale(1.04); }
-    .project-info {
-      padding: 32px; display: flex; flex-direction: column;
-      justify-content: center; gap: 14px;
-    }
-    .project.vert .project-info { padding: 26px 26px 28px; }
-    .project-num { font-family: 'Unbounded'; font-size: 14px; color: rgba(255,255,255,.28); }
-    .project-info h3 { font-size: 24px; }
+    .project:hover .project-img { transform: scale(1.05); }
+    .project-num { font-family: 'Unbounded'; font-size: 13px; color: rgba(255,255,255,.5); }
+    .project-info h3 { font-size: 26px; }
     .project.vert .project-info h3 { font-size: 20px; }
-    .project-info p { color: var(--muted); font-size: 15px; }
+    .project-info p { color: #c9c8d2; font-size: 15px; }
     .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
     .card-tags span {
       font-size: 12px; color: var(--accent); background: rgba(216,255,62,.08);
@@ -139,8 +145,10 @@
 
     @media (max-width: 860px) {
       .projects { grid-template-columns: 1fr; gap: 26px; }
-      .project.wide { grid-template-columns: 1fr; }
-      .project.wide .project-shot img { height: 220px; }
+      .project.wide { height: 340px; }
+      .project.vert { height: 400px; }
+      .project-info { padding: 20px 22px 22px; }
+      .project-info::before { height: 80px; }
       .project.shift { margin-top: 0; }
       .project.tilt-r.in, .project.tilt-l.in { transform: none; }
       .facts-grid { grid-template-columns: 1fr 1fr; }
@@ -176,12 +184,10 @@
     <div class="projects">
 
       <a class="project wide" href="project.html?p=kord">
-        <div class="project-shot">
-          <div class="browser-bar">
-            <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-            <span>fabrikakord.com</span>
-          </div>
-          <img src="assets/kord.jpg" alt="Сайт креативно-технологического квартала «Фабрика КОРД»" loading="lazy">
+        <img class="project-img" src="assets/kord.jpg" alt="Сайт креативно-технологического квартала «Фабрика КОРД»" loading="lazy">
+        <div class="browser-bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span>fabrikakord.com</span>
         </div>
         <div class="project-info">
           <span class="project-num">01</span>
@@ -193,12 +199,10 @@
       </a>
 
       <a class="project vert tilt-l" href="project.html?p=cifra">
-        <div class="project-shot">
-          <div class="browser-bar">
-            <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-            <span>cifra.ai</span>
-          </div>
-          <img src="assets/cifra.jpg" alt="Сайт SaaS-платформы «Цифра» для управления бетонным заводом" loading="lazy">
+        <img class="project-img" src="assets/cifra.jpg" alt="Сайт SaaS-платформы «Цифра» для управления бетонным заводом" loading="lazy">
+        <div class="browser-bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span>cifra.ai</span>
         </div>
         <div class="project-info">
           <span class="project-num">02</span>
@@ -210,12 +214,10 @@
       </a>
 
       <a class="project vert shift tilt-r" href="project.html?p=krista">
-        <div class="project-shot">
-          <div class="browser-bar">
-            <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
-            <span>krista.ru</span>
-          </div>
-          <img src="assets/krista.jpg" alt="Сайт НПО «Криста» — разработчика цифровых платформ для госуправления" loading="lazy">
+        <img class="project-img" src="assets/krista.jpg" alt="Сайт НПО «Криста» — разработчика цифровых платформ для госуправления" loading="lazy">
+        <div class="browser-bar">
+          <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+          <span>krista.ru</span>
         </div>
         <div class="project-info">
           <span class="project-num">03</span>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проект — Игорь Пономарёв</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e11;
+      --surface: #17171c;
+      --surface-2: #1f1f26;
+      --text: #f2f1ee;
+      --muted: #9a99a3;
+      --accent: #d8ff3e;
+      --accent-2: #7b6cff;
+      --radius: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: 'Unbounded', sans-serif; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(14,14,17,.75);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'Unbounded'; font-weight: 800; font-size: 18px; }
+    .logo span { color: var(--accent); }
+    .back { font-size: 14px; color: var(--muted); }
+    .back:hover { color: var(--text); }
+
+    /* ---------- project header ---------- */
+    header { padding: 72px 0 48px; position: relative; overflow: hidden; }
+    header::before {
+      content: ''; position: absolute; top: -160px; right: -140px;
+      width: 460px; height: 460px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,108,255,.25), transparent 65%);
+      pointer-events: none;
+    }
+    .p-num { font-family: 'Unbounded'; font-size: 14px; color: rgba(255,255,255,.3); display: block; margin-bottom: 14px; }
+    h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; margin-bottom: 14px; }
+    .p-desc { color: var(--muted); font-size: 18px; max-width: 560px; margin-bottom: 22px; }
+    .p-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .card-tags span {
+      font-size: 12px; color: var(--accent); background: rgba(216,255,62,.08);
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .btn {
+      display: inline-block; padding: 12px 24px; border-radius: 100px;
+      font-weight: 600; font-size: 14px; transition: transform .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #111; }
+    .hint { margin-top: 26px; font-size: 13px; color: var(--muted); }
+    .hint b { color: var(--accent); font-weight: 600; }
+
+    /* ---------- gallery collage ---------- */
+    .gallery {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px 28px; padding-bottom: 40px;
+    }
+    figure.shot {
+      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius); overflow: hidden; cursor: zoom-in;
+      opacity: 0; transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+    figure.shot.in { opacity: 1; transform: translateY(0); }
+    figure.shot.in:hover {
+      border-color: rgba(216,255,62,.45);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+      transform: translateY(-4px) rotate(0deg) !important;
+    }
+    figure.shot.wide { grid-column: 1 / -1; }
+    figure.shot.shift { margin-top: 56px; }
+    figure.shot.tilt-l.in { transform: rotate(-.7deg); }
+    figure.shot.tilt-r.in { transform: rotate(.7deg); }
+    .browser-bar {
+      display: flex; align-items: center; gap: 7px;
+      padding: 11px 16px; background: #101014;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .browser-bar i { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .browser-bar span {
+      margin-left: 10px; font-size: 12px; color: var(--muted);
+      background: rgba(255,255,255,.05); padding: 3px 14px; border-radius: 6px;
+    }
+    figure.shot img { width: 100%; display: block; }
+    figcaption {
+      display: flex; align-items: baseline; gap: 12px;
+      padding: 14px 18px; font-size: 14px;
+    }
+    figcaption b { font-family: 'Unbounded'; font-size: 12px; color: var(--accent); font-weight: 600; }
+    figcaption span { color: var(--muted); }
+
+    /* ---------- lightbox ---------- */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(8,8,10,.94); backdrop-filter: blur(8px);
+      display: none; align-items: center; justify-content: center; flex-direction: column;
+      padding: 24px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: min(1200px, 92vw); max-height: 78vh;
+      border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 40px 120px rgba(0,0,0,.7);
+    }
+    .lb-bar {
+      width: min(1200px, 92vw); display: flex; align-items: center;
+      justify-content: space-between; gap: 16px; margin-top: 18px;
+    }
+    .lb-cap { font-size: 14px; color: var(--muted); }
+    .lb-cap b { color: var(--text); font-weight: 600; }
+    .lb-count { font-family: 'Unbounded'; font-size: 12px; color: var(--accent); }
+    .lb-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 52px; height: 52px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.18); background: rgba(23,23,28,.8);
+      color: var(--text); font-size: 22px; cursor: pointer; transition: background .15s;
+    }
+    .lb-btn:hover { background: rgba(216,255,62,.2); }
+    .lb-prev { left: 22px; }
+    .lb-next { right: 22px; }
+    .lb-close {
+      position: absolute; top: 20px; right: 22px;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.18); background: rgba(23,23,28,.8);
+      color: var(--text); font-size: 18px; cursor: pointer;
+    }
+    .lb-close:hover { background: rgba(255,95,87,.3); }
+
+    /* ---------- footer nav ---------- */
+    .p-nav {
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 36px 0 64px;
+    }
+    .p-nav a { color: var(--muted); font-size: 14px; }
+    .p-nav a:hover { color: var(--accent); }
+    .p-nav a b { display: block; color: var(--text); font-family: 'Unbounded'; font-size: 15px; margin-top: 4px; }
+    .p-nav a:hover b { color: var(--accent); }
+    .p-nav .next { text-align: right; }
+
+    @media (max-width: 860px) {
+      .gallery { grid-template-columns: 1fr; gap: 24px; }
+      figure.shot.shift { margin-top: 0; }
+      figure.shot.tilt-l.in, figure.shot.tilt-r.in { transform: none; }
+      .lb-prev { left: 8px; } .lb-next { right: 8px; }
+      .lb-btn { width: 42px; height: 42px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">IGOR<span>.</span></a>
+    <a class="back" href="index.html#works">← Все проекты</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="p-num" id="pNum"></span>
+    <h1 id="pTitle"></h1>
+    <p class="p-desc" id="pDesc"></p>
+    <div class="p-meta">
+      <div class="card-tags" id="pTags"></div>
+      <a class="btn btn-primary" id="pSite" href="#" target="_blank" rel="noopener">Открыть сайт ↗</a>
+    </div>
+    <p class="hint">Листайте галерею · <b>клик по скриншоту</b> — просмотр в полном размере, стрелки ← → — навигация</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="gallery" id="gallery"></div>
+  <div class="p-nav" id="pNav"></div>
+</main>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Закрыть">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Предыдущий">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Следующий">›</button>
+  <div class="lb-bar">
+    <span class="lb-cap" id="lbCap"></span>
+    <span class="lb-count" id="lbCount"></span>
+  </div>
+</div>
+
+<script>
+const PROJECTS = {
+  kord: {
+    num: "01", title: "Фабрика КОРД",
+    desc: "Креативно-технологический квартал в Ярославле",
+    url: "https://fabrikakord.com/", domain: "fabrikakord.com",
+    tags: ["Веб-дизайн", "Креативный кластер"],
+    shots: [
+      ["assets/kord-1.jpg", "Главный экран"],
+      ["assets/kord-2.jpg", "О квартале"],
+      ["assets/kord-3.jpg", "Резиденты"],
+      ["assets/kord-4.jpg", "События"],
+      ["assets/kord-5.jpg", "Сервисы и карта"],
+      ["assets/kord-6.jpg", "Контакты"]
+    ]
+  },
+  cifra: {
+    num: "02", title: "Цифра",
+    desc: "SaaS-платформа управления бетонным заводом",
+    url: "https://cifra.ai/", domain: "cifra.ai",
+    tags: ["Продуктовый дизайн", "SaaS"],
+    shots: [
+      ["assets/cifra-1.jpg", "Главный экран"],
+      ["assets/cifra-2.jpg", "Интеграции и данные"],
+      ["assets/cifra-3.jpg", "Рабочие места ролей"],
+      ["assets/cifra-4.jpg", "Трекинг для заказчиков"],
+      ["assets/cifra-5.jpg", "Кейс клиента"],
+      ["assets/cifra-6.jpg", "Тарифы"]
+    ]
+  },
+  krista: {
+    num: "03", title: "НПО Криста",
+    desc: "Цифровые платформы для государственного управления",
+    url: "https://www.krista.ru/", domain: "krista.ru",
+    tags: ["Корпоративный сайт", "GovTech"],
+    shots: [
+      ["assets/krista-1.jpg", "Главный экран"],
+      ["assets/krista-2.jpg", "Платформа «Цифровой регион»"],
+      ["assets/krista-3.jpg", "Продуктовые решения"],
+      ["assets/krista-4.jpg", "Полный цикл разработки"],
+      ["assets/krista-5.jpg", "Медиа и новости"],
+      ["assets/krista-6.jpg", "Карьера"]
+    ]
+  }
+};
+const ORDER = ["kord", "cifra", "krista"];
+const key = new URLSearchParams(location.search).get("p");
+const id = PROJECTS[key] ? key : "kord";
+const p = PROJECTS[id];
+
+document.title = p.title + " — Игорь Пономарёв";
+document.getElementById("pNum").textContent = "Проект " + p.num;
+document.getElementById("pTitle").textContent = p.title;
+document.getElementById("pDesc").textContent = p.desc;
+document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</span>").join("");
+const site = document.getElementById("pSite");
+site.href = p.url;
+
+// collage layout: wide / staggered pair / staggered pair / wide
+const LAYOUT = ["wide", "", "shift tilt-r", "shift tilt-l", "", "wide"];
+const gallery = document.getElementById("gallery");
+p.shots.forEach(([src, cap], i) => {
+  const fig = document.createElement("figure");
+  fig.className = "shot " + (LAYOUT[i] || "");
+  fig.innerHTML =
+    '<div class="browser-bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span>' + p.domain + "</span></div>" +
+    '<img src="' + src + '" alt="' + p.title + " — " + cap + '" loading="lazy">' +
+    "<figcaption><b>" + String(i + 1).padStart(2, "0") + "</b><span>" + cap + "</span></figcaption>";
+  fig.addEventListener("click", () => openLb(i));
+  gallery.appendChild(fig);
+});
+
+// scroll reveal
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll("figure.shot").forEach(f => io.observe(f));
+
+// prev / next project
+const idx = ORDER.indexOf(id);
+const prev = PROJECTS[ORDER[(idx + ORDER.length - 1) % ORDER.length]];
+const next = PROJECTS[ORDER[(idx + 1) % ORDER.length]];
+document.getElementById("pNav").innerHTML =
+  '<a href="project.html?p=' + ORDER[(idx + ORDER.length - 1) % ORDER.length] + '">← Предыдущий проект<b>' + prev.title + "</b></a>" +
+  '<a class="next" href="project.html?p=' + ORDER[(idx + 1) % ORDER.length] + '">Следующий проект →<b>' + next.title + "</b></a>";
+
+// lightbox
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lbImg");
+const lbCap = document.getElementById("lbCap");
+const lbCount = document.getElementById("lbCount");
+let cur = 0;
+function openLb(i) { cur = i; renderLb(); lb.classList.add("open"); document.body.style.overflow = "hidden"; }
+function closeLb() { lb.classList.remove("open"); document.body.style.overflow = ""; }
+function renderLb() {
+  const [src, cap] = p.shots[cur];
+  lbImg.src = src;
+  lbCap.innerHTML = "<b>" + p.title + "</b> · " + cap;
+  lbCount.textContent = (cur + 1) + " / " + p.shots.length;
+}
+function step(d) { cur = (cur + d + p.shots.length) % p.shots.length; renderLb(); }
+document.getElementById("lbClose").addEventListener("click", closeLb);
+document.getElementById("lbPrev").addEventListener("click", e => { e.stopPropagation(); step(-1); });
+document.getElementById("lbNext").addEventListener("click", e => { e.stopPropagation(); step(1); });
+lb.addEventListener("click", e => { if (e.target === lb) closeLb(); });
+document.addEventListener("keydown", e => {
+  if (!lb.classList.contains("open")) return;
+  if (e.key === "Escape") closeLb();
+  if (e.key === "ArrowLeft") step(-1);
+  if (e.key === "ArrowRight") step(1);
+});
+</script>
+
+</body>
+</html>

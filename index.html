@@ -24,6 +24,7 @@
     }
     h1, h2, h3, .logo { font-weight: 400; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    @view-transition { navigation: auto; }
     html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       background: var(--bg);
@@ -53,12 +54,17 @@
 
     /* ---------- projects gallery ---------- */
     section { padding: 0 0 88px; scroll-margin-top: 72px; position: relative; flex: 1; display: flex; flex-direction: column; }
-    section::before {
-      content: ''; position: absolute; top: -120px; right: -160px;
+    .glow {
+      position: absolute; top: -120px; right: -160px;
       width: 480px; height: 480px; border-radius: 50%;
       background: radial-gradient(circle, rgba(123,108,255,.22), transparent 65%);
       pointer-events: none;
+      view-transition-name: glow;
     }
+    @keyframes glow-leave {
+      to { transform: translate(38vw, -24vh) scale(1.15); opacity: 0; }
+    }
+    .glow--leave { animation: glow-leave .3s ease-in forwards; }
     .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 0; }
     .section-head { padding: 48px 24px; margin: auto 0; text-align: center; }
 
@@ -179,6 +185,7 @@
 </nav>
 
 <section id="works">
+  <div class="glow" aria-hidden="true"></div>
   <div class="section-head">
     <h2 class="section-title">Проекты</h2>
   </div>
@@ -297,6 +304,24 @@ window.addEventListener("resize", () => {
       cols = c;
     }
     saved = now;
+  });
+});
+
+// cross-document view transitions: fallback glow exit when PageRevealEvent is unsupported
+let leaving = false;
+document.querySelectorAll(".project").forEach(card => {
+  card.addEventListener("click", e => {
+    if (window.PageRevealEvent) return;
+    const href = card.getAttribute("href");
+    if (!href) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    if (leaving) return;
+    leaving = true;
+    const glow = document.querySelector(".glow");
+    if (!glow) { location.href = href; return; }
+    glow.classList.add("glow--leave");
+    setTimeout(() => { location.href = href; }, 300);
   });
 });
 </script>

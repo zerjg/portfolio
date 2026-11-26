@@ -21,6 +21,7 @@
       --font-body: 'Golos Text';
       --glass-tint: rgba(235,235,245,.3);
     }
+    @view-transition { navigation: auto; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; overflow-x: clip; }
     body {
@@ -55,14 +56,21 @@
     .back:hover { color: var(--text); background: rgba(235,235,245,.12); border-color: rgba(255,255,255,.24); }
 
     /* ---------- project header ---------- */
-    header { padding: 72px 0 56px; position: relative; overflow: hidden; }
-    header::before {
-      content: ''; position: absolute; top: -240px; left: 50%;
+    header { padding: 72px 0 56px; position: relative; }
+    .glow {
+      position: absolute; top: -140px; left: 50%;
       width: 780px; height: 540px; border-radius: 50%;
       transform: translateX(-50%);
       background: radial-gradient(circle, rgba(123,108,255,.22), rgba(216,255,62,.05) 44%, transparent 68%);
       pointer-events: none;
+      view-transition-name: glow;
     }
+    @keyframes glow-enter {
+      from { transform: translate(38vw, -24vh) scale(1.15); opacity: 0; }
+      30% { opacity: 1; }
+      to { transform: translateX(-50%) scale(1); opacity: 1; }
+    }
+    .glow--enter { animation: glow-enter 1s ease-out both; }
     header .wrap {
       position: relative; display: flex; flex-direction: column;
       align-items: center; text-align: center;
@@ -135,21 +143,10 @@
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 26%, rgba(255,255,255,0) 46%);
     }
-    /* domain chip over a solid backdrop so it always stays legible */
-    figure.shot .domain {
-      position: absolute; top: 12px; right: 12px; z-index: 5;
-      max-width: calc(100% - 24px);
-      font-size: 11px; font-weight: 500; color: #fff;
-      text-shadow: 0 1px 6px rgba(0,0,0,.45);
-      background: linear-gradient(var(--glass-tint), var(--glass-tint)) var(--bg);
-      border: 1px solid rgba(255,255,255,.28);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
-      padding: 5px 12px; border-radius: 100px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-    }
     /* signature touch: matte glass caption inside the frame */
     figure.shot .shot-cap {
-      position: absolute; left: 16px; right: 16px; bottom: 16px; z-index: 4;
+      position: absolute; left: 16px; right: auto; bottom: 16px; z-index: 4;
+      width: fit-content; max-width: calc(100% - 32px);
       display: flex; align-items: center; gap: 10px;
       padding: 10px 14px; border-radius: 16px;
       background: linear-gradient(180deg, rgba(16,16,22,.62) 0%, rgba(12,12,16,.8) 100%);
@@ -259,7 +256,7 @@
     }
     @media (max-width: 480px) {
       .p-desc { font-size: 16px; }
-      figure.shot .shot-cap { left: 12px; right: 12px; bottom: 12px; padding: 8px 12px; }
+      figure.shot .shot-cap { left: 12px; right: auto; bottom: 12px; max-width: calc(100% - 24px); padding: 8px 12px; }
       figure.shot .shot-cap .t { font-size: 12px; }
       .lb-bar { padding: 9px 14px; }
     }
@@ -275,6 +272,7 @@
 </nav>
 
 <header>
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
     <h1 id="pTitle"></h1>
     <p class="p-desc" id="pDesc"></p>
@@ -302,6 +300,12 @@
 </div>
 
 <script>
+// cross-document view transitions: fallback entrance when PageRevealEvent is unsupported
+if (!window.PageRevealEvent) {
+  const glow = document.querySelector(".glow");
+  if (glow) glow.classList.add("glow--enter");
+}
+
 const PROJECTS = {
   kord: {
     num: "01", title: "Фабрика КОРД",
@@ -411,7 +415,6 @@ p.shots.forEach(([src, cap], i) => {
   fig.setAttribute("aria-label", "Открыть кадр: " + cap);
   fig.innerHTML =
     '<img src="' + src + '" alt="' + p.title + " — " + cap + '" loading="lazy">' +
-    '<span class="domain">' + p.domain + "</span>" +
     '<div class="shot-cap"><b class="n">' + String(i + 1).padStart(2, "0") + '</b><span class="t">' + cap + "</span></div>";
   fig.addEventListener("click", () => openLb(i));
   fig.addEventListener("keydown", e => {

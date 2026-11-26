@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Игорь Пономарёв — дизайнер</title>
-  <meta name="description" content="Портфолио Игоря Пономарёва — графический и цифровой дизайн, брендинг, UI/UX.">
+  <meta name="description" content="Портфолио Игоря Пономарёва — веб-дизайн и цифровые продукты: Фабрика КОРД, Цифра, НПО Криста.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -39,71 +39,41 @@
       background: rgba(14,14,17,.75);
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-family: 'Unbounded'; font-weight: 800; font-size: 18px; }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+    .logo { font-family: 'Unbounded'; font-weight: 800; font-size: 15px; letter-spacing: .02em; white-space: nowrap; }
     .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
     .nav-links a:hover { color: var(--text); }
 
-    /* ---------- hero ---------- */
-    header { padding: 96px 0 72px; position: relative; overflow: hidden; }
-    header::before {
-      content: ''; position: absolute; top: -180px; right: -120px;
+    /* ---------- projects gallery ---------- */
+    section { padding: 72px 0 88px; scroll-margin-top: 72px; position: relative; }
+    section::before {
+      content: ''; position: absolute; top: -120px; right: -160px;
       width: 480px; height: 480px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(123,108,255,.28), transparent 65%);
+      background: radial-gradient(circle, rgba(123,108,255,.22), transparent 65%);
       pointer-events: none;
     }
-    .hero { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
-    .hero-text { flex: 1 1 420px; }
-    .tag {
-      display: inline-block; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); border: 1px solid rgba(216,255,62,.35);
-      padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
-    }
-    h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; margin-bottom: 20px; }
-    h1 em { font-style: normal; color: var(--accent); }
-    .lead { color: var(--muted); font-size: 18px; max-width: 520px; margin-bottom: 32px; }
-    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; padding: 14px 28px; border-radius: 100px;
-      font-weight: 600; font-size: 15px; transition: transform .15s ease, opacity .15s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--accent); color: #111; }
-    .btn-ghost { border: 1px solid rgba(255,255,255,.2); color: var(--text); }
-    .avatar {
-      width: 240px; height: 240px; border-radius: 32px; object-fit: cover;
-      border: 3px solid var(--surface-2);
-      box-shadow: 0 24px 60px rgba(0,0,0,.5);
-      transform: rotate(3deg);
-    }
+    .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 12px; }
+    .section-sub { color: var(--muted); margin-bottom: 48px; max-width: 560px; }
 
-    /* ---------- sections ---------- */
-    section { padding: 72px 0; scroll-margin-top: 72px; }
-    .section-title { font-size: clamp(24px, 3.5vw, 36px); margin-bottom: 12px; }
-    .section-sub { color: var(--muted); margin-bottom: 40px; max-width: 560px; }
-
-    /* ---------- skills ---------- */
-    .chips { display: flex; flex-wrap: wrap; gap: 12px; }
-    .chip {
-      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
-      padding: 12px 22px; border-radius: 100px; font-size: 15px; font-weight: 500;
-    }
-    .chip b { color: var(--accent); font-weight: 600; }
-
-    /* ---------- projects ---------- */
-    .projects { display: flex; flex-direction: column; gap: 28px; }
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 28px; }
     .project {
-      display: grid; grid-template-columns: 1.55fr 1fr;
       background: var(--surface); border: 1px solid rgba(255,255,255,.07);
       border-radius: var(--radius); overflow: hidden;
-      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+      opacity: 0; transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease, border-color .25s ease, box-shadow .25s ease;
     }
-    .project:hover {
-      transform: translateY(-5px);
+    .project.in { opacity: 1; transform: translateY(0); }
+    .project.in:hover {
       border-color: rgba(216,255,62,.45);
       box-shadow: 0 28px 70px rgba(0,0,0,.5);
+      transform: translateY(-5px) rotate(0deg) !important;
     }
+    .project.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.55fr 1fr; }
+    .project.vert { display: flex; flex-direction: column; }
+    .project.shift { margin-top: 72px; }
+    .project.tilt-r.in { transform: rotate(.7deg); }
+    .project.tilt-l.in { transform: rotate(-.7deg); }
     .project-shot { background: var(--surface-2); overflow: hidden; }
     .browser-bar {
       display: flex; align-items: center; gap: 7px;
@@ -116,16 +86,20 @@
       background: rgba(255,255,255,.05); padding: 3px 14px; border-radius: 6px;
     }
     .project-shot img {
-      width: 100%; height: 330px; object-fit: cover; object-position: top;
-      display: block; transition: transform .6s ease;
+      width: 100%; display: block; object-fit: cover; object-position: top;
+      transition: transform .6s ease;
     }
+    .project.wide .project-shot img { height: 330px; }
+    .project.vert .project-shot img { height: 250px; }
     .project:hover .project-shot img { transform: scale(1.04); }
     .project-info {
-      padding: 36px 32px; display: flex; flex-direction: column;
+      padding: 32px; display: flex; flex-direction: column;
       justify-content: center; gap: 14px;
     }
+    .project.vert .project-info { padding: 26px 26px 28px; }
     .project-num { font-family: 'Unbounded'; font-size: 14px; color: rgba(255,255,255,.28); }
     .project-info h3 { font-size: 24px; }
+    .project.vert .project-info h3 { font-size: 20px; }
     .project-info p { color: var(--muted); font-size: 15px; }
     .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
     .card-tags span {
@@ -134,98 +108,74 @@
     }
     .project-link { margin-top: 8px; color: var(--accent); font-weight: 600; font-size: 14px; }
     .project:hover .project-link { text-decoration: underline; text-underline-offset: 4px; }
+
+    /* ---------- facts footer band ---------- */
+    .facts-band {
+      background: var(--surface);
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+    .facts-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .fact {
+      padding: 44px 32px;
+      border-left: 1px solid rgba(255,255,255,.07);
+    }
+    .fact:first-child { border-left: none; }
+    .fact b {
+      display: block; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .fact span { font-family: 'Unbounded'; font-size: 16px; line-height: 1.45; display: block; }
+    .fact a { color: var(--text); }
+    .fact a:hover { color: var(--accent); }
+    .footer-line {
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 22px 0; font-size: 13px; color: var(--muted);
+    }
+    .footer-line .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .footer-line a:hover { color: var(--accent); }
+
     @media (max-width: 860px) {
-      .project { grid-template-columns: 1fr; }
-      .project-shot img { height: 220px; }
-      .project-info { padding: 26px 24px; }
+      .projects { grid-template-columns: 1fr; gap: 26px; }
+      .project.wide { grid-template-columns: 1fr; }
+      .project.wide .project-shot img { height: 220px; }
+      .project.shift { margin-top: 0; }
+      .project.tilt-r.in, .project.tilt-l.in { transform: none; }
+      .facts-grid { grid-template-columns: 1fr 1fr; }
+      .fact { padding: 28px 24px; }
+      .fact:nth-child(3) { border-left: none; }
+      .fact:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.07); }
+      .nav-links { gap: 18px; }
+      .logo { font-size: 13px; }
     }
-
-    /* ---------- about ---------- */
-    .about-box {
-      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
-      border-radius: var(--radius); padding: 40px;
-      display: grid; grid-template-columns: 2fr 1fr; gap: 40px;
-    }
-    .about-box p { color: var(--muted); margin-bottom: 14px; }
-    .facts { list-style: none; }
-    .facts li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 14px; }
-    .facts li:last-child { border: none; }
-    .facts b { display: block; color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
-
-    /* ---------- contact ---------- */
-    .contact {
-      text-align: center; background: var(--surface);
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: var(--radius); padding: 64px 32px;
-    }
-    .contact h2 { margin-bottom: 14px; }
-    .contact p { color: var(--muted); margin-bottom: 28px; }
-    .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-
-    footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px; }
-
-    @media (max-width: 720px) {
-      .about-box { grid-template-columns: 1fr; }
-      .hero { flex-direction: column-reverse; text-align: center; }
-      .btn-row { justify-content: center; }
-      .nav-links { display: none; }
-      .avatar { width: 180px; height: 180px; }
+    @media (max-width: 480px) {
+      .facts-grid { grid-template-columns: 1fr; }
+      .fact { border-left: none; border-top: 1px solid rgba(255,255,255,.07); }
+      .fact:first-child { border-top: none; }
     }
   </style>
 </head>
 <body>
 
-<nav>
+<nav id="top">
   <div class="wrap">
-    <a class="logo" href="#top">IGOR<span>.</span></a>
+    <a class="logo" href="#top">ИГОРЬ ПОНОМАРЕВ<span>.</span></a>
     <div class="nav-links">
-      <a href="#skills">Навыки</a>
       <a href="#works">Проекты</a>
-      <a href="#about">Обо мне</a>
-      <a href="#contact">Контакты</a>
+      <a href="https://github.com/zerjg" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </nav>
 
-<header id="top">
-  <div class="wrap hero">
-    <div class="hero-text">
-      <span class="tag">Дизайнер · Ярославль</span>
-      <h1>Игорь Пономарёв — <em>дизайн</em>, который работает</h1>
-      <p class="lead">Проектирую сайты и цифровые продукты — от креативных кластеров до промышленных SaaS-платформ. Помогаю брендам выглядеть так, чтобы их запоминали.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#works">Смотреть проекты</a>
-        <a class="btn btn-ghost" href="#contact">Связаться</a>
-      </div>
-    </div>
-    <img class="avatar" src="https://avatars.githubusercontent.com/u/17095296?v=4" alt="Игорь Пономарёв">
-  </div>
-</header>
-
-<section id="skills">
-  <div class="wrap">
-    <h2 class="section-title">Навыки</h2>
-    <p class="section-sub">Инструменты и направления, в которых я работаю.</p>
-    <div class="chips">
-      <span class="chip"><b>Figma</b> · UI/UX</span>
-      <span class="chip">Брендинг и айдентика</span>
-      <span class="chip">Adobe Photoshop</span>
-      <span class="chip">Adobe Illustrator</span>
-      <span class="chip">Типографика</span>
-      <span class="chip">Веб-дизайн</span>
-      <span class="chip">Прототипирование</span>
-      <span class="chip">Motion-дизайн</span>
-    </div>
-  </div>
-</section>
-
 <section id="works">
   <div class="wrap">
     <h2 class="section-title">Проекты</h2>
-    <p class="section-sub">Сайты, которые я спроектировал и дизайн которых довёл до продакшена.</p>
+    <p class="section-sub">Сайты, которые я спроектировал и дизайн которых довёл до продакшена. Клик по карточке — галерея экранов проекта.</p>
     <div class="projects">
 
-      <a class="project" href="project.html?p=kord">
+      <a class="project wide" href="project.html?p=kord">
         <div class="project-shot">
           <div class="browser-bar">
             <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
@@ -242,7 +192,7 @@
         </div>
       </a>
 
-      <a class="project" href="project.html?p=cifra">
+      <a class="project vert tilt-l" href="project.html?p=cifra">
         <div class="project-shot">
           <div class="browser-bar">
             <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
@@ -259,7 +209,7 @@
         </div>
       </a>
 
-      <a class="project" href="project.html?p=krista">
+      <a class="project vert shift tilt-r" href="project.html?p=krista">
         <div class="project-shot">
           <div class="browser-bar">
             <i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
@@ -280,42 +230,29 @@
   </div>
 </section>
 
-<section id="about">
+<footer class="facts-band">
   <div class="wrap">
-    <h2 class="section-title">Обо мне</h2>
-    <p class="section-sub">Коротко о том, кто я и как работаю.</p>
-    <div class="about-box">
-      <div>
-        <p>Привет! Я Игорь — дизайнер из Ярославля. Верю, что хороший дизайн — это не украшение, а решение задачи: он должен быть понятным, честным и красивым одновременно.</p>
-        <p>В работе ценю системность: сначала разбираюсь в задаче и аудитории, потом ищу форму. Люблю типографику, сетки и детали, которые замечаешь не сразу.</p>
-        <p>Открыт к интересным проектам и сотрудничеству — напишите мне, обсудим вашу задачу.</p>
-      </div>
-      <ul class="facts">
-        <li><b>Локация</b>Ярославль, Россия</li>
-        <li><b>Фокус</b>Брендинг · UI/UX · Веб</li>
-        <li><b>Формат</b>Проекты и сотрудничество</li>
-        <li><b>GitHub</b><a href="https://github.com/zerjg" target="_blank">@zerjg</a></li>
-      </ul>
+    <div class="facts-grid">
+      <div class="fact"><b>Локация</b><span>Ярославль, Россия</span></div>
+      <div class="fact"><b>Фокус</b><span>Брендинг · UI/UX · Веб</span></div>
+      <div class="fact"><b>Формат</b><span>Проекты и сотрудничество</span></div>
+      <div class="fact"><b>GitHub</b><span><a href="https://github.com/zerjg" target="_blank" rel="noopener">@zerjg ↗</a></span></div>
     </div>
   </div>
-</section>
-
-<section id="contact">
-  <div class="wrap">
-    <div class="contact">
-      <h2 class="section-title">Давайте работать вместе</h2>
-      <p>Есть проект или идея? Напишите — отвечаю быстро.</p>
-      <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:igor_p@live.ru">igor_p@live.ru</a>
-        <a class="btn btn-ghost" href="https://github.com/zerjg" target="_blank">GitHub</a>
-      </div>
+  <div class="footer-line">
+    <div class="wrap">
+      <span>© 2026 Игорь Пономарёв</span>
+      <a href="mailto:igor_p@live.ru">igor_p@live.ru</a>
     </div>
   </div>
-</section>
-
-<footer>
-  © 2026 Игорь Пономарёв · Сделано с любовью к деталям
 </footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll(".project").forEach(p => io.observe(p));
+</script>
 
 </body>
 </html>

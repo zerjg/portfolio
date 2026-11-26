@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Игорь Пономарёв — дизайнер</title>
-  <meta name="description" content="Портфолио Игоря Пономарёва — веб-дизайн и цифровые продукты: Фабрика КОРД, Цифра, НПО Криста.">
+  <title>Игорь Пономарев — дизайнер</title>
+  <meta name="description" content="Портфолио Игоря Пономарева — веб-дизайн и цифровые продукты: Фабрика КОРД, Цифра, НПО Криста.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,15 +20,11 @@
       --radius: 20px;
       --font-display: 'Russo One';
       --font-body: 'Golos Text';
-      --glass-tint: rgba(16,16,20,.6);
+      --glass-tint: rgba(235,235,245,.3);
     }
-    body[data-tint="silver"] { --glass-tint: rgba(235,235,245,.3); }
-    body[data-tint="lime"] { --glass-tint: rgba(216,255,62,.25); }
-    body[data-tint="violet"] { --glass-tint: rgba(123,108,255,.3); }
-    body[data-tint="ice"] { --glass-tint: rgba(140,190,255,.3); }
     h1, h2, h3, .logo { font-weight: 400; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       background: var(--bg);
       color: var(--text);
@@ -36,6 +32,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       min-height: 100dvh; display: flex; flex-direction: column;
+      overflow-x: clip;
     }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
     h1, h2, h3 { font-family: var(--font-display), sans-serif; line-height: 1.2; }
@@ -55,16 +52,15 @@
     .nav-links a:hover { color: var(--text); }
 
     /* ---------- projects gallery ---------- */
-    section { padding: 72px 0 88px; scroll-margin-top: 72px; position: relative; flex: 1; display: flex; flex-direction: column; }
+    section { padding: 0 0 88px; scroll-margin-top: 72px; position: relative; flex: 1; display: flex; flex-direction: column; }
     section::before {
       content: ''; position: absolute; top: -120px; right: -160px;
       width: 480px; height: 480px; border-radius: 50%;
       background: radial-gradient(circle, rgba(123,108,255,.22), transparent 65%);
       pointer-events: none;
     }
-    .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 12px; }
-    .section-sub { color: var(--muted); margin-bottom: 48px; max-width: 560px; }
-    .section-head { padding: 0 24px; margin-top: auto; }
+    .section-title { font-size: clamp(28px, 4.5vw, 44px); margin-bottom: 0; }
+    .section-head { padding: 48px 24px; margin: auto 0; text-align: center; }
 
     .projects {
       display: grid; grid-template-columns: repeat(6, 1fr);
@@ -119,11 +115,6 @@
     }
     .project-info h3 { font-size: 17px; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
     .project-info p { color: #d6d5dd; font-size: 12.5px; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
-    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-    .card-tags span {
-      font-size: 10.5px; color: var(--accent); background: rgba(216,255,62,.08);
-      padding: 3px 10px; border-radius: 100px;
-    }
     .project-link { margin-top: 4px; color: var(--accent); font-weight: 600; font-size: 12.5px; }
     .project:hover .project-link { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -155,29 +146,11 @@
     .footer-line .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .footer-line a:hover { color: var(--accent); }
 
-    /* ---------- glass tint picker ---------- */
-    .tint-picker {
-      position: fixed; right: 20px; bottom: 20px; z-index: 60;
-      display: flex; gap: 8px; padding: 8px 10px;
-      background: rgba(23,23,28,.7); backdrop-filter: blur(12px) saturate(1.4);
-      border: 1px solid rgba(255,255,255,.14); border-radius: 100px;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
-    }
-    .tint-picker button {
-      width: 22px; height: 22px; border-radius: 50%; cursor: pointer;
-      border: 1px solid rgba(255,255,255,.35);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
-      transition: transform .15s ease;
-    }
-    .tint-picker button:hover { transform: scale(1.15); }
-    .tint-picker button.on { outline: 2px solid var(--accent); outline-offset: 2px; }
-
     @media (max-width: 1999px) {
       .projects { grid-template-columns: repeat(3, 1fr); }
       .project-info { padding: 16px 20px; gap: 9px; }
       .project-info h3 { font-size: 21px; }
       .project-info p { font-size: 14px; }
-      .card-tags span { font-size: 12px; padding: 4px 12px; }
       .project-link { font-size: 13.5px; }
     }
     @media (max-width: 1199px) {
@@ -194,12 +167,10 @@
       .fact:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.07); }
       .nav-links { gap: 18px; }
       .logo { font-size: 13px; }
-      .tint-picker { right: 12px; bottom: 12px; padding: 6px 8px; gap: 6px; }
-      .tint-picker button { width: 18px; height: 18px; }
     }
     @media (max-width: 759px) {
       .projects { grid-template-columns: 1fr; gap: 22px; padding: 0 16px; }
-      .section-head { padding: 0 16px; }
+      .section-head { padding: 32px 16px; }
       .project-info { padding: 18px 22px; }
       .project.tilt-r.in, .project.tilt-l.in { transform: none; }
     }
@@ -214,14 +185,13 @@
 
 <nav id="top">
   <div class="wrap">
-    <a class="logo" href="#top">ИГОРЬ ПОНОМАРЕВ<span>.</span></a>
+    <a class="logo" href="index.html">ИГОРЬ ПОНОМАРЕВ<span>.</span></a>
   </div>
 </nav>
 
 <section id="works">
   <div class="section-head">
     <h2 class="section-title">Проекты</h2>
-    <p class="section-sub">Сайты, которые я спроектировал и дизайн которых довёл до продакшена. Клик по карточке — галерея экранов проекта.</p>
   </div>
   <div class="projects">
 
@@ -231,7 +201,6 @@
         <div class="project-info">
           <h3>Фабрика КОРД</h3>
           <p>Креативно-технологический квартал в Ярославле</p>
-          <div class="card-tags"><span>Веб-дизайн</span><span>Креативный кластер</span></div>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -242,7 +211,6 @@
         <div class="project-info">
           <h3>Цифра</h3>
           <p>SaaS-платформа управления бетонным заводом</p>
-          <div class="card-tags"><span>Продуктовый дизайн</span><span>SaaS</span></div>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -253,7 +221,6 @@
         <div class="project-info">
           <h3>НПО Криста</h3>
           <p>Цифровые платформы для государственного управления</p>
-          <div class="card-tags"><span>Корпоративный сайт</span><span>GovTech</span></div>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -264,7 +231,6 @@
         <div class="project-info">
           <h3>Гудград</h3>
           <p>Застройщик Ярославля: каталог новостроек и подбор квартир</p>
-          <div class="card-tags"><span>Веб-дизайн</span><span>Недвижимость</span></div>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -275,7 +241,6 @@
         <div class="project-info">
           <h3>TenderLand</h3>
           <p>Система точного поиска и анализа тендеров</p>
-          <div class="card-tags"><span>Продуктовый дизайн</span><span>SaaS</span></div>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -286,7 +251,6 @@
         <div class="project-info">
           <h3>ХОПМОЛТ</h3>
           <p>Крафтовая пивоварня Ярославля: каталог живого пива</p>
-          <div class="card-tags"><span>Бренд-сайт</span><span>Крафт</span></div>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -298,41 +262,24 @@
   <div class="wrap">
     <div class="facts-grid">
       <div class="fact"><b>Локация</b><span>Ярославль, Россия</span></div>
-      <div class="fact"><b>Фокус</b><span>Брендинг · UI/UX · Веб</span></div>
+      <div class="fact"><b>Фокус</b><span>UI/UX · Веб-разработка</span></div>
       <div class="fact"><b>Формат</b><span>Проекты и сотрудничество</span></div>
       <div class="fact"><b>Telegram</b><span><a href="https://t.me/zerjg" target="_blank" rel="noopener">@zerjg ↗</a></span></div>
     </div>
   </div>
   <div class="footer-line">
     <div class="wrap">
-      <span>© 2026 Игорь Пономарёв</span>
+      <span>© 2026 Игорь Пономарев</span>
       <a href="mailto:igor_p@live.ru">igor_p@live.ru</a>
     </div>
   </div>
 </footer>
-
-<div class="tint-picker" aria-label="Оттенок стекла">
-  <button data-tint="graphite" title="Графит" style="background:rgba(16,16,20,.85)"></button>
-  <button data-tint="silver" title="Серебро" style="background:rgba(235,235,245,.55)"></button>
-  <button data-tint="lime" title="Лайм" style="background:rgba(216,255,62,.55)"></button>
-  <button data-tint="violet" title="Фиолет" style="background:rgba(123,108,255,.6)"></button>
-  <button data-tint="ice" title="Лёд" style="background:rgba(140,190,255,.6)"></button>
-</div>
 
 <script>
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll(".project").forEach(p => io.observe(p));
-
-function setTint(t) {
-  if (!["graphite", "silver", "lime", "violet", "ice"].includes(t)) t = "graphite";
-  document.body.dataset.tint = t;
-  localStorage.setItem("portfolio-tint", t);
-  document.querySelectorAll(".tint-picker button").forEach(b => b.classList.toggle("on", b.dataset.tint === t));
-}
-setTint(localStorage.getItem("portfolio-tint") || "graphite");
-document.querySelectorAll(".tint-picker button").forEach(b => b.addEventListener("click", () => setTint(b.dataset.tint)));
 
 // FLIP: плавный перенос карточек при смене числа колонок
 const grid = document.querySelector(".projects");

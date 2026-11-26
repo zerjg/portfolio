@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проект — Игорь Пономарёв</title>
+  <title>Проект — Игорь Пономарев</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
@@ -21,11 +21,12 @@
       --font-body: 'Golos Text';
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: clip; }
     body {
       background: var(--bg); color: var(--text);
       font-family: var(--font-body), system-ui, sans-serif; line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
     }
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
     h1, h2, h3 { font-family: var(--font-display), sans-serif; line-height: 1.2; }
@@ -169,7 +170,7 @@
 <nav>
   <div class="wrap">
     <a class="logo" href="index.html">ИГОРЬ ПОНОМАРЕВ<span>.</span></a>
-    <a class="back" href="index.html#works">← Все проекты</a>
+    <a class="back" href="index.html">← Все проекты</a>
   </div>
 </nav>
 
@@ -292,7 +293,7 @@ const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];
 
-document.title = p.title + " — Игорь Пономарёв";
+document.title = p.title + " — Игорь Пономарев";
 document.getElementById("pTitle").textContent = p.title;
 document.getElementById("pDesc").textContent = p.desc;
 document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</span>").join("");

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игорь Пономарёв — дизайнер</title>
+  <meta name="description" content="Портфолио Игоря Пономарёва — графический и цифровой дизайн, брендинг, UI/UX.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e11;
+      --surface: #17171c;
+      --surface-2: #1f1f26;
+      --text: #f2f1ee;
+      --muted: #9a99a3;
+      --accent: #d8ff3e;
+      --accent-2: #7b6cff;
+      --radius: 20px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: 'Unbounded', sans-serif; line-height: 1.2; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---------- nav ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(14,14,17,.75);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: 'Unbounded'; font-weight: 800; font-size: 18px; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ---------- hero ---------- */
+    header { padding: 96px 0 72px; position: relative; overflow: hidden; }
+    header::before {
+      content: ''; position: absolute; top: -180px; right: -120px;
+      width: 480px; height: 480px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,108,255,.28), transparent 65%);
+      pointer-events: none;
+    }
+    .hero { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .hero-text { flex: 1 1 420px; }
+    .tag {
+      display: inline-block; font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid rgba(216,255,62,.35);
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 24px;
+    }
+    h1 { font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; margin-bottom: 20px; }
+    h1 em { font-style: normal; color: var(--accent); }
+    .lead { color: var(--muted); font-size: 18px; max-width: 520px; margin-bottom: 32px; }
+    .btn-row { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 100px;
+      font-weight: 600; font-size: 15px; transition: transform .15s ease, opacity .15s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #111; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,.2); color: var(--text); }
+    .avatar {
+      width: 240px; height: 240px; border-radius: 32px; object-fit: cover;
+      border: 3px solid var(--surface-2);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5);
+      transform: rotate(3deg);
+    }
+
+    /* ---------- sections ---------- */
+    section { padding: 72px 0; }
+    .section-title { font-size: clamp(24px, 3.5vw, 36px); margin-bottom: 12px; }
+    .section-sub { color: var(--muted); margin-bottom: 40px; max-width: 560px; }
+
+    /* ---------- skills ---------- */
+    .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+    .chip {
+      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
+      padding: 12px 22px; border-radius: 100px; font-size: 15px; font-weight: 500;
+    }
+    .chip b { color: var(--accent); font-weight: 600; }
+
+    /* ---------- projects ---------- */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .card {
+      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius); overflow: hidden;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+    .card:hover { transform: translateY(-6px); border-color: rgba(216,255,62,.4); }
+    .card-cover { height: 190px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+    .cover-1 { background: linear-gradient(135deg, #7b6cff, #4a3fd1); }
+    .cover-2 { background: linear-gradient(135deg, #d8ff3e, #7fb800); }
+    .cover-3 { background: linear-gradient(135deg, #ff6c9d, #c2337a); }
+    .cover-4 { background: linear-gradient(135deg, #3ecfff, #1f7fb8); }
+    .card-body { padding: 24px; }
+    .card-body h3 { font-size: 18px; margin-bottom: 8px; }
+    .card-body p { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+    .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .card-tags span {
+      font-size: 12px; color: var(--accent); background: rgba(216,255,62,.08);
+      padding: 4px 12px; border-radius: 100px;
+    }
+
+    /* ---------- about ---------- */
+    .about-box {
+      background: var(--surface); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius); padding: 40px;
+      display: grid; grid-template-columns: 2fr 1fr; gap: 40px;
+    }
+    .about-box p { color: var(--muted); margin-bottom: 14px; }
+    .facts { list-style: none; }
+    .facts li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.07); font-size: 14px; }
+    .facts li:last-child { border: none; }
+    .facts b { display: block; color: var(--muted); font-weight: 500; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+
+    /* ---------- contact ---------- */
+    .contact {
+      text-align: center; background: var(--surface);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius); padding: 64px 32px;
+    }
+    .contact h2 { margin-bottom: 14px; }
+    .contact p { color: var(--muted); margin-bottom: 28px; }
+    .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 720px) {
+      .about-box { grid-template-columns: 1fr; }
+      .hero { flex-direction: column-reverse; text-align: center; }
+      .btn-row { justify-content: center; }
+      .nav-links { display: none; }
+      .avatar { width: 180px; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">IGOR<span>.</span></a>
+    <div class="nav-links">
+      <a href="#skills">Навыки</a>
+      <a href="#works">Работы</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contact">Контакты</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap hero">
+    <div class="hero-text">
+      <span class="tag">Дизайнер · Ярославль</span>
+      <h1>Игорь Пономарёв — <em>дизайн</em>, который работает</h1>
+      <p class="lead">Создаю айдентику, интерфейсы и визуальные истории. Помогаю брендам выглядеть так, чтобы их запоминали.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#works">Смотреть работы</a>
+        <a class="btn btn-ghost" href="#contact">Связаться</a>
+      </div>
+    </div>
+    <img class="avatar" src="https://avatars.githubusercontent.com/u/17095296?v=4" alt="Игорь Пономарёв">
+  </div>
+</header>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="section-title">Навыки</h2>
+    <p class="section-sub">Инструменты и направления, в которых я работаю.</p>
+    <div class="chips">
+      <span class="chip"><b>Figma</b> · UI/UX</span>
+      <span class="chip">Брендинг и айдентика</span>
+      <span class="chip">Adobe Photoshop</span>
+      <span class="chip">Adobe Illustrator</span>
+      <span class="chip">Типографика</span>
+      <span class="chip">Веб-дизайн</span>
+      <span class="chip">Прототипирование</span>
+      <span class="chip">Motion-дизайн</span>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <h2 class="section-title">Избранные работы</h2>
+    <p class="section-sub">Замените эти карточки своими проектами — обложки, описания и ссылки.</p>
+    <div class="grid">
+      <article class="card">
+        <div class="card-cover cover-1">🎨</div>
+        <div class="card-body">
+          <h3>Айдентика бренда</h3>
+          <p>Логотип, фирменный стиль и гайдлайны для компании. Здесь будет описание задачи и результата.</p>
+          <div class="card-tags"><span>Брендинг</span><span>Логотип</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-cover cover-2">📱</div>
+        <div class="card-body">
+          <h3>Мобильное приложение</h3>
+          <p>UI/UX-дизайн приложения: от исследования и прототипа до финальных экранов.</p>
+          <div class="card-tags"><span>UI/UX</span><span>Figma</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-cover cover-3">🖥️</div>
+        <div class="card-body">
+          <h3>Дизайн сайта</h3>
+          <p>Лендинг с продуманной структурой и анимациями. Концепция, макеты, адаптив.</p>
+          <div class="card-tags"><span>Веб</span><span>Лендинг</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card-cover cover-4">📦</div>
+        <div class="card-body">
+          <h3>Упаковка продукта</h3>
+          <p>Дизайн упаковки и полиграфии: от идеи до печатных макетов.</p>
+          <div class="card-tags"><span>Графика</span><span>Print</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title">Обо мне</h2>
+    <p class="section-sub">Коротко о том, кто я и как работаю.</p>
+    <div class="about-box">
+      <div>
+        <p>Привет! Я Игорь — дизайнер из Ярославля. Верю, что хороший дизайн — это не украшение, а решение задачи: он должен быть понятным, честным и красивым одновременно.</p>
+        <p>В работе ценю системность: сначала разбираюсь в задаче и аудитории, потом ищу форму. Люблю типографику, сетки и детали, которые замечаешь не сразу.</p>
+        <p>Открыт к интересным проектам и сотрудничеству — напишите мне, обсудим вашу задачу.</p>
+      </div>
+      <ul class="facts">
+        <li><b>Локация</b>Ярославль, Россия</li>
+        <li><b>Фокус</b>Брендинг · UI/UX · Веб</li>
+        <li><b>Формат</b>Проекты и сотрудничество</li>
+        <li><b>GitHub</b><a href="https://github.com/zerjg" target="_blank">@zerjg</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2 class="section-title">Давайте работать вместе</h2>
+      <p>Есть проект или идея? Напишите — отвечаю быстро.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:igor_p@live.ru">igor_p@live.ru</a>
+        <a class="btn btn-ghost" href="https://github.com/zerjg" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Игорь Пономарёв · Сделано с любовью к деталям
+</footer>
+
+</body>
+</html>

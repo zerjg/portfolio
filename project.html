@@ -6,7 +6,7 @@
   <title>Проект — Игорь Пономарёв</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Tektur:wght@500;700;800&family=Rubik+Mono+One&family=Exo+2:wght@600;700;800&family=Golos+Text:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0e0e11;
@@ -20,10 +20,6 @@
       --font-display: 'Russo One';
       --font-body: 'Golos Text';
     }
-    body[data-font="tektur"] { --font-display: 'Tektur'; --font-body: 'Golos Text'; }
-    body[data-font="rubik"] { --font-display: 'Rubik Mono One'; --font-body: 'Golos Text'; }
-    body[data-font="exo"] { --font-display: 'Exo 2'; --font-body: 'Manrope'; }
-    body[data-font="russo"] :is(h1, h2, h3, .logo), body[data-font="rubik"] :is(h1, h2, h3, .logo) { font-weight: 400; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -42,7 +38,7 @@
       border-bottom: 1px solid rgba(255,255,255,.06);
     }
     nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .logo { font-family: var(--font-display); font-weight: 800; font-size: 15px; letter-spacing: .02em; white-space: nowrap; }
+    .logo { font-family: var(--font-display); font-weight: 400; font-size: 15px; letter-spacing: .02em; white-space: nowrap; }
     .logo span { color: var(--accent); }
     .back { font-size: 14px; color: var(--muted); }
     .back:hover { color: var(--text); }
@@ -56,7 +52,7 @@
       pointer-events: none;
     }
     .p-num { font-family: var(--font-display); font-size: 14px; color: rgba(255,255,255,.3); display: block; margin-bottom: 14px; }
-    h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 800; margin-bottom: 14px; }
+    h1 { font-size: clamp(30px, 5vw, 52px); font-weight: 400; margin-bottom: 14px; }
     .p-desc { color: var(--muted); font-size: 18px; max-width: 560px; margin-bottom: 22px; }
     .p-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
     .card-tags { display: flex; gap: 8px; flex-wrap: wrap; }
@@ -109,7 +105,7 @@
       display: flex; align-items: baseline; gap: 12px;
       padding: 14px 18px; font-size: 14px;
     }
-    figcaption b { font-family: var(--font-display); font-size: 12px; color: var(--accent); font-weight: 600; }
+    figcaption b { font-family: var(--font-display); font-size: 12px; color: var(--accent); font-weight: 400; }
     figcaption span { color: var(--muted); }
 
     /* ---------- lightbox ---------- */
@@ -160,20 +156,7 @@
     .p-nav a b { display: block; color: var(--text); font-family: var(--font-display); font-size: 15px; margin-top: 4px; }
     .p-nav a:hover b { color: var(--accent); }
     .p-nav .next { text-align: right; }
-
-    /* ---------- font switcher ---------- */
-    .font-switch {
-      position: fixed; right: 20px; bottom: 20px; z-index: 60;
-      display: flex; gap: 4px; padding: 5px;
-      background: rgba(23,23,28,.85); backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,.12); border-radius: 100px;
-    }
-    .font-switch button {
-      border: 0; background: transparent; color: var(--muted);
-      font: 500 12px/1 var(--font-body), sans-serif;
-      padding: 9px 14px; border-radius: 100px; cursor: pointer;
-    }
-    .font-switch button.on { background: var(--accent); color: #111; font-weight: 600; }
+    .p-num, .lb-count, .p-nav a b { font-weight: 400; }
 
     @media (max-width: 860px) {
       .gallery { grid-template-columns: 1fr; gap: 24px; }
@@ -181,8 +164,6 @@
       figure.shot.tilt-l.in, figure.shot.tilt-r.in { transform: none; }
       .lb-prev { left: 8px; } .lb-next { right: 8px; }
       .lb-btn { width: 42px; height: 42px; }
-      .font-switch { right: 12px; bottom: 12px; }
-      .font-switch button { padding: 8px 11px; font-size: 11px; }
     }
   </style>
 </head>
@@ -222,13 +203,6 @@
     <span class="lb-cap" id="lbCap"></span>
     <span class="lb-count" id="lbCount"></span>
   </div>
-</div>
-
-<div class="font-switch" aria-label="Шрифт оформления">
-  <button data-font="russo">Russo</button>
-  <button data-font="tektur">Tektur</button>
-  <button data-font="rubik">Rubik Mono</button>
-  <button data-font="exo">Exo 2</button>
 </div>
 
 <script>
@@ -384,15 +358,6 @@ document.addEventListener("keydown", e => {
   if (e.key === "ArrowLeft") step(-1);
   if (e.key === "ArrowRight") step(1);
 });
-
-function setFont(f) {
-  if (!["russo", "tektur", "rubik", "exo"].includes(f)) f = "russo";
-  document.body.dataset.font = f;
-  localStorage.setItem("portfolio-font", f);
-  document.querySelectorAll(".font-switch button").forEach(b => b.classList.toggle("on", b.dataset.font === f));
-}
-setFont(localStorage.getItem("portfolio-font") || "russo");
-document.querySelectorAll(".font-switch button").forEach(b => b.addEventListener("click", () => setFont(b.dataset.font)));
 </script>
 
 </body>

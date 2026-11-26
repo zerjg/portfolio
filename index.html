@@ -20,7 +20,12 @@
       --radius: 20px;
       --font-display: 'Russo One';
       --font-body: 'Golos Text';
+      --glass-tint: rgba(16,16,20,.6);
     }
+    body[data-tint="silver"] { --glass-tint: rgba(235,235,245,.3); }
+    body[data-tint="lime"] { --glass-tint: rgba(216,255,62,.25); }
+    body[data-tint="violet"] { --glass-tint: rgba(123,108,255,.3); }
+    body[data-tint="ice"] { --glass-tint: rgba(140,190,255,.3); }
     h1, h2, h3, .logo { font-weight: 400; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -84,26 +89,48 @@
       position: absolute; inset: -3px; width: calc(100% + 6px); height: calc(100% + 6px);
       object-fit: cover; object-position: top center;
     }
+    /* liquid glass: specular sheen */
+    .project::before {
+      content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.05) 26%, rgba(255,255,255,0) 46%);
+    }
+    /* liquid glass: refractive edge ring */
     .project::after {
       content: ''; position: absolute; inset: 0; z-index: 4; pointer-events: none;
       border-radius: var(--radius);
-      box-shadow: inset 0 0 0 6px rgba(255,255,255,.5);
-      mix-blend-mode: difference;
+      padding: 6px;
+      background: var(--glass-tint);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), inset 0 0 14px rgba(255,255,255,.1);
+      transition: box-shadow .25s ease;
+    }
+    .project.in:hover::after {
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.45), inset 0 0 18px rgba(255,255,255,.16);
     }
     .project-info {
-      position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
-      padding: 76px 16px 14px; display: flex; flex-direction: column; gap: 7px;
-      background: linear-gradient(180deg, rgba(14,14,17,0) 0%, rgba(14,14,17,.25) 18%, rgba(14,14,17,.62) 36%, rgba(14,14,17,.86) 52%, rgba(14,14,17,.97) 70%, rgba(14,14,17,1) 100%);
+      position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 2;
+      padding: 14px 16px; display: flex; flex-direction: column; gap: 7px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(16,16,22,.62) 0%, rgba(12,12,16,.8) 100%);
+      backdrop-filter: blur(18px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 8px 24px rgba(0,0,0,.35);
     }
     .domain-tag {
-      position: absolute; top: 10px; right: 10px; z-index: 2;
-      font-size: 11px; font-weight: 500; color: var(--text);
-      background: rgba(10,10,12,.78); backdrop-filter: blur(6px);
-      border: 1px solid rgba(255,255,255,.12);
+      position: absolute; top: 12px; right: 12px; z-index: 2;
+      font-size: 11px; font-weight: 500; color: #fff;
+      text-shadow: 0 1px 6px rgba(0,0,0,.45);
+      background: rgba(16,16,22,.5); backdrop-filter: blur(10px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
       padding: 5px 12px; border-radius: 100px;
     }
-    .project-info h3 { font-size: 17px; }
-    .project-info p { color: #c9c8d2; font-size: 12.5px; }
+    .project-info h3 { font-size: 17px; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+    .project-info p { color: #d6d5dd; font-size: 12.5px; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
     .card-tags { display: flex; gap: 6px; flex-wrap: wrap; }
     .card-tags span {
       font-size: 10.5px; color: var(--accent); background: rgba(216,255,62,.08);
@@ -140,9 +167,26 @@
     .footer-line .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .footer-line a:hover { color: var(--accent); }
 
+    /* ---------- glass tint picker ---------- */
+    .tint-picker {
+      position: fixed; right: 20px; bottom: 20px; z-index: 60;
+      display: flex; gap: 8px; padding: 8px 10px;
+      background: rgba(23,23,28,.7); backdrop-filter: blur(12px) saturate(1.4);
+      border: 1px solid rgba(255,255,255,.14); border-radius: 100px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
+    }
+    .tint-picker button {
+      width: 22px; height: 22px; border-radius: 50%; cursor: pointer;
+      border: 1px solid rgba(255,255,255,.35);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.3);
+      transition: transform .15s ease;
+    }
+    .tint-picker button:hover { transform: scale(1.15); }
+    .tint-picker button.on { outline: 2px solid var(--accent); outline-offset: 2px; }
+
     @media (max-width: 1999px) {
       .projects { grid-template-columns: repeat(3, 1fr); }
-      .project-info { padding: 110px 24px 20px; gap: 9px; }
+      .project-info { padding: 16px 20px; gap: 9px; }
       .project-info h3 { font-size: 21px; }
       .project-info p { font-size: 14px; }
       .card-tags span { font-size: 12px; padding: 4px 12px; }
@@ -150,7 +194,7 @@
     }
     @media (max-width: 1199px) {
       .projects { grid-template-columns: repeat(2, 1fr); }
-      .project-info { padding: 130px 26px 22px; gap: 10px; }
+      .project-info { padding: 18px 22px; gap: 10px; }
       .project-info h3 { font-size: 24px; }
       .project-info p { font-size: 15px; }
       .project-link { font-size: 14px; }
@@ -162,11 +206,13 @@
       .fact:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.07); }
       .nav-links { gap: 18px; }
       .logo { font-size: 13px; }
+      .tint-picker { right: 12px; bottom: 12px; padding: 6px 8px; gap: 6px; }
+      .tint-picker button { width: 18px; height: 18px; }
     }
     @media (max-width: 759px) {
       .projects { grid-template-columns: 1fr; gap: 22px; padding: 0 16px; }
       .section-head { padding: 0 16px; }
-      .project-info { padding: 120px 24px 22px; }
+      .project-info { padding: 18px 22px; }
       .project.tilt-r.in, .project.tilt-l.in { transform: none; }
     }
     @media (max-width: 480px) {
@@ -277,11 +323,28 @@
   </div>
 </footer>
 
+<div class="tint-picker" aria-label="Оттенок стекла">
+  <button data-tint="graphite" title="Графит" style="background:rgba(16,16,20,.85)"></button>
+  <button data-tint="silver" title="Серебро" style="background:rgba(235,235,245,.55)"></button>
+  <button data-tint="lime" title="Лайм" style="background:rgba(216,255,62,.55)"></button>
+  <button data-tint="violet" title="Фиолет" style="background:rgba(123,108,255,.6)"></button>
+  <button data-tint="ice" title="Лёд" style="background:rgba(140,190,255,.6)"></button>
+</div>
+
 <script>
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll(".project").forEach(p => io.observe(p));
+
+function setTint(t) {
+  if (!["graphite", "silver", "lime", "violet", "ice"].includes(t)) t = "graphite";
+  document.body.dataset.tint = t;
+  localStorage.setItem("portfolio-tint", t);
+  document.querySelectorAll(".tint-picker button").forEach(b => b.classList.toggle("on", b.dataset.tint === t));
+}
+setTint(localStorage.getItem("portfolio-tint") || "graphite");
+document.querySelectorAll(".tint-picker button").forEach(b => b.addEventListener("click", () => setTint(b.dataset.tint)));
 
 // FLIP: плавный перенос карточек при смене числа колонок
 const grid = document.querySelector(".projects");

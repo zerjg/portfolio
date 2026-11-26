@@ -162,6 +162,7 @@
     .btn-primary:hover { box-shadow: 0 14px 36px rgba(216,255,62,.24); }
 
     /* ---------- gallery: silver glass frames ---------- */
+    .btn[hidden] { display: none; }
     .gallery {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 36px 28px; padding-bottom: 56px;
@@ -368,6 +369,7 @@
     <p class="p-desc" id="pDesc"></p>
     <div class="p-meta">
       <div class="card-tags" id="pTags"></div>
+      <a class="btn btn-primary" id="pPrototype" hidden>Открыть прототип →</a>
       <a class="btn btn-primary" id="pSite" href="#" target="_blank" rel="noopener">Открыть сайт ↗</a>
     </div>
   </div>
@@ -423,31 +425,33 @@ const PROJECTS = {
     ]
   },
   cifra: {
+    prototype: true,
     num: "02", title: "Цифра",
     desc: "SaaS-платформа управления бетонным заводом",
     url: "https://cifra.ai/", domain: "cifra.ai",
     tags: ["Продуктовый дизайн", "SaaS"],
     shots: [
-      ["assets/cifra-1.jpg", "Главный экран"],
-      ["assets/cifra-2.jpg", "Интеграции и данные"],
-      ["assets/cifra-3.jpg", "Рабочие места ролей"],
-      ["assets/cifra-4.jpg", "Трекинг для заказчиков"],
-      ["assets/cifra-5.jpg", "Кейс клиента"],
-      ["assets/cifra-6.jpg", "Тарифы"]
+      ["assets/platforms/cifra-1.webp", "Сводка производства"],
+      ["assets/platforms/cifra-2.webp", "Заказы"],
+      ["assets/platforms/cifra-3.webp", "Диспетчерская"],
+      ["assets/platforms/cifra-4.webp", "Партии бетона"],
+      ["assets/platforms/cifra-5.webp", "Склад сырья"],
+      ["assets/platforms/cifra-6.webp", "Интеграции"]
     ]
   },
   krista: {
+    prototype: true,
     num: "03", title: "НПО Криста",
     desc: "Цифровые платформы для государственного управления",
     url: "https://www.krista.ru/", domain: "krista.ru",
-    tags: ["Корпоративный сайт", "GovTech"],
+    tags: ["Продуктовый дизайн", "GovTech"],
     shots: [
-      ["assets/krista-1.jpg", "Главный экран"],
-      ["assets/krista-2.jpg", "Платформа «Цифровой регион»"],
-      ["assets/krista-3.jpg", "Продуктовые решения"],
-      ["assets/krista-4.jpg", "Полный цикл разработки"],
-      ["assets/krista-5.jpg", "Медиа и новости"],
-      ["assets/krista-6.jpg", "Карьера"]
+      ["assets/platforms/krista-1.webp", "Показатели региона"],
+      ["assets/platforms/krista-2.webp", "Исполнение бюджета"],
+      ["assets/platforms/krista-3.webp", "Объекты и территории"],
+      ["assets/platforms/krista-4.webp", "Государственные программы"],
+      ["assets/platforms/krista-5.webp", "Сбор отчётности"],
+      ["assets/platforms/krista-6.webp", "Источники данных"]
     ]
   },
   goodgrad: {
@@ -465,17 +469,18 @@ const PROJECTS = {
     ]
   },
   tenderland: {
+    prototype: true,
     num: "05", title: "TenderLand",
     desc: "Система точного поиска и анализа тендеров",
     url: "https://tenderland.ru/", domain: "tenderland.ru",
     tags: ["Продуктовый дизайн", "SaaS"],
     shots: [
-      ["assets/tenderland-1.jpg", "Главный экран"],
-      ["assets/tenderland-2.jpg", "Улучшенные фильтры"],
-      ["assets/tenderland-3.jpg", "Поиск тендеров"],
-      ["assets/tenderland-4.jpg", "Проверка контрагентов"],
-      ["assets/tenderland-5.jpg", "Отзывы клиентов"],
-      ["assets/tenderland-6.jpg", "Тестовый доступ"]
+      ["assets/platforms/tenderland-1.webp", "Поиск закупок"],
+      ["assets/platforms/tenderland-2.webp", "Автопоиск"],
+      ["assets/platforms/tenderland-3.webp", "Карточка закупки"],
+      ["assets/platforms/tenderland-4.webp", "В работе"],
+      ["assets/platforms/tenderland-5.webp", "Проверка контрагента"],
+      ["assets/platforms/tenderland-6.webp", "Аналитика рынка"]
     ]
   },
   hopmalt: {
@@ -504,6 +509,13 @@ document.getElementById("pDesc").textContent = p.desc;
 document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</span>").join("");
 const site = document.getElementById("pSite");
 site.href = p.url;
+if (p.prototype) {
+  const prototype = document.getElementById("pPrototype");
+  prototype.href = "prototypes/?p=" + id;
+  prototype.hidden = false;
+  site.classList.remove("btn-primary");
+  document.getElementById("pDesc").textContent += " · Концепт интерфейса";
+}
 
 // collage layout: wide / staggered pair / staggered pair / wide
 const LAYOUT = ["wide", "", "", "", "", "wide"];

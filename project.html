@@ -369,7 +369,7 @@
     <p class="p-desc" id="pDesc"></p>
     <div class="p-meta">
       <div class="card-tags" id="pTags"></div>
-      <a class="btn btn-primary" id="pPrototype" hidden>Открыть прототип →</a>
+      <a class="btn btn-primary" id="pPrototype" hidden>Открыть макет →</a>
     </div>
   </div>
 </header>
@@ -465,7 +465,7 @@ const PROJECTS = {
     ]
   },
   dj: {
-    live: "dj/", liveLabel: "Открыть визитную карточку →",
+    live: "dj/",
     num: "05", title: "DJ ZERJG",
     desc: "Визитная карточка диджея: история жанров от соула до органик-хауса",
     tags: ["Веб-дизайн", "Музыка"],
@@ -479,7 +479,7 @@ const PROJECTS = {
     ]
   },
   shop: {
-    live: "shop/", liveLabel: "Открыть магазин →",
+    live: "shop/",
     num: "06", title: "Телефон Телефоныч",
     desc: "Интернет-магазин смартфонов с бонусами, рассрочкой и trade-in",
     tags: ["Веб-дизайн", "E-commerce"],
@@ -508,7 +508,7 @@ const PROJECTS = {
     ]
   },
   school: {
-    live: "school/", liveLabel: "Открыть сайт школы →",
+    live: "school/",
     num: "08", title: "Школа Дмитрия Никитина",
     desc: "Концепт сайта школы английского языка в Ярославле: курсы для детей и взрослых, цены, команда и два офиса",
     tags: ["Веб-дизайн", "Образование"],
@@ -522,7 +522,7 @@ const PROJECTS = {
     ]
   },
   art: {
-    live: "art/", liveLabel: "Открыть сайт →",
+    live: "art/",
     num: "09", title: "ART",
     desc: "Сайт апсайкл-бренда одежды: вещи из старых джинсов и льна в одном экземпляре, выбор конкретной куртки и паспорт вещи",
     tags: ["Веб-дизайн", "Мода"],
@@ -537,7 +537,7 @@ const PROJECTS = {
     ]
   },
   most: {
-    live: "most/", liveLabel: "Открыть лендинг →",
+    live: "most/",
     num: "10", title: "МОСТ",
     desc: "Музыкальная студия в Ярославле: уроки музыки, звукозапись и репетиционные базы",
     tags: ["Лендинг", "Музыкальная студия"],
@@ -565,7 +565,6 @@ document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</s
 if (p.live) {
   const live = document.getElementById("pPrototype");
   live.href = p.live;
-  live.textContent = p.liveLabel || "Открыть →";
   live.hidden = false;
 }
 if (p.prototype) {

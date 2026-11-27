@@ -327,6 +327,8 @@
     }
     .footer-line .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .footer-line a:hover { color: var(--accent); }
+    .footer-links { display: flex; gap: 24px; }
+    .facts-band > .wrap[hidden] + .footer-line { border-top: none; }
 
     @media (max-width: 860px) {
       header { padding: 48px 0 40px; }
@@ -380,7 +382,8 @@
 </main>
 
 <footer class="facts-band">
-  <div class="wrap">
+  <!-- блок с фактами скрыт. Чтобы вернуть, уберите атрибут hidden -->
+  <div class="wrap" hidden>
     <div class="facts-grid">
       <div class="fact"><b>Локация</b><span>Ярославль, Россия</span></div>
       <div class="fact"><b>Фокус</b><span>UI/UX · Веб-разработка</span></div>
@@ -391,7 +394,10 @@
   <div class="footer-line">
     <div class="wrap">
       <span>© 2026 Игорь Пономарев</span>
-      <a href="mailto:igor_p@live.ru">igor_p@live.ru</a>
+      <span class="footer-links">
+        <a href="https://t.me/zerjg" target="_blank" rel="noopener">Telegram</a>
+        <a href="mailto:igor_p@live.ru">igor_p@live.ru</a>
+      </span>
     </div>
   </div>
 </footer>

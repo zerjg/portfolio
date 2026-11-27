@@ -143,8 +143,7 @@
       border-radius: var(--radius); overflow: hidden;
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), inset 0 0 14px rgba(255,255,255,.1);
       opacity: 0; transform: translateY(36px);
-      translate: var(--push-x, 0px) var(--push-y, 0px);
-      transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease, translate .5s cubic-bezier(.22,.9,.26,1);
+      transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease;
     }
     .project[hidden] { display: none; }
     .project.in { opacity: 1; transform: translateY(0); }
@@ -388,29 +387,6 @@ window.addEventListener("resize", () => {
     saved = now;
   });
 });
-
-// при наведении соседние карточки чуть расходятся в стороны, сила убывает с расстоянием
-if (matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches) {
-  const PUSH = 10, RADIUS = 700;
-  const center = c => [c.offsetLeft + c.offsetWidth / 2, c.offsetTop + c.offsetHeight / 2];
-  const reset = () => cards.forEach(reset1);
-  cards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      const [hx, hy] = center(card);
-      cards.forEach(c => {
-        if (c === card) return reset1(c);
-        const [x, y] = center(c);
-        const dx = x - hx, dy = y - hy, d = Math.hypot(dx, dy);
-        const f = PUSH * Math.max(0, 1 - d / RADIUS);
-        if (!f) return reset1(c);
-        c.style.setProperty("--push-x", (dx / d * f).toFixed(2) + "px");
-        c.style.setProperty("--push-y", (dy / d * f).toFixed(2) + "px");
-      });
-    });
-    card.addEventListener("mouseleave", reset);
-  });
-  function reset1(c) { c.style.removeProperty("--push-x"); c.style.removeProperty("--push-y"); }
-}
 
 // show the page only once fonts are ready, with a 1.2s safety timeout
 const showPage = () => document.documentElement.classList.remove("fonts-pending");

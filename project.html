@@ -486,7 +486,7 @@ const PROJECTS = {
   },
   shop: {
     live: "shop/",
-    num: "09", title: "Телефон Телефоныч",
+    num: "10", title: "Телефон Телефоныч",
     desc: "Интернет-магазин смартфонов с бонусами, рассрочкой и trade-in",
     tags: ["Веб-дизайн", "E-commerce"],
     shots: [
@@ -499,7 +499,7 @@ const PROJECTS = {
     ]
   },
   webdev: {
-    num: "10", title: "WebDev",
+    num: "09", title: "WebDev",
     desc: "Учебная платформа курса веб-разработки: занятия, задания и проверка работ",
     tags: ["Продуктовый дизайн", "EdTech"],
     shots: [
@@ -559,7 +559,7 @@ const PROJECTS = {
     ]
   }
 };
-const ORDER = ["kord", "cifra", "goodgrad", "hopmalt", "school", "art", "most", "dj", "shop", "webdev"].filter(k => !PROJECTS[k].hidden);
+const ORDER = ["kord", "cifra", "goodgrad", "hopmalt", "school", "art", "most", "dj", "webdev", "shop"].filter(k => !PROJECTS[k].hidden);
 const key = new URLSearchParams(location.search).get("p");
 const id = ORDER.includes(key) ? key : ORDER[0];
 const p = PROJECTS[id];

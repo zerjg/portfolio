@@ -160,6 +160,14 @@
       box-shadow: 0 10px 30px rgba(216,255,62,.16);
     }
     .btn-primary:hover { box-shadow: 0 14px 36px rgba(216,255,62,.24); }
+    .btn-ghost {
+      color: var(--text);
+      background: rgba(235,235,245,.07);
+      backdrop-filter: blur(10px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+    }
+    .btn-ghost:hover { border-color: rgba(216,255,62,.4); color: var(--accent); }
 
     /* ---------- gallery: silver glass frames ---------- */
     .btn[hidden] { display: none; }
@@ -372,6 +380,7 @@
     <div class="p-meta">
       <div class="card-tags" id="pTags"></div>
       <a class="btn btn-primary" id="pPrototype" hidden>Открыть макет →</a>
+      <a class="btn btn-primary" id="pSite" href="#" target="_blank" rel="noopener" hidden>Открыть сайт ↗</a>
     </div>
   </div>
 </header>
@@ -418,6 +427,7 @@ const PROJECTS = {
   kord: {
     num: "01", title: "Фабрика КОРД",
     desc: "Креативно-технологический квартал в Ярославле",
+    url: "https://fabrikakord.com/",
     tags: ["Веб-дизайн", "Креативный кластер"],
     shots: [
       ["assets/kord-1.jpg", "Главный экран"],
@@ -447,6 +457,7 @@ const PROJECTS = {
   goodgrad: {
     num: "03", title: "Гудград",
     desc: "Застройщик Ярославля: каталог новостроек и подбор квартир",
+    url: "https://goodgrad.ru/",
     tags: ["Веб-дизайн", "Недвижимость"],
     shots: [
       ["assets/goodgrad-1.jpg", "Главный экран"],
@@ -460,6 +471,7 @@ const PROJECTS = {
   hopmalt: {
     num: "04", title: "ХОПМОЛТ",
     desc: "Крафтовая пивоварня Ярославля: каталог живого пива",
+    url: "https://hopmalt.ru/",
     tags: ["Бренд-сайт", "Крафт"],
     shots: [
       ["assets/hopmalt-1.jpg", "Главный экран"],
@@ -517,6 +529,7 @@ const PROJECTS = {
     live: "school/",
     num: "05", title: "Школа Дмитрия Никитина",
     desc: "Концепт сайта школы английского языка в Ярославле: курсы для детей и взрослых, цены, команда и два офиса",
+    url: "https://dnschool.ru/",
     tags: ["Веб-дизайн", "Образование"],
     shots: [
       ["assets/school/school-1.webp", "Главный экран"],
@@ -568,6 +581,13 @@ document.title = p.title + " — Игорь Пономарев";
 document.getElementById("pTitle").textContent = p.title;
 document.getElementById("pDesc").textContent = p.desc;
 document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</span>").join("");
+if (p.url) {
+  const site = document.getElementById("pSite");
+  site.href = p.url;
+  site.hidden = false;
+  // если есть макет, главная кнопка у него, а ссылка на сайт второстепенная
+  if (p.live || p.prototype) site.classList.replace("btn-primary", "btn-ghost");
+}
 if (p.live) {
   const live = document.getElementById("pPrototype");
   live.href = p.live;

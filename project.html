@@ -539,9 +539,23 @@ const PROJECTS = {
       ["assets/webdev/webdev-7.webp", "Занятие · тёмная тема"],
       ["assets/webdev/webdev-8.webp", "Проверка работы · светлая тема"]
     ]
+  },
+  school: {
+    live: "school/", liveLabel: "Открыть сайт школы →",
+    num: "10", title: "Школа Дмитрия Никитина",
+    desc: "Концепт сайта школы английского языка в Ярославле: курсы для детей и взрослых, цены, команда и два офиса",
+    tags: ["Веб-дизайн", "Образование"],
+    shots: [
+      ["assets/school/school-1.webp", "Главный экран"],
+      ["assets/school/school-2.webp", "Программы по возрасту"],
+      ["assets/school/school-3.webp", "Курсы и цены"],
+      ["assets/school/school-4.webp", "Почему выбирают нас"],
+      ["assets/school/school-5.webp", "Команда"],
+      ["assets/school/school-6.webp", "Мобильная версия"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev", "school"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];

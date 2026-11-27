@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Школа Дмитрия Никитина — концепт сайта</title>
+<meta name="description" content="Концепт сайта школы английского языка Дмитрия Никитина в Ярославле: курсы для детей и взрослых, цены, команда и два офиса.">
+<link rel="preload" href="../assets/fonts/school/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Onest';font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/school/onest-cyrillic.woff2") format("woff2");unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/school/onest-latin.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:16px}
+body{margin:0;background:#FFFFFF;font-family:'Onest',system-ui,sans-serif;color:#17171A;-webkit-font-smoothing:antialiased}
+a{color:#17171A}a:hover{color:#B73324}
+h1,h2,h3,p,ul{margin:0}
+@media (max-width:1100px){
+.g6{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+.g5{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+.g4{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.gfoot{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.mosaic{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+.m-wide{display:none !important}
+}
+@media (max-width:760px){
+.g6,.g5,.g4,.g3,.g2,.gfoot,.gcontact{grid-template-columns:repeat(1,minmax(0,1fr)) !important}
+.mosaic{grid-template-columns:repeat(2,minmax(0,1fr)) !important}
+.m-mid{display:none !important}
+.hello{font-size:104px !important}
+.sec{padding-top:56px !important;padding-bottom:56px !important}
+.panel{padding:32px 24px !important}
+.hide-sm{display:none !important}
+.stamp{display:none !important}
+.wrap{padding-left:20px !important;padding-right:20px !important}
+.hdr{grid-template-columns:auto minmax(0,1fr) auto !important}
+.hdr-logo{height:20px !important}
+}
+</style>
+</head>
+<body id="top">
+<div style="width: 100%; min-width: 0; background: #FFFFFF;">
+
+<div style="background: #17171A; color: #FFFFFF;">
+<div style="max-width: 1320px; margin: 0 auto; padding: 11px 40px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; font-size: 14px; line-height: 1.4;">
+<span style="font-weight: 500;">Приведите друга и получите месяц обучения бесплатно</span>
+<a href="#" style="color: #FFFFFF; font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Подробнее</a>
+</div>
+</div>
+
+<header style="border-bottom: 1px solid #ECE8EE; background: #FFFFFF;">
+<div class="wrap hdr" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; height: 76px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 28px;">
+<button type="button" aria-label="Меню" style="display: inline-flex; align-items: center; gap: 10px; height: 44px; padding: 0; background: transparent; border: none; font-family: inherit; font-size: 15px; font-weight: 500; color: #17171A; cursor: pointer;">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+<span class="hide-sm">Меню</span>
+</button>
+<a class="hide-sm" href="#courses" style="font-size: 15px; font-weight: 500; text-decoration: none;">Курсы и цены</a>
+<a class="hide-sm" href="#contacts" style="font-size: 15px; font-weight: 500; text-decoration: none;">Контакты</a>
+</div>
+<a href="#top" aria-label="Школа Дмитрия Никитина, наверх" style="display: flex; justify-content: center;">
+<img class="hdr-logo" src="../assets/school/img/logo-dn.svg" alt="Школа Дмитрия Никитина" style="height: 30px; width: auto; display: block;">
+</a>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 20px;">
+<a class="hide-sm" href="tel:+74852595027" style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; text-decoration: none; white-space: nowrap;">+7 (4852) 59-50-27
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+</a>
+<a href="#test" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #17171A; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none; white-space: nowrap;">Записаться</a>
+</div>
+</div>
+</header>
+
+<section style="padding: 72px 24px 56px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px;">
+<h1 class="hello" style="font-size: 176px; line-height: 0.95; font-weight: 200; letter-spacing: -0.045em; color: #17171A;">hello!</h1>
+<p style="max-width: 780px; font-size: 26px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em;">Школа английского языка Дмитрия Никитина в Ярославле. Учим детей с 4 лет и взрослых с 2009 года.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px;">
+<a href="#courses" style="display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; background: #17171A; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none;">Выбрать курс
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg>
+</a>
+<a href="#test" style="display: inline-flex; align-items: center; height: 54px; padding: 0 28px; border-radius: 999px; border: 1.5px solid #17171A; box-sizing: border-box; color: #17171A; font-size: 16px; font-weight: 600; text-decoration: none;">Бесплатное тестирование</a>
+</div>
+</section>
+
+<section style="position: relative; max-width: 1400px; margin: 0 auto; padding: 0 16px 24px; box-sizing: border-box;">
+<div class="mosaic" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 16px; margin-top: 72px;">
+<img src="../assets/school/img/mosaic-01-adults-map.webp" alt="Взрослые ученики работают в группе за столом" style="width: 100%; height: 220px; object-fit: cover; border-radius: 20px; display: block;">
+<img src="../assets/school/img/mosaic-08-library-reader.webp" alt="Преподаватель с книгой в школьной библиотеке" style="width: 100%; height: 240px; object-fit: cover; border-radius: 20px; display: block;">
+</div>
+<div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+<img src="../assets/school/img/mosaic-02-mom-kids.webp" alt="Малыши играют на занятии вместе с преподавателем" style="width: 100%; height: 300px; object-fit: cover; border-radius: 20px; display: block;">
+<img src="../assets/school/img/mosaic-05-boy-reading.webp" alt="Мальчик читает книгу на английском" style="width: 100%; height: 220px; object-fit: cover; border-radius: 20px; display: block;">
+</div>
+<div class="m-mid" style="display: flex; flex-direction: column; gap: 16px;">
+<img src="../assets/school/img/mosaic-03-teens-board.webp" alt="Подростки у доски с планом года" style="width: 100%; height: 250px; object-fit: cover; object-position: 50% 30%; border-radius: 20px; display: block;">
+<img src="../assets/school/img/mosaic-04-graduates.webp" alt="Выпускники с сертификатами" style="width: 100%; height: 360px; object-fit: cover; border-radius: 20px; display: block;">
+</div>
+<div class="m-wide" style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+<img src="../assets/school/img/mosaic-06-library-kids.webp" alt="Ученицы с рюкзаками школы в библиотеке" style="width: 100%; height: 190px; object-fit: cover; border-radius: 20px; display: block;">
+<img src="../assets/school/img/mosaic-07-circle-ball.webp" alt="Дети сидят в кругу и играют с мячом" style="width: 100%; height: 380px; object-fit: cover; border-radius: 20px; display: block;">
+</div>
+<div class="m-wide" style="display: flex; flex-direction: column; gap: 16px; margin-top: 96px;">
+<img src="../assets/school/img/mosaic-09-teens-floor.webp" alt="Подростки на занятии сидят на полу" style="width: 100%; height: 230px; object-fit: cover; border-radius: 20px; display: block;">
+<img src="../assets/school/img/mosaic-10-bookshelf.webp" alt="Преподаватель помогает ученику выбрать книгу" style="width: 100%; height: 220px; object-fit: cover; border-radius: 20px; display: block;">
+</div>
+</div>
+<div class="stamp" style="position: absolute; left: 56px; top: 8px; width: 148px; padding: 14px 12px 12px; box-sizing: border-box; background: #1F7A6E; background-clip: border-box; border: 6px dotted #FFFFFF; border-radius: 10px; color: #FFFFFF; text-align: center; transform: rotate(-8deg); box-shadow: 0 10px 24px rgba(23, 23, 26, 0.18);">
+<svg width="76" height="44" viewBox="0 0 76 44" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: block; margin: 0 auto 6px;"><path d="M6 40h64"></path><path d="M14 40V26c0-5 3-8 6-10 3 2 6 5 6 10v14"></path><path d="M20 16v-6M18 12h4"></path><path d="M30 40V20c0-7 4-11 8-14 4 3 8 7 8 14v20"></path><path d="M38 6V1M35.5 3h5"></path><path d="M50 40V26c0-5 3-8 6-10 3 2 6 5 6 10v14"></path><path d="M56 16v-6M54 12h4"></path><path d="M35 40v-8h6v8"></path></svg>
+<div style="font-size: 15px; font-weight: 800; letter-spacing: 0.08em;">YAROSLAVL</div>
+<div style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; margin-top: 2px;">SINCE 2009</div>
+</div>
+<div class="stamp" style="position: absolute; right: 64px; top: 452px; width: 140px; padding: 14px 12px 12px; box-sizing: border-box; background: #C23C7C; border: 6px dotted #FFFFFF; border-radius: 10px; color: #FFFFFF; text-align: center; transform: rotate(9deg); box-shadow: 0 10px 24px rgba(23, 23, 26, 0.18);">
+<svg width="48" height="40" viewBox="0 0 24 20" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: block; margin: 0 auto 6px;"><path d="M2 2h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 2h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg>
+<div style="font-size: 22px; font-weight: 800; letter-spacing: 0.02em; line-height: 1;">4000</div>
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; margin-top: 4px;">BOOKS INSIDE</div>
+</div>
+</section>
+
+<section id="programs" class="sec" style="padding: 96px 24px; display: flex; flex-direction: column; align-items: center;">
+<div style="width: 48px; height: 48px; border-radius: 999px; background: #FCE9EF; display: flex; align-items: center; justify-content: center; color: #B73324;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg>
+</div>
+<h2 style="margin-top: 16px; font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; text-align: center;">Найдите свою программу</h2>
+<div class="g3" style="margin-top: 48px; width: 100%; max-width: 1120px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+<div style="background: #FCE9EF; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; min-height: 360px; box-sizing: border-box;">
+<h3 style="font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">Дети и подростки</h3>
+<p style="font-size: 16px; line-height: 1.5; color: #5B5B66;">Игровые занятия для малышей, книги в оригинале для школьников, академический английский и подготовка к экзаменам для подростков.</p>
+<div style="margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+<a href="#courses" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #C23C7C; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">4–6 лет</a>
+<a href="#courses" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #C23C7C; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">7–12 лет</a>
+<a href="#courses" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #C23C7C; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">13–17 лет</a>
+</div>
+</div>
+<div style="background: #EAF1FB; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; min-height: 360px; box-sizing: border-box;">
+<h3 style="font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">Взрослые</h3>
+<p style="font-size: 16px; line-height: 1.5; color: #5B5B66;">Разговорный английский, грамматика и подготовка к международным экзаменам. Группы до 8 человек, утром или вечером.</p>
+<div style="margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+<a href="#courses" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #2D63B8; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">Английский 18+</a>
+<a href="#clubs" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #2D63B8; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">Языковые клубы</a>
+<a href="#clubs" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #2D63B8; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">Другие языки</a>
+</div>
+</div>
+<div style="background: #FDEFE4; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 12px; min-height: 360px; box-sizing: border-box;">
+<h3 style="font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">Компании</h3>
+<p style="font-size: 16px; line-height: 1.5; color: #5B5B66;">Корпоративное обучение английскому языку для сотрудников и команд.</p>
+<div style="margin-top: auto; padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+<a href="#programs" style="display: flex; align-items: center; justify-content: center; height: 46px; border-radius: 999px; border: 1.5px solid #C9602F; background: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">Узнать условия</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="courses" class="sec" style="padding: 32px 0 96px;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<div style="width: 48px; height: 48px; border-radius: 999px; background: #FCE9EF; display: flex; align-items: center; justify-content: center; color: #B73324;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg>
+</div>
+<h2 style="margin-top: 16px; font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Курсы и цены</h2>
+<p style="margin-top: 12px; max-width: 620px; font-size: 18px; line-height: 1.5; color: #5B5B66;">Группы до 8 человек. Уровень определяем на бесплатном тестировании.</p>
+</div>
+
+<div class="g4" style="margin-top: 48px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+
+<article style="border: 1px solid #E7E3EA; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF;">
+<img loading="lazy" src="../assets/school/img/course-adults.webp" alt="Взрослые ученики на занятии" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: #EAF1FB; font-size: 13px; font-weight: 600;">18+</span>
+<h3 style="font-size: 24px; line-height: 1.2; font-weight: 700;">Взрослые</h3>
+<ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.4; color: #3D3D46;">
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Свободно говорим и понимаем носителей языка</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Разбираемся в грамматике</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Преодолеваем языковой барьер</li>
+</ul>
+<div style="margin-top: auto; padding-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+<p style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">от 6 700 ₽<span style="font-size: 15px; font-weight: 500; color: #5B5B66;"> / мес</span></p>
+<a href="#courses" aria-label="Подробнее о курсе для взрослых" style="width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #17171A; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+</div>
+</div>
+</article>
+
+<article style="border: 1px solid #E7E3EA; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF;">
+<img loading="lazy" src="../assets/school/img/course-teens.webp" alt="Подросток у доски на занятии" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: #F1EDFA; font-size: 13px; font-weight: 600;">13–17 лет</span>
+<h3 style="font-size: 24px; line-height: 1.2; font-weight: 700;">Подростки</h3>
+<ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.4; color: #3D3D46;">
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Общаемся только на английском</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Отрабатываем грамматику и лексику</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Делаем проекты на английском</li>
+</ul>
+<div style="margin-top: auto; padding-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+<p style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">от 6 700 ₽<span style="font-size: 15px; font-weight: 500; color: #5B5B66;"> / мес</span></p>
+<a href="#courses" aria-label="Подробнее о курсе для подростков" style="width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #17171A; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+</div>
+</div>
+</article>
+
+<article style="border: 1px solid #E7E3EA; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF;">
+<img loading="lazy" src="../assets/school/img/course-kids.webp" alt="Школьницы выполняют задание вместе с преподавателем" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: #E6F4EF; font-size: 13px; font-weight: 600;">7–12 лет</span>
+<h3 style="font-size: 24px; line-height: 1.2; font-weight: 700;">Школьники</h3>
+<ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.4; color: #3D3D46;">
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Изучаем грамматику играючи</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Читаем книги в оригинале</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Сдаём первые Кембриджские экзамены</li>
+</ul>
+<div style="margin-top: auto; padding-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+<p style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">от 6 700 ₽<span style="font-size: 15px; font-weight: 500; color: #5B5B66;"> / мес</span></p>
+<a href="#courses" aria-label="Подробнее о курсе для школьников" style="width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #17171A; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+</div>
+</div>
+</article>
+
+<article style="border: 1px solid #E7E3EA; border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF;">
+<img loading="lazy" src="../assets/school/img/course-preschool.webp" alt="Дошкольники рисуют на занятии" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+<div style="padding: 24px; display: flex; flex-direction: column; gap: 12px; flex-grow: 1;">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: #FCE9EF; font-size: 13px; font-weight: 600;">4–6 лет</span>
+<h3 style="font-size: 24px; line-height: 1.2; font-weight: 700;">Дошкольники</h3>
+<ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.4; color: #3D3D46;">
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Превращаем занятия в увлекательную игру</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Погружаем в языковую среду</li>
+<li style="display: flex; gap: 10px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B73324" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 1px;"><path d="M20 6 9 17l-5-5"></path></svg>Поём песни и учим стихи</li>
+</ul>
+<div style="margin-top: auto; padding-top: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+<p style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">от 6 700 ₽<span style="font-size: 15px; font-weight: 500; color: #5B5B66;"> / мес</span></p>
+<a href="#courses" aria-label="Подробнее о курсе для дошкольников" style="width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid #17171A; box-sizing: border-box; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+</div>
+</div>
+</article>
+</div>
+
+<div id="clubs" class="g3" style="margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+<a href="#clubs" style="border: 1px solid #E7E3EA; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px; min-height: 170px; box-sizing: border-box; text-decoration: none;">
+<h3 style="font-size: 22px; line-height: 1.25; font-weight: 700;">Языковые клубы</h3>
+<p style="font-size: 15px; line-height: 1.5; color: #5B5B66;">Cinema club для подростков и взрослых, клуб подготовки к ОГЭ и ЕГЭ.</p>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: auto; align-self: flex-end;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a href="#clubs" style="border: 1px solid #E7E3EA; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px; min-height: 170px; box-sizing: border-box; text-decoration: none;">
+<h3 style="font-size: 22px; line-height: 1.25; font-weight: 700;">Другие языки</h3>
+<p style="font-size: 15px; line-height: 1.5; color: #5B5B66;">Кроме английского в школе работают группы других языков, например китайского.</p>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: auto; align-self: flex-end;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a href="#clubs" style="border: 1px solid #E7E3EA; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 10px; min-height: 170px; box-sizing: border-box; text-decoration: none;">
+<h3 style="font-size: 22px; line-height: 1.25; font-weight: 700;">Летний интенсив</h3>
+<p style="font-size: 15px; line-height: 1.5; color: #5B5B66;">Детский лагерь для школьников на время летних каникул.</p>
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: auto; align-self: flex-end;"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+</div>
+</div>
+</section>
+
+<section style="padding: 0 0 96px;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div class="panel" style="background: #F1EDFA; border-radius: 32px; padding: 64px 56px;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;">
+<h2 style="font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Школа в цифрах</h2>
+<p style="max-width: 420px; font-size: 16px; line-height: 1.5; color: #5B5B66;">А ещё у нас 50+ комнатных растений и 12 контейнеров для раздельного сбора мусора.</p>
+</div>
+<div class="g6" style="margin-top: 48px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 32px 24px;">
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid #17171A; padding-top: 16px;">
+<p style="font-size: 52px; line-height: 1; font-weight: 300; letter-spacing: -0.04em;">8</p>
+<p style="font-size: 15px; line-height: 1.4; color: #4A4A55;">учеников в группе, не больше</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid #17171A; padding-top: 16px;">
+<p style="font-size: 52px; line-height: 1; font-weight: 300; letter-spacing: -0.04em;">20+</p>
+<p style="font-size: 15px; line-height: 1.4; color: #4A4A55;">преподавателей</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid #17171A; padding-top: 16px;">
+<p style="font-size: 52px; line-height: 1; font-weight: 300; letter-spacing: -0.04em;">1000+</p>
+<p style="font-size: 15px; line-height: 1.4; color: #4A4A55;">учеников</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid #17171A; padding-top: 16px;">
+<p style="font-size: 52px; line-height: 1; font-weight: 300; letter-spacing: -0.04em;">100%</p>
+<p style="font-size: 15px; line-height: 1.4; color: #4A4A55;">успешно сданных ЕГЭ</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid #17171A; padding-top: 16px;">
+<p style="font-size: 52px; line-height: 1; font-weight: 300; letter-spacing: -0.04em;">97%</p>
+<p style="font-size: 15px; line-height: 1.4; color: #4A4A55;">успешно сданных международных экзаменов</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px; border-top: 1.5px solid #17171A; padding-top: 16px;">
+<p style="font-size: 52px; line-height: 1; font-weight: 300; letter-spacing: -0.04em;">4000+</p>
+<p style="font-size: 15px; line-height: 1.4; color: #4A4A55;">книг в школьной библиотеке</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec" style="padding: 0 0 96px;">
+<div class="g2 wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; align-items: stretch;">
+<div style="position: relative; min-height: 420px;">
+<img loading="lazy" src="../assets/school/img/why-story.webp" alt="Преподаватель читает малышам книгу на английском" style="width: 100%; height: 100%; min-height: 420px; object-fit: cover; border-radius: 28px; display: block;">
+<div class="stamp" style="position: absolute; left: -18px; bottom: 36px; width: 150px; padding: 14px 12px 12px; box-sizing: border-box; background: #F2B544; border: 6px dotted #FFFFFF; border-radius: 10px; color: #17171A; text-align: center; transform: rotate(-7deg); box-shadow: 0 10px 24px rgba(23, 23, 26, 0.18);">
+<svg width="40" height="36" viewBox="0 0 24 24" fill="none" stroke="#17171A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: block; margin: 0 auto 6px;"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+<div style="font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">SUNDAY CLUBS</div>
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; margin-top: 2px;">FREE FOR STUDENTS</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; padding: 8px 0;">
+<div style="width: 48px; height: 48px; border-radius: 999px; background: #FCE9EF; display: flex; align-items: center; justify-content: center; color: #B73324;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+</div>
+<h2 style="margin-top: 16px; font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Почему выбирают нас</h2>
+<p style="margin-top: 16px; font-size: 18px; line-height: 1.5; color: #5B5B66;">За 17 лет мы собрали методику, библиотеку и команду, с которыми английский становится интересным, приятным и результативным одновременно.</p>
+<div class="g2" style="margin-top: 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 32px;">
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Работаем с 2009 года</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">Объединили лучшие авторские практики преподавания.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Два офиса</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">В центре и в Брагино, удобно добираться на транспорте.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><path d="M9 9h.01M15 9h.01"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">С 4 лет до выпускного</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">Набираем детей с 4 лет и учим до окончания школы.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Группа по уровню</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">Взрослым подберём группу нужного уровня.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Библиотека на 4000 книг</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">Не нужно ломать голову, где взять книгу.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Бесплатные клубы</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">По воскресеньям читаем, общаемся по-английски и готовимся к ЕГЭ.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Бесплатные консультации</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">Пропустили или не поняли тему, разберём её индивидуально.</p></div>
+</div>
+<div style="display: flex; gap: 16px;">
+<div style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: #FAF3EC; display: flex; align-items: center; justify-content: center; color: #B73324;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"></path><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path><path d="M8 22v-5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v5"></path></svg></div>
+<div><h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Комплект ученика</h3><p style="margin-top: 4px; font-size: 15px; line-height: 1.5; color: #5B5B66;">Материалы, которые разработали методисты школы.</p></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="team" class="sec" style="background: #FAF7F3; padding: 96px 0;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px;">
+<div>
+<h2 style="font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Наша команда</h2>
+<p style="margin-top: 12px; font-size: 18px; line-height: 1.5; color: #5B5B66;">Больше 20 преподавателей, методисты и администраторы.</p>
+</div>
+<a href="#team" style="display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 999px; border: 1.5px solid #17171A; box-sizing: border-box; font-size: 15px; font-weight: 600; text-decoration: none;">Вся команда
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+</div>
+<div class="g5" style="margin-top: 40px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px;">
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<img loading="lazy" src="../assets/school/img/team-nikitin.webp" alt="Дмитрий Никитин" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; display: block; margin-bottom: 10px;">
+<h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Дмитрий Никитин</h3>
+<p style="font-size: 14px; line-height: 1.45; color: #5B5B66;">Основатель школы</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<img loading="lazy" src="../assets/school/img/team-domogatskaya.webp" alt="Анна Домогатская" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; display: block; margin-bottom: 10px;">
+<h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Анна Домогатская</h3>
+<p style="font-size: 14px; line-height: 1.45; color: #5B5B66;">Преподаватель, ведёт клуб подготовки к ОГЭ и ЕГЭ</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<img loading="lazy" src="../assets/school/img/team-sych.webp" alt="Ирина Сыч" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; display: block; margin-bottom: 10px;">
+<h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Ирина Сыч</h3>
+<p style="font-size: 14px; line-height: 1.45; color: #5B5B66;">Преподаватель английского языка</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<img loading="lazy" src="../assets/school/img/team-lutskevich.webp" alt="Анастасия Луцкевич" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; display: block; margin-bottom: 10px;">
+<h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Анастасия Луцкевич</h3>
+<p style="font-size: 14px; line-height: 1.45; color: #5B5B66;">Преподаватель, ведёт Cinema club for teens and adults</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<img loading="lazy" src="../assets/school/img/team-balanchuk.webp" alt="Виктория Баланчук" style="width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 20px; display: block; margin-bottom: 10px;">
+<h3 style="font-size: 18px; line-height: 1.3; font-weight: 700;">Виктория Баланчук</h3>
+<p style="font-size: 14px; line-height: 1.45; color: #5B5B66;">Преподаватель, ведёт Cinema club</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reviews" class="sec" style="padding: 96px 0;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<div style="width: 48px; height: 48px; border-radius: 999px; background: #FCE9EF; display: flex; align-items: center; justify-content: center; color: #B73324;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg>
+</div>
+<h2 style="margin-top: 16px; font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Что говорят ученики и родители</h2>
+</div>
+<div class="g3" style="margin-top: 48px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+<figure style="margin: 0; background: #EAF1FB; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; gap: 4px;" role="img" aria-label="Оценка 5 из 5"><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+<blockquote style="margin: 0; font-size: 18px; line-height: 1.5; font-weight: 500;">Чистые светлые классы, профессиональные учителя! После школы и вуза английский был не на высоте. В школе впервые вывела язык на достойный уровень.</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px;">
+<span style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700;">ИФ</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 700;">Ирина Федорычева</span><span style="font-size: 14px; color: #5B5B66;">взрослая группа</span></span>
+</figcaption>
+</figure>
+<figure style="margin: 0; background: #F1EDFA; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; gap: 4px;" role="img" aria-label="Оценка 5 из 5"><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+<blockquote style="margin: 0; font-size: 18px; line-height: 1.5; font-weight: 500;">Прохожу здесь подготовку к IELTS, и всего за 2 месяца занятий поднял свой уровень с 5.0 до 6.0. Отличный преподавательский состав, который всегда готов прийти на помощь.</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px;">
+<span style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700;">ВБ</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 700;">Вадим Белякин</span><span style="font-size: 14px; color: #5B5B66;">готовится к IELTS</span></span>
+</figcaption>
+</figure>
+<figure style="margin: 0; background: #FCE9EF; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; gap: 4px;" role="img" aria-label="Оценка 5 из 5"><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#B73324" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg></div>
+<blockquote style="margin: 0; font-size: 18px; line-height: 1.5; font-weight: 500;">Посещаем занятия с 4 лет, с 2017 года. Сначала занимались по 60 минут 2 раза в неделю, теперь по 90 минут. Со слов ребёнка, на занятиях много играют и поют.</blockquote>
+<figcaption style="margin-top: auto; display: flex; align-items: center; gap: 12px;">
+<span style="width: 44px; height: 44px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700;">ЕМ</span>
+<span style="display: flex; flex-direction: column;"><span style="font-size: 16px; font-weight: 700;">Елизавета Миниханова</span><span style="font-size: 14px; color: #5B5B66;">родитель ученика</span></span>
+</figcaption>
+</figure>
+</div>
+<div style="margin-top: 32px; display: flex; justify-content: center;">
+<a href="#reviews" style="display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px;">Все отзывы</a>
+</div>
+</div>
+</section>
+
+<section id="test" style="padding: 0 0 96px;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div class="panel g2" style="background: #FCE9EF; border-radius: 32px; padding: 64px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; align-items: center;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+<span style="padding: 4px 12px; border-radius: 8px; border: 1.5px solid #17171A; font-size: 14px; font-weight: 600;">Бесплатно</span>
+<h2 style="font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Узнайте свой уровень на бесплатном тестировании</h2>
+<p style="font-size: 18px; line-height: 1.5; color: #4A4A55;">Группы формируются по результатам тестирования. Подберём группу нужного уровня, утром или вечером, в центре или в Брагино.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 8px;">
+<a href="#test" style="display: inline-flex; align-items: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; background: #17171A; color: #FFFFFF; font-size: 16px; font-weight: 600; text-decoration: none;">Записаться на тестирование
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+</a>
+<a href="tel:+74852595027" style="font-size: 16px; font-weight: 600; text-decoration: none;">или позвоните +7 (4852) 59-50-27</a>
+</div>
+</div>
+<div style="position: relative; padding: 16px 16px 16px 32px;">
+<img loading="lazy" src="../assets/school/img/testing-class.webp" alt="Ученики и преподаватель на занятии в классе" style="width: 100%; height: 380px; object-fit: cover; border-radius: 24px; display: block; transform: rotate(2.5deg); box-shadow: 0 18px 40px rgba(23, 23, 26, 0.14);">
+<div class="stamp" style="position: absolute; left: 0; top: -12px; width: 138px; padding: 14px 12px 12px; box-sizing: border-box; background: #1F7A6E; border: 6px dotted #FFFFFF; border-radius: 10px; color: #FFFFFF; text-align: center; transform: rotate(-10deg); box-shadow: 0 10px 24px rgba(23, 23, 26, 0.18);">
+<div style="font-size: 26px; font-weight: 800; line-height: 1;">A1–C2</div>
+<div style="font-size: 12px; font-weight: 700; letter-spacing: 0.08em; margin-top: 6px;">LEVEL TEST</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contacts" class="sec" style="padding: 0 0 96px;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+<div style="width: 48px; height: 48px; border-radius: 999px; background: #FCE9EF; display: flex; align-items: center; justify-content: center; color: #B73324;">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+</div>
+<h2 style="margin-top: 16px; font-size: 44px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em;">Два офиса в Ярославле</h2>
+</div>
+<div class="gcontact" style="margin-top: 48px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
+<img loading="lazy" src="../assets/school/img/office-center.webp" alt="Дмитрий Никитин у здания школы на площади Челюскинцев" style="width: 100%; height: 100%; min-height: 360px; object-fit: cover; border-radius: 24px; display: block;">
+<div style="background: #EAF1FB; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: #FFFFFF; font-size: 13px; font-weight: 600;">Центральный офис</span>
+<h3 style="font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">пл. Челюскинцев, 16</h3>
+<p style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5; color: #3D3D46;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>пн–пт 10:00–20:00<br>вс 10:00–16:00</p>
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<a href="tel:+74852595027" style="font-size: 20px; font-weight: 600; text-decoration: none;">+7 (4852) 59-50-27</a>
+<a href="tel:+79066395027" style="font-size: 20px; font-weight: 600; text-decoration: none;">+7 906 639-50-27</a>
+</div>
+<a href="https://yandex.ru/maps/org/shkola_dmitriya_nikitina/157134307134/" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; border: 1.5px solid #2D63B8; background: #FFFFFF; box-sizing: border-box; font-size: 15px; font-weight: 600; text-decoration: none;">Построить маршрут</a>
+</div>
+<div style="background: #FDEFE4; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 16px;">
+<span style="align-self: flex-start; padding: 5px 12px; border-radius: 999px; background: #FFFFFF; font-size: 13px; font-weight: 600;">Брагино</span>
+<h3 style="font-size: 28px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;">ул. Панина, 3</h3>
+<p style="display: flex; gap: 10px; font-size: 16px; line-height: 1.5; color: #3D3D46;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>пн–пт 12:00–20:00</p>
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<a href="tel:+74852663027" style="font-size: 20px; font-weight: 600; text-decoration: none;">+7 (4852) 66-30-27</a>
+<a href="tel:+79657263027" style="font-size: 20px; font-weight: 600; text-decoration: none;">+7 965 726-30-27</a>
+</div>
+<a href="https://yandex.ru/maps/" style="margin-top: auto; align-self: flex-start; display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; border: 1.5px solid #C9602F; background: #FFFFFF; box-sizing: border-box; font-size: 15px; font-weight: 600; text-decoration: none;">Построить маршрут</a>
+</div>
+</div>
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px;">
+<span style="font-size: 16px; font-weight: 600; margin-right: 4px;">Напишите нам:</span>
+<a href="https://vk.me/dnschoolclub" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #F3F1F5; font-size: 15px; font-weight: 600; text-decoration: none;">ВКонтакте</a>
+<a href="https://t.me/+79066395027" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #F3F1F5; font-size: 15px; font-weight: 600; text-decoration: none;">Telegram</a>
+<a href="https://wa.me/79066395027" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #F3F1F5; font-size: 15px; font-weight: 600; text-decoration: none;">WhatsApp</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #FAF7F3; padding: 64px 0 0;">
+<div class="wrap" style="max-width: 1320px; margin: 0 auto; padding: 0 40px; box-sizing: border-box;">
+<div class="gfoot" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<img src="../assets/school/img/logo-dn.svg" alt="Школа Дмитрия Никитина" style="height: 30px; width: auto; align-self: flex-start; display: block;">
+<p style="font-size: 15px; line-height: 1.5; color: #5B5B66;">Учим английскому детей и взрослых в Ярославле с 2009 года.</p>
+</div>
+<nav aria-label="Курсы" style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+<p style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5B5B66; margin-bottom: 4px;">Курсы</p>
+<a href="#courses" style="text-decoration: none;">Взрослые</a>
+<a href="#courses" style="text-decoration: none;">Подростки</a>
+<a href="#courses" style="text-decoration: none;">Школьники</a>
+<a href="#courses" style="text-decoration: none;">Дошкольники</a>
+<a href="#clubs" style="text-decoration: none;">Другие языки</a>
+<a href="#clubs" style="text-decoration: none;">Языковые клубы</a>
+<a href="#clubs" style="text-decoration: none;">Летний интенсив</a>
+</nav>
+<nav aria-label="Школа" style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;">
+<p style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5B5B66; margin-bottom: 4px;">Школа</p>
+<a href="#" style="text-decoration: none;">О нас</a>
+<a href="#team" style="text-decoration: none;">Команда</a>
+<a href="#" style="text-decoration: none;">Расписание</a>
+<a href="#courses" style="text-decoration: none;">Стоимость</a>
+<a href="#reviews" style="text-decoration: none;">Отзывы</a>
+<a href="#" style="text-decoration: none;">FAQ</a>
+<a href="#" style="text-decoration: none;">Учителям</a>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.5;">
+<p style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5B5B66; margin-bottom: 4px;">Контакты</p>
+<p>пл. Челюскинцев, 16<br><a href="tel:+74852595027" style="font-weight: 600; text-decoration: none;">+7 (4852) 59-50-27</a></p>
+<p>ул. Панина, 3<br><a href="tel:+74852663027" style="font-weight: 600; text-decoration: none;">+7 (4852) 66-30-27</a></p>
+<a href="#test" style="margin-top: 8px; align-self: flex-start; display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 999px; background: #17171A; color: #FFFFFF; font-size: 15px; font-weight: 600; text-decoration: none;">Записаться</a>
+</div>
+</div>
+<div style="margin-top: 56px; padding: 24px 0 32px; border-top: 1px solid #E7E1DA; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; font-size: 14px; color: #5B5B66;">
+<p>© 2009–2026 ЧУ ДО «Школа Дмитрия Никитина»</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 24px;">
+<a href="#" style="color: #5B5B66; text-decoration: none;">Уставные документы</a>
+<a href="#" style="color: #5B5B66; text-decoration: none;">Политика обработки данных</a>
+<a href="#" style="color: #5B5B66; text-decoration: none;">Версия для слабовидящих</a>
+<a href="../project.html?p=school" style="color: #5B5B66; text-decoration: none;">← Вернуться в портфолио</a>
+</div>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>

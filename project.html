@@ -510,9 +510,23 @@ const PROJECTS = {
       ["assets/dj/dj-5.webp", "Chillhop"],
       ["assets/dj/dj-6.webp", "Organic House Ethnic"]
     ]
+  },
+  shop: {
+    live: "shop/", liveLabel: "Открыть магазин →",
+    num: "08", title: "Телефон Телефоныч",
+    desc: "Интернет-магазин смартфонов с бонусами, рассрочкой и trade-in",
+    tags: ["Веб-дизайн", "E-commerce"],
+    shots: [
+      ["assets/shop/shop-1.webp", "Главный экран"],
+      ["assets/shop/shop-2.webp", "Хиты продаж"],
+      ["assets/shop/shop-3.webp", "Скидки недели"],
+      ["assets/shop/shop-4.webp", "Каталог с фильтрами"],
+      ["assets/shop/shop-5.webp", "Карточка товара"],
+      ["assets/shop/shop-6.webp", "Мобильная версия"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];

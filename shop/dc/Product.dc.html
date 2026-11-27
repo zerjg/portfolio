@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Телефон Телефоныч — Samsung Galaxy S20</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+h1,h2,h3{font-family:'Jost',Arial,sans-serif;font-weight:500}
+a{color:#0B7A55}a:hover{color:#075E41}
+</style>
+</helmet>
+<div style="font-family: 'Onest', Arial, sans-serif; color: #17191E; background: #F1EFEA; font-size: 15px; line-height: 1.4">
+<dc-import name="Header" hint-size="100%,110px"></dc-import>
+<main style="max-width: 1280px; margin: 0 auto; padding: 0 24px; box-sizing: border-box">
+<nav aria-label="Хлебные крошки" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; min-height: 48px; font-size: 13px; color: #5C626C">
+<a href="index.html">Главная</a><span aria-hidden="true">/</span><a href="catalog.html">Смартфоны</a><span aria-hidden="true">/</span><a href="catalog.html">Samsung</a><span aria-hidden="true">/</span><span>Galaxy S20</span>
+</nav>
+<h1 style="margin: 0; font-size: 30px; line-height: 38px; font-weight: 500">Смартфон Samsung Galaxy S20 8/128 ГБ, {{ colorLower }}</h1>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 20px; margin: 8px 0 20px; font-size: 14px">
+<span style="display: inline-flex; align-items: center; gap: 6px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#F5A300"><path d="M12 3l2.7 5.6 6.1.8-4.4 4.3 1.1 6.1-5.5-2.9-5.5 2.9 1.1-6.1-4.4-4.3 6.1-.8z"></path></svg><span style="font-weight: 500">4,8</span></span>
+<a href="#tabs" style="display: inline-flex; align-items: center; min-height: 44px">126 отзывов</a>
+<span style="color: #5C626C">Код товара: 104 512</span>
+<span style="display: inline-flex; align-items: center; gap: 6px; color: #0B7A55; font-weight: 500"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #0B7A55"></span>В наличии</span>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 26px; padding: 32px; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 40px">
+<div style="flex: 1 1 440px; min-width: 0; display: flex; gap: 16px">
+<div style="flex: none; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+<button type="button" aria-label="{{ t.label }}" aria-pressed="{{ t.on }}" onClick="{{ t.pick }}" style="width: 64px; height: 64px; box-sizing: border-box; border-radius: 8px; border: {{ t.border }}; background: #FFFFFF; display: flex; align-items: center; justify-content: center; cursor: pointer"><img src="{{ t.img }}" alt="" style="max-width: 50px; height: 52px; object-fit: contain"></button>
+</sc-for>
+</div>
+<div style="flex: 1 1 auto; min-width: 0; min-height: 460px; border-radius: 8px; background: #F1EFEA; display: flex; align-items: center; justify-content: center">
+<img src="{{ mainImg }}" alt="{{ mainAlt }}" style="display: block; max-width: 86%%; height: 400px; object-fit: contain; filter: drop-shadow(0 24px 28px rgba(27,36,48,0.22))">
+</div>
+</div>
+
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div><span style="color: #5C626C">Цвет: </span><span style="font-weight: 500">{{ colorName }}</span></div>
+<div style="display: flex; gap: 10px">
+<sc-for list="{{ colors }}" as="c" hint-placeholder-count="3">
+<button type="button" aria-label="{{ c.name }}" aria-pressed="{{ c.on }}" onClick="{{ c.pick }}" style="width: 44px; height: 44px; border-radius: 50%; border: 3px solid #FFFFFF; background: {{ c.hex }}; box-shadow: {{ c.ring }}; cursor: pointer"></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div><span style="color: #5C626C">Память: </span><span style="font-weight: 500">8/128 ГБ</span></div>
+<div style="display: flex; gap: 8px">
+<button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 16px; border: 2px solid #0B7A55; border-radius: 14px; background: #E3F1EA; color: #17191E; font: inherit; font-weight: 500; cursor: pointer">8/128 ГБ</button>
+</div>
+</div>
+<div>
+<h2 style="margin: 0 0 8px; font-size: 16px; font-weight: 500">Коротко о товаре</h2>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+<sc-for list="{{ brief }}" as="s" hint-placeholder-count="6">
+<div style="display: flex; align-items: baseline; gap: 8px"><dt style="color: #5C626C">{{ s.k }}</dt><span aria-hidden="true" style="flex: 1 1 auto; border-bottom: 1px dotted #C9C4BA"></span><dd style="margin: 0; text-align: right">{{ s.v }}</dd></div>
+</sc-for>
+</dl>
+<a href="#tabs" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 500">Все характеристики</a>
+</div>
+</div>
+
+<div style="flex: 1 1 300px; min-width: 0; box-sizing: border-box; border-radius: 22px; padding: 24px; box-shadow: 0 8px 24px rgba(27,36,48,0.08); display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 34px; line-height: 1.1; font-weight: 700">69 990 ₽</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<span style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 4px; background: #FFF1C7; color: #6B4500; font-size: 14px; font-weight: 500"><svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 7v10M9 9.5h4.5a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3H15"></path></svg>+3 500 бонусов</span>
+<span style="display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 4px; background: #E3F1EA; color: #075E41; font-size: 14px; font-weight: 500">Рассрочка 0% на 12 месяцев</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; font-size: 14px"><span>от <span style="font-weight: 500">5 833 ₽</span> в месяц без переплаты</span><a href="#">Условия кредита</a></div>
+<button type="button" style="height: 52px; border: 0; border-radius: 14px; background: #0B7A55; color: #FFFFFF; font: inherit; font-size: 17px; font-weight: 500; cursor: pointer">Добавить в корзину</button>
+<button type="button" style="height: 48px; border: 1px solid #0B7A55; border-radius: 14px; background: #FFFFFF; color: #0B7A55; font: inherit; font-weight: 500; cursor: pointer">Купить в 1 клик</button>
+<div style="display: flex; gap: 8px">
+<button type="button" style="flex: 1 1 0; min-height: 44px; border: 0; background: transparent; color: #17191E; font: inherit; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg><span>В избранное</span></button>
+<button type="button" style="flex: 1 1 0; min-height: 44px; border: 0; background: transparent; color: #17191E; font: inherit; font-size: 14px; display: flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 20V10M12 20V4M18 20v-7"></path></svg><span>Сравнить</span></button>
+</div>
+<fieldset style="margin: 0; padding: 16px 0 0; border: 0; border-top: 1px solid #E2DFD8; display: flex; flex-direction: column; gap: 4px">
+<legend style="float: left; width: 100%; padding: 0; margin-bottom: 6px; font-weight: 500">Добавить услуги</legend>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; cursor: pointer"><input type="checkbox" style="width: 18px; height: 18px; margin: 0; accent-color: #0B7A55"><span style="flex: 1 1 auto">Защитное стекло с поклейкой</span><span style="color: #454B55">1 490 ₽</span></label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; cursor: pointer"><input type="checkbox" style="width: 18px; height: 18px; margin: 0; accent-color: #0B7A55"><span style="flex: 1 1 auto">Настройка и перенос данных</span><span style="color: #454B55">990 ₽</span></label>
+<label style="display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14px; cursor: pointer"><input type="checkbox" style="width: 18px; height: 18px; margin: 0; accent-color: #0B7A55"><span style="flex: 1 1 auto">Страховка на 1 год</span><span style="color: #454B55">4 990 ₽</span></label>
+</fieldset>
+<ul style="margin: 0; padding: 16px 0 0; list-style: none; border-top: 1px solid #E2DFD8; display: flex; flex-direction: column; gap: 12px; font-size: 14px">
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7A55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M2 7h12v9H2zM14 10h4l3 3v3h-7zM7 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM17 18.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg><span><span style="font-weight: 500">Курьером завтра</span> — бесплатно</span></li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7A55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg><span><span style="font-weight: 500">Самовывоз сегодня</span> — в 12 магазинах, <a href="#">на карте</a></span></li>
+<li style="display: flex; gap: 10px"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7A55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex: none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6zM9 12l2 2 4-4"></path></svg><span><span style="font-weight: 500">Гарантия 1 год</span> — официальная</span></li>
+</ul>
+</div>
+</div>
+
+<section id="tabs" style="margin-top: 32px; background: #FFFFFF; border-radius: 26px; padding: 8px 32px 32px">
+<div role="tablist" aria-label="Информация о товаре" style="display: flex; flex-wrap: wrap; gap: 0 32px; border-bottom: 1px solid #E2DFD8; margin-bottom: 24px">
+<button type="button" role="tab" aria-selected="true" style="min-height: 52px; padding: 0; border: 0; border-bottom: 3px solid #0B7A55; background: transparent; color: #0B7A55; font: inherit; font-size: 16px; font-weight: 500; cursor: pointer">Характеристики</button>
+<button type="button" role="tab" aria-selected="false" style="min-height: 52px; padding: 0; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #17191E; font: inherit; font-size: 16px; cursor: pointer">Описание</button>
+<button type="button" role="tab" aria-selected="false" style="min-height: 52px; padding: 0; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #17191E; font: inherit; font-size: 16px; cursor: pointer">Отзывы (126)</button>
+<button type="button" role="tab" aria-selected="false" style="min-height: 52px; padding: 0; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #17191E; font: inherit; font-size: 16px; cursor: pointer">Вопросы и ответы (24)</button>
+<button type="button" role="tab" aria-selected="false" style="min-height: 52px; padding: 0; border: 0; border-bottom: 3px solid transparent; background: transparent; color: #17191E; font: inherit; font-size: 16px; cursor: pointer">Аксессуары</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 24px 64px">
+<sc-for list="{{ specGroups }}" as="g" hint-placeholder-count="4">
+<div>
+<h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 500">{{ g.title }}</h3>
+<dl style="margin: 0">
+<sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="4">
+<div style="display: flex; gap: 16px; padding: 10px 0; border-bottom: 1px solid #EEEBE5; font-size: 14px"><dt style="flex: 0 0 46%; color: #5C626C">{{ r.k }}</dt><dd style="margin: 0; flex: 1 1 auto">{{ r.v }}</dd></div>
+</sc-for>
+</dl>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="padding-top: 48px">
+<h2 style="margin: 0 0 20px; font-size: 28px; line-height: 36px; font-weight: 500">Похожие смартфоны</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px">
+<sc-for list="{{ related }}" as="p" hint-placeholder-count="4">
+<div style="min-width: 0"><dc-import name="ProductCard" item="{{ p }}" hint-size="100%,560px"></dc-import></div>
+</sc-for>
+</div>
+</section>
+</main>
+<div style="margin-top: 56px"><dc-import name="Footer" hint-size="100%,520px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2820}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { color: 0, view: 0 };
+}
+renderVals() {
+const palette = [
+{ name: 'Голубой', hex: '#6FA3E0' },
+{ name: 'Серый', hex: '#7C8794' },
+{ name: 'Розовый', hex: '#F2C4CE' }
+];
+const shots = [{ label: 'Вид сзади', img: '../assets/shop/img/s20.webp' }, { label: 'Вид спереди', img: '../assets/shop/img/s20f.webp' }];
+const view = this.state.view ?? 0;
+const cur = this.state.color ?? 0;
+const sel = palette[cur];
+return {
+colorName: sel.name,
+colorLower: sel.name.toLowerCase(),
+colorHex: sel.hex,
+colors: palette.map((c, i) => ({
+name: c.name, hex: c.hex, on: i === cur,
+ring: i === cur ? '0 0 0 2px #0B7A55' : '0 0 0 1px #C9C4BA',
+pick: () => this.setState({ color: i })
+})),
+thumbs: shots.map((t, i) => ({ label: t.label, img: t.img, on: i === view, border: i === view ? '2px solid #0B7A55' : '1px solid #D6D2CA', pick: () => this.setState({ view: i }) })),
+mainImg: shots[view].img,
+mainAlt: 'Samsung Galaxy S20, ' + shots[view].label.toLowerCase(),
+brief: [
+{ k: 'Экран', v: '6,2″, 120 Гц' },
+{ k: 'Камера', v: '64 + 12 + 12 Мп' },
+{ k: 'Процессор', v: 'Exynos 990' },
+{ k: 'Память', v: '8 ГБ / 128 ГБ' },
+{ k: 'Аккумулятор', v: '4000 мА·ч' },
+{ k: 'Защита', v: 'IP68' }
+],
+specGroups: [
+{ title: 'Экран', rows: [
+{ k: 'Диагональ', v: '6,2″' }, { k: 'Тип матрицы', v: 'Dynamic AMOLED 2X' },
+{ k: 'Разрешение', v: '3200 × 1440' }, { k: 'Частота обновления', v: '120 Гц' } ] },
+{ title: 'Камера', rows: [
+{ k: 'Основная', v: '12 Мп + 64 Мп + 12 Мп' }, { k: 'Фронтальная', v: '10 Мп' },
+{ k: 'Запись видео', v: 'до 8K' }, { k: 'Оптическая стабилизация', v: 'Есть' } ] },
+{ title: 'Память и процессор', rows: [
+{ k: 'Процессор', v: 'Samsung Exynos 990' }, { k: 'Оперативная память', v: '8 ГБ' },
+{ k: 'Встроенная память', v: '128 ГБ' }, { k: 'Карта памяти', v: 'microSD до 1 ТБ' } ] },
+{ title: 'Питание и корпус', rows: [
+{ k: 'Аккумулятор', v: '4000 мА·ч' }, { k: 'Беспроводная зарядка', v: 'Есть' },
+{ k: 'Защита от воды', v: 'IP68' }, { k: 'Вес', v: '163 г' } ] }
+],
+related: [
+{ name: 'Смартфон Apple iPhone 11 128 ГБ, (PRODUCT)RED', spec: '6,1″ · 128 ГБ · 12 + 12 Мп', price: '64 990 ₽', old: '', badge: 'Хит', color: '#B3262E', rating: '4,9', img: '../assets/shop/img/i11.webp', colors: ['#B3262E', '#22262B', '#E9E6E1'] },
+{ name: 'Смартфон OnePlus 8 Pro 8/128 ГБ, синий', spec: '6,78″ · 128 ГБ · 48 Мп', price: '69 990 ₽', old: '', badge: '', color: '#2B4FA8', rating: '4,7', img: '../assets/shop/img/op8p2.webp', colors: ['#2B4FA8', '#22262B'] },
+{ name: 'Смартфон Xiaomi Mi 10 8/128 ГБ, зелёный', spec: '6,67″ · 128 ГБ · 108 Мп', price: '54 990 ₽', old: '', badge: '', color: '#2A8C9A', rating: '4,7', img: '../assets/shop/img/mi10.webp', colors: ['#2A8C9A', '#9AA3AD'] },
+{ name: 'Смартфон Samsung Galaxy S10+ 8/128 ГБ, чёрный', spec: '6,4″ · 128 ГБ · 12 + 12 + 16 Мп', price: '49 990 ₽', old: '56 990 ₽', badge: '−12%', color: '#22262B', rating: '4,8', img: '../assets/shop/img/s10p.webp', colors: ['#22262B', '#E9E6E1'] }
+]
+};
+}
+}
+</script>
+</body>
+</html>

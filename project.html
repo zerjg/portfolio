@@ -496,9 +496,23 @@ const PROJECTS = {
       ["assets/hopmalt-5.jpg", "Как мы варим"],
       ["assets/hopmalt-6.jpg", "Где купить"]
     ]
+  },
+  dj: {
+    live: "dj/", liveLabel: "Открыть визитку →",
+    num: "07", title: "DJ ZERJG",
+    desc: "Визитка диджея: история жанров от соула до органик-хауса",
+    tags: ["Веб-дизайн", "Музыка"],
+    shots: [
+      ["assets/dj/dj-1.webp", "Главный экран"],
+      ["assets/dj/dj-2.webp", "Funk"],
+      ["assets/dj/dj-3.webp", "Disco и плеер фрагмента"],
+      ["assets/dj/dj-4.webp", "Electro Swing"],
+      ["assets/dj/dj-5.webp", "Chillhop"],
+      ["assets/dj/dj-6.webp", "Organic House Ethnic"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];
@@ -508,7 +522,14 @@ document.getElementById("pTitle").textContent = p.title;
 document.getElementById("pDesc").textContent = p.desc;
 document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</span>").join("");
 const site = document.getElementById("pSite");
-site.href = p.url;
+if (p.url) site.href = p.url;
+else site.remove();
+if (p.live) {
+  const live = document.getElementById("pPrototype");
+  live.href = p.live;
+  live.textContent = p.liveLabel || "Открыть →";
+  live.hidden = false;
+}
 if (p.prototype) {
   const prototype = document.getElementById("pPrototype");
   prototype.href = "prototypes/?p=" + id;

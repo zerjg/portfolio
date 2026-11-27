@@ -568,9 +568,25 @@ const PROJECTS = {
       ["assets/art/art-6.webp", "Сдать вещь"],
       ["assets/art/art-7.webp", "Мобильная версия"]
     ]
+  },
+  most: {
+    live: "most/", liveLabel: "Открыть лендинг →",
+    num: "12", title: "МОСТ",
+    desc: "Музыкальная студия в Ярославле: уроки музыки, звукозапись и репетиционные базы",
+    tags: ["Лендинг", "Музыкальная студия"],
+    shots: [
+      ["assets/most/most-1.webp", "Главный экран"],
+      ["assets/most/most-2.webp", "Направления обучения"],
+      ["assets/most/most-3.webp", "Как начать"],
+      ["assets/most/most-4.webp", "Педагоги и студия"],
+      ["assets/most/most-5.webp", "Звукозапись VOSTORG records"],
+      ["assets/most/most-6.webp", "Цены"],
+      ["assets/most/most-7.webp", "Подарочные сертификаты"],
+      ["assets/most/most-8.webp", "Мобильная версия"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev", "school", "art"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev", "school", "art", "most"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МОСТ — музыкальная студия в Ярославле</title>
+<meta name="description" content="Музыкальная студия МОСТ в Ярославле: вокал, гитара, ударные и фортепиано для взрослых, подростков и детей от 8 лет. Студия звукозаписи VOSTORG records, аранжировки, курсы звукорежиссуры и репетиционные базы.">
+<link rel="preload" href="../assets/fonts/dj/geologica-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/shop/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Geologica';font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/dj/geologica-cyrillic.woff2") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Geologica';font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/dj/geologica-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Onest';font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/shop/onest-cyrillic.woff2") format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/shop/onest-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+body{margin:0;background:#fff;color:#15111F;font-family:'Onest',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5B23D6}a:hover{color:#3E139E}
+.blob{animation:drift 22s ease-in-out infinite alternate}
+.blob.b2{animation-duration:28s;animation-direction:alternate-reverse}
+.blob.b3{animation-duration:34s}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(40px,-24px,0) scale(1.08)}100%{transform:translate3d(-30px,30px,0) scale(.96)}}
+.eq span{transform-origin:bottom;animation:eq 1.8s ease-in-out infinite alternate}
+@keyframes eq{0%{transform:scaleY(.3)}100%{transform:scaleY(1)}}
+.still .blob,.still .eq span{animation:none}
+.track{scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+.btn-ink{transition:background .2s ease}.btn-ink:hover{background:#2E2541 !important;color:#fff !important}
+.btn-orange:hover{background:#FFA062 !important;color:#15111F !important}
+.btn-ghost:hover{background:rgba(255,255,255,.22) !important;color:#fff !important}
+.nav-a{color:#fff;text-decoration:none;opacity:.9}.nav-a:hover{opacity:1;color:#fff;text-decoration:underline;text-underline-offset:5px}
+.chip-dark{color:#E7E2F2;text-decoration:none}.chip-dark:hover{color:#fff;background:rgba(255,255,255,.12) !important}
+.foot a{color:rgba(255,255,255,.84);text-decoration:none}.foot a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+:focus-visible{outline:2px solid #FF8A3D;outline-offset:3px}
+@media (max-width:860px){.nav-links{display:none !important}.hide-sm{display:none !important}}
+@media (prefers-reduced-motion:reduce){.blob,.eq span{animation:none}}
+html{scroll-behavior:smooth}
+[hidden]{display:none !important}
+.eq span{display:block;width:4px;border-radius:2px 2px 0 0;background:#fff}
+.tab{height:44px;padding:0 20px;border-radius:999px;border:1px solid #E4DFEC;background:#fff;color:#15111F;font-family:inherit;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 1px 2px rgba(21,17,31,.06);transition:background .2s ease,color .2s ease}
+.tab:hover{border-color:#CFC6E0}
+.tab[aria-selected="true"]{background:#5B23D6;border-color:transparent;color:#fff;box-shadow:0 6px 18px rgba(91,35,214,.25)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="root" style="width: 100%; min-width: 0; overflow-x: hidden">
+
+<!-- HERO -->
+<section id="top" style="position: relative; overflow: hidden; background: #5B23D6; color: #fff">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<div class="blob b1" style="position: absolute; left: 10%; top: -280px; width: 600px; height: 540px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #FFC93C 0%, #FF8A3D 42%, rgba(255,138,61,0) 70%); filter: blur(36px); opacity: 0.95"></div>
+<div class="blob b2" style="position: absolute; right: -200px; top: 330px; width: 780px; height: 560px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #FF5BB0 0%, rgba(255,91,176,0.55) 40%, rgba(255,91,176,0) 70%); filter: blur(30px)"></div>
+<div class="blob b3" style="position: absolute; left: -240px; top: 180px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #A98BFF 0%, rgba(169,139,255,0) 70%); filter: blur(30px); opacity: 0.9"></div>
+</div>
+
+<header style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 20px 24px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="#top" aria-label="Творческое пространство МОСТ — на главную" style="display: flex; align-items: center; gap: 12px; text-decoration: none">
+<img src="../assets/most/img/logo-emblem.webp" alt="" style="display: block; width: 48px; height: auto">
+<img src="../assets/most/img/logo-wordmark.webp" alt="" style="display: block; height: 24px; width: auto">
+</a>
+<nav class="nav-links" aria-label="Основное меню" style="display: flex; gap: 28px; font-size: 15px; font-weight: 500">
+<a href="#directions" class="nav-a">Направления</a>
+<a href="#studio" class="nav-a">Студия</a>
+<a href="#services" class="nav-a" data-tab="rec">Звукозапись</a>
+<a href="#prices" class="nav-a">Цены</a>
+<a href="#faq" class="nav-a">Вопросы</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 18px">
+<a href="tel:+79605356841" class="hide-sm nav-a" style="font-weight: 600; font-size: 15px; white-space: nowrap">8 (960) 535-68-41</a>
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; white-space: nowrap">Хочу на пробное<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</header>
+
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 96px 24px 136px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 28px">
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3); font-size: 14px; font-weight: 500"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #FFC93C"></span>Ярославль · очно и онлайн</span>
+<h1 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(42px, 6.4vw, 80px); line-height: 1.02; letter-spacing: -0.035em; max-width: 1000px; text-wrap: balance">Учим петь и играть. Записываем ваши песни.</h1>
+<p style="margin: 0; max-width: 660px; font-size: 19px; line-height: 1.55; color: rgba(255,255,255,0.92); text-wrap: pretty">Музыкальная студия МОСТ: вокал, гитара, ударные и фортепиано для взрослых, подростков и детей от 8 лет. Знакомство с педагогом и первый урок — в подарок.</p>
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 16px">Хочу на пробное<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+<div class="eq" aria-hidden="true" style="position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); display: flex; align-items: flex-end; gap: 6px; height: 60px; opacity: 0.32; pointer-events: none">
+
+<span style="height: 10px; animation-delay: -0.00s"></span>
+<span style="height: 19px; animation-delay: -0.14s"></span>
+<span style="height: 17px; animation-delay: -0.27s"></span>
+<span style="height: 13px; animation-delay: -0.41s"></span>
+<span style="height: 18px; animation-delay: -0.55s"></span>
+<span style="height: 11px; animation-delay: -0.69s"></span>
+<span style="height: 26px; animation-delay: -0.82s"></span>
+<span style="height: 44px; animation-delay: -0.96s"></span>
+<span style="height: 50px; animation-delay: -1.10s"></span>
+<span style="height: 39px; animation-delay: -1.23s"></span>
+<span style="height: 14px; animation-delay: -1.37s"></span>
+<span style="height: 33px; animation-delay: -1.51s"></span>
+<span style="height: 49px; animation-delay: -1.64s"></span>
+<span style="height: 47px; animation-delay: -1.78s"></span>
+<span style="height: 32px; animation-delay: -0.12s"></span>
+<span style="height: 13px; animation-delay: -0.26s"></span>
+<span style="height: 18px; animation-delay: -0.39s"></span>
+<span style="height: 16px; animation-delay: -0.53s"></span>
+<span style="height: 13px; animation-delay: -0.67s"></span>
+<span style="height: 19px; animation-delay: -0.80s"></span>
+<span style="height: 14px; animation-delay: -0.94s"></span>
+<span style="height: 23px; animation-delay: -1.08s"></span>
+<span style="height: 42px; animation-delay: -1.21s"></span>
+<span style="height: 51px; animation-delay: -1.35s"></span>
+<span style="height: 43px; animation-delay: -1.49s"></span>
+<span style="height: 19px; animation-delay: -1.63s"></span>
+<span style="height: 28px; animation-delay: -1.76s"></span>
+<span style="height: 47px; animation-delay: -0.10s"></span>
+<span style="height: 48px; animation-delay: -0.24s"></span>
+<span style="height: 34px; animation-delay: -0.37s"></span>
+<span style="height: 16px; animation-delay: -0.51s"></span>
+<span style="height: 16px; animation-delay: -0.65s"></span>
+<span style="height: 15px; animation-delay: -0.78s"></span>
+<span style="height: 13px; animation-delay: -0.92s"></span>
+<span style="height: 20px; animation-delay: -1.06s"></span>
+<span style="height: 16px; animation-delay: -1.19s"></span>
+<span style="height: 20px; animation-delay: -1.33s"></span>
+<span style="height: 40px; animation-delay: -1.47s"></span>
+<span style="height: 52px; animation-delay: -1.61s"></span>
+<span style="height: 46px; animation-delay: -1.74s"></span>
+<span style="height: 25px; animation-delay: -0.08s"></span>
+<span style="height: 23px; animation-delay: -0.22s"></span>
+<span style="height: 43px; animation-delay: -0.35s"></span>
+<span style="height: 48px; animation-delay: -0.49s"></span>
+<span style="height: 36px; animation-delay: -0.63s"></span>
+<span style="height: 19px; animation-delay: -0.77s"></span>
+<span style="height: 14px; animation-delay: -0.90s"></span>
+<span style="height: 14px; animation-delay: -1.04s"></span>
+<span style="height: 14px; animation-delay: -1.18s"></span>
+<span style="height: 21px; animation-delay: -1.31s"></span>
+<span style="height: 19px; animation-delay: -1.45s"></span>
+<span style="height: 16px; animation-delay: -1.59s"></span>
+<span style="height: 37px; animation-delay: -1.72s"></span>
+<span style="height: 51px; animation-delay: -0.06s"></span>
+<span style="height: 49px; animation-delay: -0.20s"></span>
+<span style="height: 30px; animation-delay: -0.33s"></span>
+<span style="height: 17px; animation-delay: -0.47s"></span>
+<span style="height: 40px; animation-delay: -0.61s"></span>
+<span style="height: 47px; animation-delay: -0.75s"></span>
+<span style="height: 38px; animation-delay: -0.88s"></span>
+<span style="height: 21px; animation-delay: -1.02s"></span>
+<span style="height: 12px; animation-delay: -1.16s"></span>
+<span style="height: 14px; animation-delay: -1.29s"></span>
+<span style="height: 14px; animation-delay: -1.43s"></span>
+<span style="height: 23px; animation-delay: -1.57s"></span>
+<span style="height: 22px; animation-delay: -1.71s"></span>
+<span style="height: 12px; animation-delay: -0.04s"></span>
+<span style="height: 34px; animation-delay: -0.18s"></span>
+<span style="height: 51px; animation-delay: -0.32s"></span>
+<span style="height: 52px; animation-delay: -0.45s"></span>
+<span style="height: 35px; animation-delay: -0.59s"></span>
+<span style="height: 12px; animation-delay: -0.73s"></span>
+
+</div>
+</section>
+
+<!-- DIRECTIONS (dark) -->
+<section id="directions" style="background: #15111F; color: #fff; padding: 88px 0 96px">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<h2 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: 28px; line-height: 1.2; letter-spacing: -0.02em">Продолжается набор по направлениям</h2>
+<p style="margin: 0; color: #A9A1BC; font-size: 16px; line-height: 1.5">Для взрослых, подростков и детей от 8 лет — очно и онлайн</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr)); gap: 16px">
+<article style="background: #211B2E; border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,91,176,0.14); color: #FF7BC0; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0"></path><path d="M12 18v3M8 21h8"></path></svg></div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Вокал</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">эстрадный</li>
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">рок</li>
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">академический</li>
+</ul>
+</div>
+</article>
+<article style="background: #211B2E; border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,138,61,0.14); color: #FF9A55; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3.5l2.5 2.5"></path><path d="M19.3 4.7l-7.6 7.6"></path><path d="M11.3 9.9c-1.5-.6-3.2-.3-4.3.8-.9.9-1.2 2-1 3-1.1.2-2.1.8-2.5 1.8-.8 1.7.3 3.6 2.1 4.2 1.5.6 3.2 0 4.1-1.3.5-.8.6-1.7.4-2.4 1.1.1 2.2-.2 3-1.1 1.1-1.1 1.5-2.8.9-4.3"></path><circle cx="8.8" cy="15.2" r="1.2"></circle></svg></div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Гитара</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">акустическая</li>
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">электро</li>
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">бас</li>
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">укулеле</li>
+</ul>
+</div>
+</article>
+<article style="background: #211B2E; border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(255,201,60,0.14); color: #FFD25E; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="11" rx="8" ry="3"></ellipse><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"></path><path d="M7 2.5l3.5 6.5M17 2.5l-3.5 6.5"></path></svg></div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Ударные</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">барабанная установка</li>
+</ul>
+</div>
+</article>
+<article style="background: #211B2E; border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="width: 48px; height: 48px; border-radius: 14px; background: rgba(169,139,255,0.16); color: #B9A2FF; display: flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M9 20v-6M15 20v-6"></path><rect x="7" y="4" width="4" height="10" rx="1"></rect><rect x="13" y="4" width="4" height="10" rx="1"></rect></svg></div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em">Фортепиано</h3>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px">
+<li style="font-size: 13px; color: #D9D3E7; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,0.07)">с нуля и для продолжающих</li>
+</ul>
+</div>
+</article>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px">
+<a href="#services" class="chip-dark" data-tab="rec" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 15px; font-weight: 500">+ Студийная звукозапись</a>
+<a href="#services" class="chip-dark" data-tab="eng" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 15px; font-weight: 500">+ Курсы по звукорежиссуре</a>
+<a href="#services" class="chip-dark" data-tab="reh" style="display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); font-size: 15px; font-weight: 500">+ Репетиционные базы</a>
+</div>
+</div>
+</section>
+
+<!-- HOW TO START (white) -->
+<section id="how" style="background: #fff; padding: 112px 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 56px">
+<h2 style="margin: 0 auto; max-width: 780px; text-align: center; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.03em; color: #15111F; text-wrap: balance">Начать просто — даже без своего инструмента</h2>
+<div style="position: relative; width: 100%; max-width: 800px; margin: 0 auto">
+<svg class="hide-sm" width="76" height="76" viewBox="0 0 76 76" aria-hidden="true" style="position: absolute; right: -44px; top: -52px"><path d="M10 54c8-22 32-38 47-29 11 7-2 24-17 24-13 0-15-13-2-19 15-8 32 2 28 17" fill="none" stroke="#FF8A3D" stroke-width="4" stroke-linecap="round"></path></svg>
+<img loading="lazy" src="../assets/most/img/vocal-duo.webp" alt="Урок вокала: педагог и ученица поют у микрофона в классе МОСТ" style="display: block; width: 100%; height: 460px; object-fit: cover; object-position: 50% 47%">
+<span style="position: absolute; left: 20px; bottom: 20px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 15px; box-shadow: 0 10px 30px rgba(21,17,31,0.2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B23D6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>ул. Рыбинская 44Б, 2 этаж</span>
+</div>
+<ol style="list-style: none; margin: 0 auto; padding: 0; width: 100%; max-width: 1100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 32px 28px">
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #15111F; color: #fff; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center">1</span><span aria-hidden="true" style="flex: 1; height: 1px; background: #E4DFEC"></span></div>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: #15111F">Напишите «Хочу на пробное»</h3>
+<p style="margin: 0; color: #6B6579; font-size: 15px; line-height: 1.55">В личку Станции Мост или по телефону <a href="tel:+79605356841" style="white-space: nowrap">8 (960) 535-68-41</a></p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #15111F; color: #fff; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center">2</span><span aria-hidden="true" style="flex: 1; height: 1px; background: #E4DFEC"></span></div>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: #15111F">Познакомьтесь с педагогом</h3>
+<p style="margin: 0; color: #6B6579; font-size: 15px; line-height: 1.55">Расскажите, чему хотите научиться, и выберите направление. Это бесплатно.</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #15111F; color: #fff; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center">3</span><span aria-hidden="true" style="flex: 1; height: 1px; background: #E4DFEC"></span></div>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: #15111F">Первый урок — в подарок</h3>
+<p style="margin: 0; color: #6B6579; font-size: 15px; line-height: 1.55">Приходите без своего инструмента: гитары, установка и клавиши ждут в классе.</p>
+</li>
+<li style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><span style="flex: none; width: 34px; height: 34px; border-radius: 50%; background: #FF8A3D; color: #15111F; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center">4</span></div>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; line-height: 1.3; color: #15111F">Занимайтесь очно или онлайн</h3>
+<p style="margin: 0; color: #6B6579; font-size: 15px; line-height: 1.55">В студии на Рыбинской или из дома — формат выбираете вы.</p>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- STUDIO / TEACHERS (accent) -->
+<section id="studio" style="position: relative; overflow: hidden; background: #5B23D6; color: #fff; padding: 112px 0 104px">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<div class="blob b2" style="position: absolute; left: -260px; bottom: -220px; width: 720px; height: 620px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #FF5BB0 0%, rgba(255,91,176,0.45) 38%, rgba(255,91,176,0) 70%); filter: blur(34px)"></div>
+<div class="blob b1" style="position: absolute; right: -120px; top: -200px; width: 520px; height: 460px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #FF8A3D 0%, rgba(255,138,61,0.4) 40%, rgba(255,138,61,0) 70%); filter: blur(40px); opacity: 0.8"></div>
+</div>
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px">
+<h2 style="margin: 0; max-width: 660px; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.03em; text-wrap: balance">Педагоги — профи. Студия работает больше 10 лет</h2>
+<p style="margin: 0; max-width: 400px; font-size: 17px; line-height: 1.55; color: rgba(255,255,255,0.9)">Занятия у нас — это интересно и весело. И отличный способ психологической разгрузки.</p>
+</div>
+<div class="track" id="track" style="position: relative; z-index: 1; display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 48px max(24px, calc((100% - 1152px) / 2)) 8px; scroll-padding-left: max(24px, calc((100% - 1152px) / 2))">
+<figure style="flex: 0 0 auto; position: relative; width: 300px; margin: 0; scroll-snap-align: start">
+<img loading="lazy" src="../assets/most/img/vocal-girl.webp" alt="Ученица поёт в микрофон на уроке вокала" style="display: block; width: 300px; height: 400px; object-fit: cover; object-position: 50% 30%">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 14px">Вокал</figcaption>
+</figure>
+<figure style="flex: 0 0 auto; position: relative; width: 300px; margin: 0; scroll-snap-align: start">
+<img loading="lazy" src="../assets/most/img/drums.webp" alt="Ученик играет на барабанной установке" style="display: block; width: 300px; height: 400px; object-fit: cover; object-position: 50% 38%">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 14px">Ударные</figcaption>
+</figure>
+<figure style="flex: 0 0 auto; position: relative; width: 300px; margin: 0; scroll-snap-align: start">
+<img loading="lazy" src="../assets/most/img/kid-guitar.webp" alt="Мальчик с гитарой в классе студии" style="display: block; width: 300px; height: 400px; object-fit: cover; object-position: 50% 30%">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 14px">Гитара · дети 8+</figcaption>
+</figure>
+<figure style="flex: 0 0 auto; position: relative; width: 300px; margin: 0; scroll-snap-align: start">
+<img loading="lazy" src="../assets/most/img/vocal-piano.webp" alt="Урок вокала за клавишным инструментом" style="display: block; width: 300px; height: 400px; object-fit: cover; object-position: 50% 62%">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 14px">Вокал и фортепиано</figcaption>
+</figure>
+<figure style="flex: 0 0 auto; position: relative; width: 300px; margin: 0; scroll-snap-align: start">
+<img loading="lazy" src="../assets/most/img/band.webp" alt="Репетиция подросткового ансамбля: гитары, клавиши и вокал" style="display: block; width: 300px; height: 400px; object-fit: cover; object-position: 74% 50%">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 14px">Ансамбль</figcaption>
+</figure>
+<figure style="flex: 0 0 auto; position: relative; width: 300px; margin: 0; scroll-snap-align: start">
+<img loading="lazy" src="../assets/most/img/booth.webp" alt="Запись вокала в студии VOSTORG records" style="display: block; width: 300px; height: 400px; object-fit: cover; object-position: 50% 35%">
+<figcaption style="position: absolute; left: 16px; bottom: 16px; padding: 8px 14px; border-radius: 999px; background: #fff; color: #15111F; font-weight: 600; font-size: 14px">Звукозапись</figcaption>
+</figure>
+</div>
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 24px auto 0; padding: 0 24px; box-sizing: border-box; display: flex; justify-content: flex-end; gap: 12px">
+<button type="button" aria-label="Предыдущие фото" id="prev" style="width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(255,255,255,0.16); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button type="button" aria-label="Следующие фото" id="next" style="width: 48px; height: 48px; border-radius: 50%; border: 0; background: #15111F; color: #FF8A3D; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 56px auto 0; padding: 0 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14l-1.5 7 5-3 5 3-1.5-7"></path></svg>
+<h3 style="margin: 4px 0 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 18px">Педагоги — профи</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.88)">Вокал, гитару, ударные и фортепиано ведут практикующие музыканты.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10l9-6.5 9 6.5v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"></path><path d="M9 21v-7h6v7"></path></svg>
+<h3 style="margin: 4px 0 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 18px">Инструменты в классе</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.88)">Можно начать без своего инструмента — всё необходимое есть в студии.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg>
+<h3 style="margin: 4px 0 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 18px">Очно и онлайн</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.88)">Приходите на Рыбинскую или занимайтесь из дома.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"></path><circle cx="17" cy="9.5" r="2.4"></circle><path d="M15.6 14.3c.4-.2.9-.3 1.4-.3 2.5 0 4.5 2 4.5 4.5"></path></svg>
+<h3 style="margin: 4px 0 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 18px">Для всех от 8 лет</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: rgba(255,255,255,0.88)">Принимаем взрослых, подростков и детей.</p>
+</div>
+</div>
+</section>
+
+<!-- SERVICES TABS (white) -->
+<section id="services" style="background: #fff; padding: 112px 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 44px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<h2 style="margin: 0; max-width: 820px; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.03em; color: #15111F; text-wrap: balance">Специально для музыкальных людей</h2>
+<p style="margin: 0; max-width: 600px; color: #6B6579; font-size: 17px; line-height: 1.55">Звукозапись VOSTORG records, аранжировки, курсы и репетиционные базы — всё в одном месте.</p>
+</div>
+<div role="tablist" aria-label="Услуги студии" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+
+<button type="button" class="tab" role="tab" id="tab-rec" aria-controls="panel-rec" aria-selected="true">Звукозапись</button>
+<button type="button" class="tab" role="tab" id="tab-arr" aria-controls="panel-arr" aria-selected="false" tabindex="-1">Аранжировка</button>
+<button type="button" class="tab" role="tab" id="tab-eng" aria-controls="panel-eng" aria-selected="false" tabindex="-1">Звукорежиссура</button>
+<button type="button" class="tab" role="tab" id="tab-reh" aria-controls="panel-reh" aria-selected="false" tabindex="-1">Репетиционные базы</button>
+
+</div>
+
+<div role="tabpanel" id="panel-rec" aria-labelledby="tab-rec" tabindex="0" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 520px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5B23D6">VOSTORG records</span>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.025em; color: #15111F">Профессиональная звукозапись в Ярославле</h3>
+<p style="margin: 0; color: #6B6579; font-size: 17px; line-height: 1.6">Запишите вокал и инструменты в нашей студии звукозаписи — от первого демо до готовой песни.</p>
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Записаться на студию<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="position: relative; padding: 28px">
+<div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 40px; background: radial-gradient(60% 60% at 30% 40%, rgba(91,35,214,0.22), rgba(91,35,214,0) 70%), radial-gradient(50% 50% at 75% 70%, rgba(255,138,61,0.28), rgba(255,138,61,0) 70%); filter: blur(10px)"></div>
+<img loading="lazy" src="../assets/most/img/booth.webp" alt="Вокалист в наушниках записывается у студийного микрофона" style="position: relative; display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; object-position: 50% 32%; border-radius: 20px">
+<div style="position: absolute; left: 0; bottom: 56px; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 16px; background: #fff; box-shadow: 0 14px 36px rgba(21,17,31,0.16)">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #15111F; display: flex; align-items: center; justify-content: center"><span style="width: 12px; height: 12px; border-radius: 50%; background: #FF4D4D"></span></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; font-size: 14px; color: #15111F">VOSTORG records</span><span style="font-size: 13px; color: #6B6579">студия звукозаписи</span></span>
+</div>
+</div>
+</div>
+
+<div role="tabpanel" id="panel-arr" aria-labelledby="tab-arr" tabindex="0" hidden style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 520px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5B23D6">Для авторов песен</span>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.025em; color: #15111F">Аранжировка любой сложности под ваши песни</h3>
+<p style="margin: 0; color: #6B6579; font-size: 17px; line-height: 1.6">Принесите песню — хоть под гитару, хоть на диктофон. Разработаем аранжировку под ваш замысел.</p>
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Обсудить аранжировку<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="position: relative; padding: 28px">
+<div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 40px; background: radial-gradient(60% 60% at 30% 40%, rgba(91,35,214,0.22), rgba(91,35,214,0) 70%), radial-gradient(50% 50% at 75% 70%, rgba(255,138,61,0.28), rgba(255,138,61,0) 70%); filter: blur(10px)"></div>
+<img loading="lazy" src="../assets/most/img/daw.webp" alt="Работа над аранжировкой в DAW на студийных мониторах" style="position: relative; display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; object-position: 45% 40%; border-radius: 20px">
+<div style="position: absolute; left: 0; bottom: 56px; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 16px; background: #fff; box-shadow: 0 14px 36px rgba(21,17,31,0.16)">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #15111F; color: #FF8A3D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; font-size: 14px; color: #15111F">Авторские песни</span><span style="font-size: 13px; color: #6B6579">аранжировка любой сложности</span></span>
+</div>
+</div>
+</div>
+
+<div role="tabpanel" id="panel-eng" aria-labelledby="tab-eng" tabindex="0" hidden style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 520px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5B23D6">Курсы</span>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.025em; color: #15111F">Курсы по звукорежиссуре</h3>
+<p style="margin: 0; color: #6B6579; font-size: 17px; line-height: 1.6">Научитесь записывать и обрабатывать звук на настоящей студийной технике.</p>
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Узнать о курсе<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="position: relative; padding: 28px">
+<div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 40px; background: radial-gradient(60% 60% at 30% 40%, rgba(91,35,214,0.22), rgba(91,35,214,0) 70%), radial-gradient(50% 50% at 75% 70%, rgba(255,138,61,0.28), rgba(255,138,61,0) 70%); filter: blur(10px)"></div>
+<img loading="lazy" src="../assets/most/img/daw.webp" alt="Рабочее место звукорежиссёра: ноутбук, мониторы и микшер" style="position: relative; display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; object-position: 88% 70%; border-radius: 20px">
+<div style="position: absolute; left: 0; bottom: 56px; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 16px; background: #fff; box-shadow: 0 14px 36px rgba(21,17,31,0.16)">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #15111F; color: #FF8A3D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M2 14h4M10 8h4M18 16h4"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; font-size: 14px; color: #15111F">Практика на студии</span><span style="font-size: 13px; color: #6B6579">запись и обработка звука</span></span>
+</div>
+</div>
+</div>
+
+<div role="tabpanel" id="panel-reh" aria-labelledby="tab-reh" tabindex="0" hidden style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px; max-width: 520px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5B23D6">Для групп</span>
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.025em; color: #15111F">Репетиционные базы</h3>
+<p style="margin: 0; color: #6B6579; font-size: 17px; line-height: 1.6">Барабанная установка, клавиши, гитары и микрофоны уже на месте — приходите группой и играйте.</p>
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Забронировать репетицию<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="position: relative; padding: 28px">
+<div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 40px; background: radial-gradient(60% 60% at 30% 40%, rgba(91,35,214,0.22), rgba(91,35,214,0) 70%), radial-gradient(50% 50% at 75% 70%, rgba(255,138,61,0.28), rgba(255,138,61,0) 70%); filter: blur(10px)"></div>
+<img loading="lazy" src="../assets/most/img/band.webp" alt="Группа репетирует в классе: гитары, клавиши и вокал" style="position: relative; display: block; width: 100%; aspect-ratio: 5 / 4; object-fit: cover; object-position: 50% 50%; border-radius: 20px">
+<div style="position: absolute; left: 0; bottom: 56px; display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 16px; background: #fff; box-shadow: 0 14px 36px rgba(21,17,31,0.16)">
+<span aria-hidden="true" style="width: 36px; height: 36px; border-radius: 50%; background: #15111F; color: #FF8A3D; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600; font-size: 14px; color: #15111F">Рыбинская 44Б</span><span style="font-size: 13px; color: #6B6579">2 этаж, Ярославль</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PRICES (white) -->
+<section id="prices" style="background: #fff; padding: 8px 0 112px">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<h2 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.03em; color: #15111F">Сколько стоит</h2>
+<p style="margin: 0; max-width: 560px; color: #6B6579; font-size: 17px; line-height: 1.55">Начните с бесплатного знакомства — а дальше решите, ваше ли это.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; align-items: stretch">
+<article style="background: #fff; border: 1px solid #ECE8F3; border-radius: 6px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Пробный урок</h3>
+<p style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1; letter-spacing: -0.03em; color: #15111F">0 ₽</p>
+<p style="margin: 0; color: #6B6579; font-size: 15px; line-height: 1.55">Знакомство с педагогом и первый урок — в подарок.</p>
+<a href="#start" class="btn-ink" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 48px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Хочу на пробное<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p style="margin: 4px 0 0; font-weight: 600; font-size: 14px; color: #15111F">Что входит:</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #4A4458">
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Любое направление на выбор</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Очно или онлайн</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Можно без своего инструмента</li>
+</ul>
+</article>
+<article style="background: #F3EEFF; border: 1px solid #E2D6FF; border-radius: 6px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Занятия с педагогом</h3>
+<p style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1; letter-spacing: -0.03em; color: #15111F">900 ₽</p>
+<p style="margin: 0; color: #5E5870; font-size: 15px; line-height: 1.55">Вокал, гитара, ударные или фортепиано для взрослых, подростков и детей от 8 лет.</p>
+<a href="#start" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 48px; border-radius: 999px; background: #5B23D6; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Записаться<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p style="margin: 4px 0 0; font-weight: 600; font-size: 14px; color: #15111F">Что входит:</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #4A4458">
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Педагоги-профи</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Очно на Рыбинской или онлайн</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Инструменты есть в классе</li>
+</ul>
+</article>
+<article style="background: #F5F3F8; border: 1px solid #ECE8F3; border-radius: 6px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<h3 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Студия VOSTORG records</h3>
+<p style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: 48px; line-height: 1; letter-spacing: -0.03em; color: #15111F">от 2900 ₽</p>
+<p style="margin: 0; color: #5E5870; font-size: 15px; line-height: 1.55">Звукозапись, аранжировки, курсы по звукорежиссуре и репетиционные базы.</p>
+<a href="#start" class="btn-ink" style="display: flex; align-items: center; justify-content: center; gap: 10px; height: 48px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px">Обсудить проект<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p style="margin: 4px 0 0; font-weight: 600; font-size: 14px; color: #15111F">Для музыкантов:</p>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #4A4458">
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Профессиональная звукозапись</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Аранжировки под авторские песни</li>
+<li style="display: flex; gap: 10px; align-items: flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#12A36B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Репетиционные базы для групп</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+
+<!-- GIFT (dark) -->
+<section id="gift" style="background: #15111F; color: #fff; padding: 104px 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 56px; align-items: center">
+<img loading="lazy" src="../assets/most/img/guitar-gift.webp" alt="Акустическая гитара в чехле с гирляндой и наклейкой МОСТ" style="display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 20px">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #FF9A55">Подарочные сертификаты</span>
+<h2 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance">Подарите близкому мечту — научиться петь или играть</h2>
+<p style="margin: 0; max-width: 480px; color: #BDB5CE; font-size: 17px; line-height: 1.6">Сертификаты на обучение всегда в продаже. Порадуйте того, кто давно хотел попробовать.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+<a href="#start" class="btn-orange" style="display: inline-flex; align-items: center; gap: 10px; height: 50px; padding: 0 24px; border-radius: 999px; background: #FF8A3D; color: #15111F; text-decoration: none; font-weight: 600; font-size: 16px">Купить сертификат<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="tel:+79605356841" style="color: #fff; font-weight: 600; font-size: 16px; white-space: nowrap; text-underline-offset: 4px">8 (960) 535-68-41</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ (white) -->
+<section id="faq" style="background: #fff; padding: 112px 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 40px 64px">
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.03em; color: #15111F">Частые вопросы</h2>
+<p style="margin: 0; color: #6B6579; font-size: 17px; line-height: 1.55">Не нашли ответ? Позвоните: <a href="tel:+79605356841" style="white-space: nowrap; font-weight: 600">8 (960) 535-68-41</a></p>
+</div>
+<dl style="flex: 2 1 560px; min-width: 0; margin: 0; display: flex; flex-direction: column">
+<div style="padding: 22px 0; border-top: 1px solid #ECE8F3; display: flex; flex-direction: column; gap: 8px">
+<dt style="font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Нужен ли свой инструмент?</dt>
+<dd style="margin: 0; color: #6B6579; font-size: 16px; line-height: 1.6">Нет. Начать можно без своего инструмента — гитары, барабанная установка и клавиши есть в студии.</dd>
+</div>
+<div style="padding: 22px 0; border-top: 1px solid #ECE8F3; display: flex; flex-direction: column; gap: 8px">
+<dt style="font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">С какого возраста можно заниматься?</dt>
+<dd style="margin: 0; color: #6B6579; font-size: 16px; line-height: 1.6">Принимаем детей от 8 лет, подростков и взрослых.</dd>
+</div>
+<div style="padding: 22px 0; border-top: 1px solid #ECE8F3; display: flex; flex-direction: column; gap: 8px">
+<dt style="font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Можно ли заниматься онлайн?</dt>
+<dd style="margin: 0; color: #6B6579; font-size: 16px; line-height: 1.6">Да, уроки проходят и очно, и онлайн.</dd>
+</div>
+<div style="padding: 22px 0; border-top: 1px solid #ECE8F3; display: flex; flex-direction: column; gap: 8px">
+<dt style="font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Сколько стоит пробное занятие?</dt>
+<dd style="margin: 0; color: #6B6579; font-size: 16px; line-height: 1.6">Нисколько: знакомство с педагогом и первый урок — в подарок.</dd>
+</div>
+<div style="padding: 22px 0; border-top: 1px solid #ECE8F3; display: flex; flex-direction: column; gap: 8px">
+<dt style="font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Как записаться?</dt>
+<dd style="margin: 0; color: #6B6579; font-size: 16px; line-height: 1.6">Напишите «Хочу на пробное» в личку Станции Мост или позвоните по номеру 8 (960) 535-68-41.</dd>
+</div>
+<div style="padding: 22px 0; border-top: 1px solid #ECE8F3; border-bottom: 1px solid #ECE8F3; display: flex; flex-direction: column; gap: 8px">
+<dt style="font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 700; font-size: 19px; color: #15111F">Где вы находитесь?</dt>
+<dd style="margin: 0; color: #6B6579; font-size: 16px; line-height: 1.6">Ярославль, ул. Рыбинская 44Б, 2 этаж.</dd>
+</div>
+</dl>
+</div>
+</section>
+
+<!-- CTA + FOOTER (accent) -->
+<section id="start" style="position: relative; overflow: hidden; background: #5B23D6; color: #fff">
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<div class="blob b1" style="position: absolute; left: 50%; top: -300px; margin-left: -340px; width: 680px; height: 520px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #FF5BB0 0%, rgba(255,91,176,0.5) 38%, rgba(255,91,176,0) 70%); filter: blur(36px); opacity: 0.9"></div>
+<div class="blob b3" style="position: absolute; left: -260px; bottom: -280px; width: 640px; height: 560px; border-radius: 50%; background: radial-gradient(circle at 50% 50%, #FF8A3D 0%, rgba(255,138,61,0.35) 40%, rgba(255,138,61,0) 70%); filter: blur(40px); opacity: 0.7"></div>
+</div>
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 112px 24px 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<h2 style="margin: 0; max-width: 820px; font-family: Geologica, Onest, system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 54px); line-height: 1.06; letter-spacing: -0.03em; text-wrap: balance">Давно мечтали попробовать что-то новое?</h2>
+<p style="margin: 0; max-width: 600px; font-size: 18px; line-height: 1.55; color: rgba(255,255,255,0.92)">Ждём вас! Напишите в личку Станции Мост «Хочу на пробное» или позвоните — знакомство с педагогом и первый урок в подарок.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 8px">
+<a href="#start" class="btn-ink" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px; background: #15111F; color: #fff; text-decoration: none; font-weight: 600; font-size: 16px">Хочу на пробное<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a href="tel:+79605356841" class="btn-ghost" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); color: #fff; text-decoration: none; font-weight: 600; font-size: 16px; white-space: nowrap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>8 (960) 535-68-41</a>
+</div>
+</div>
+<footer class="foot" style="position: relative; z-index: 1; max-width: 1200px; margin: 88px auto 0; padding: 48px 24px 40px; box-sizing: border-box; border-top: 1px solid rgba(255,255,255,0.22); display: flex; flex-direction: column; gap: 48px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<a href="#top" aria-label="Творческое пространство МОСТ — наверх" style="display: block; width: 168px">
+<img src="../assets/most/img/logo-lockup.webp" alt="" style="display: block; width: 168px; height: auto">
+</a>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.84); max-width: 240px">Музыкальная студия и творческое пространство в Ярославле. Работаем больше 10 лет.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff">Направления</p>
+<a href="#directions" style="font-size: 15px">Вокал</a>
+<a href="#directions" style="font-size: 15px">Гитара</a>
+<a href="#directions" style="font-size: 15px">Ударные</a>
+<a href="#directions" style="font-size: 15px">Фортепиано</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff">Студия</p>
+<a href="#services" data-tab="rec" style="font-size: 15px">Звукозапись VOSTORG records</a>
+<a href="#services" data-tab="arr" style="font-size: 15px">Аранжировки</a>
+<a href="#services" data-tab="eng" style="font-size: 15px">Курсы по звукорежиссуре</a>
+<a href="#services" data-tab="reh" style="font-size: 15px">Репетиционные базы</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<p style="margin: 0 0 4px; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff">Контакты</p>
+<a href="tel:+79605356841" style="font-size: 15px; white-space: nowrap">8 (960) 535-68-41</a>
+<span style="font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.84)">Ярославль, ул. Рыбинская 44Б, 2 этаж</span>
+<span style="font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.84)">Личные сообщения: Станция Мост</span>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 13px; color: rgba(255,255,255,0.78)">
+<span>© Творческое пространство МОСТ</span>
+<span>Подарочные сертификаты на обучение — всегда в продаже</span>
+</div>
+</footer>
+</section>
+
+</div>
+
+<script>
+// tabs: «Специально для музыкальных людей»
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+function selectTab(i) {
+  tabs.forEach((t, j) => {
+    const on = i === j;
+    t.setAttribute("aria-selected", on);
+    t.tabIndex = on ? 0 : -1;
+    document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+  });
+}
+tabs.forEach((t, i) => {
+  t.addEventListener("click", () => selectTab(i));
+  t.addEventListener("keydown", e => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    e.preventDefault();
+    const n = (i + (e.key === "ArrowRight" ? 1 : -1) + tabs.length) % tabs.length;
+    selectTab(n);
+    tabs[n].focus();
+  });
+});
+document.querySelectorAll("[data-tab]").forEach(a => {
+  a.addEventListener("click", () => selectTab(tabs.findIndex(t => t.id === "tab-" + a.dataset.tab)));
+});
+
+// carousel arrows
+const track = document.getElementById("track");
+const step = () => (track.querySelector("figure")?.offsetWidth || 300) + 24;
+document.getElementById("prev").addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
+document.getElementById("next").addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+</script>
+</body>
+</html>

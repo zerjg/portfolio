@@ -553,9 +553,24 @@ const PROJECTS = {
       ["assets/school/school-5.webp", "Команда"],
       ["assets/school/school-6.webp", "Мобильная версия"]
     ]
+  },
+  art: {
+    live: "art/", liveLabel: "Открыть сайт →",
+    num: "11", title: "ART",
+    desc: "Сайт апсайкл-бренда одежды: вещи из старых джинсов и льна в одном экземпляре, выбор конкретной куртки и паспорт вещи",
+    tags: ["Веб-дизайн", "Мода"],
+    shots: [
+      ["assets/art/art-1.webp", "Главный экран"],
+      ["assets/art/art-2.webp", "Категории"],
+      ["assets/art/art-3.webp", "Выбор экземпляра"],
+      ["assets/art/art-4.webp", "Паспорт вещи"],
+      ["assets/art/art-5.webp", "Как мы шьём"],
+      ["assets/art/art-6.webp", "Сдать вещь"],
+      ["assets/art/art-7.webp", "Мобильная версия"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev", "school"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev", "school", "art"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];

@@ -466,7 +466,7 @@ const PROJECTS = {
   },
   dj: {
     live: "dj/",
-    num: "05", title: "DJ ZERJG",
+    num: "08", title: "DJ ZERJG",
     desc: "Визитная карточка диджея: история жанров от соула до органик-хауса",
     tags: ["Веб-дизайн", "Музыка"],
     shots: [
@@ -480,7 +480,7 @@ const PROJECTS = {
   },
   shop: {
     live: "shop/",
-    num: "06", title: "Телефон Телефоныч",
+    num: "09", title: "Телефон Телефоныч",
     desc: "Интернет-магазин смартфонов с бонусами, рассрочкой и trade-in",
     tags: ["Веб-дизайн", "E-commerce"],
     shots: [
@@ -493,7 +493,7 @@ const PROJECTS = {
     ]
   },
   webdev: {
-    num: "07", title: "WebDev",
+    num: "10", title: "WebDev",
     desc: "Учебная платформа курса веб-разработки: занятия, задания и проверка работ",
     tags: ["Продуктовый дизайн", "EdTech"],
     shots: [
@@ -509,7 +509,7 @@ const PROJECTS = {
   },
   school: {
     live: "school/",
-    num: "08", title: "Школа Дмитрия Никитина",
+    num: "05", title: "Школа Дмитрия Никитина",
     desc: "Концепт сайта школы английского языка в Ярославле: курсы для детей и взрослых, цены, команда и два офиса",
     tags: ["Веб-дизайн", "Образование"],
     shots: [
@@ -523,7 +523,7 @@ const PROJECTS = {
   },
   art: {
     live: "art/",
-    num: "09", title: "ART",
+    num: "06", title: "ART",
     desc: "Сайт апсайкл-бренда одежды: вещи из старых джинсов и льна в одном экземпляре, выбор конкретной куртки и паспорт вещи",
     tags: ["Веб-дизайн", "Мода"],
     shots: [
@@ -538,7 +538,7 @@ const PROJECTS = {
   },
   most: {
     live: "most/",
-    num: "10", title: "МОСТ",
+    num: "07", title: "МОСТ",
     desc: "Музыкальная студия в Ярославле: уроки музыки, звукозапись и репетиционные базы",
     tags: ["Лендинг", "Музыкальная студия"],
     shots: [
@@ -553,7 +553,7 @@ const PROJECTS = {
     ]
   }
 };
-const ORDER = ["kord", "cifra", "goodgrad", "hopmalt", "dj", "shop", "webdev", "school", "art", "most"].filter(k => !PROJECTS[k].hidden);
+const ORDER = ["kord", "cifra", "goodgrad", "hopmalt", "school", "art", "most", "dj", "shop", "webdev"].filter(k => !PROJECTS[k].hidden);
 const key = new URLSearchParams(location.search).get("p");
 const id = ORDER.includes(key) ? key : ORDER[0];
 const p = PROJECTS[id];

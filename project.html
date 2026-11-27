@@ -370,7 +370,6 @@
     <div class="p-meta">
       <div class="card-tags" id="pTags"></div>
       <a class="btn btn-primary" id="pPrototype" hidden>Открыть прототип →</a>
-      <a class="btn btn-primary" id="pSite" href="#" target="_blank" rel="noopener">Открыть сайт ↗</a>
     </div>
   </div>
 </header>
@@ -413,7 +412,6 @@ const PROJECTS = {
   kord: {
     num: "01", title: "Фабрика КОРД",
     desc: "Креативно-технологический квартал в Ярославле",
-    url: "https://fabrikakord.com/", domain: "fabrikakord.com",
     tags: ["Веб-дизайн", "Креативный кластер"],
     shots: [
       ["assets/kord-1.jpg", "Главный экран"],
@@ -425,10 +423,11 @@ const PROJECTS = {
     ]
   },
   cifra: {
+    // скрыт: не показывается на главной, в навигации и по прямой ссылке. Чтобы вернуть, удалите hidden здесь и в index.html
+    hidden: true,
     prototype: true,
     num: "02", title: "Цифра",
     desc: "SaaS-платформа управления бетонным заводом",
-    url: "https://cifra.ai/", domain: "cifra.ai",
     tags: ["Продуктовый дизайн", "SaaS"],
     shots: [
       ["assets/platforms/cifra-1.webp", "Сводка производства"],
@@ -439,25 +438,9 @@ const PROJECTS = {
       ["assets/platforms/cifra-6.webp", "Интеграции"]
     ]
   },
-  krista: {
-    prototype: true,
-    num: "03", title: "НПО Криста",
-    desc: "Цифровые платформы для государственного управления",
-    url: "https://www.krista.ru/", domain: "krista.ru",
-    tags: ["Продуктовый дизайн", "GovTech"],
-    shots: [
-      ["assets/platforms/krista-1.webp", "Показатели региона"],
-      ["assets/platforms/krista-2.webp", "Исполнение бюджета"],
-      ["assets/platforms/krista-3.webp", "Объекты и территории"],
-      ["assets/platforms/krista-4.webp", "Государственные программы"],
-      ["assets/platforms/krista-5.webp", "Сбор отчётности"],
-      ["assets/platforms/krista-6.webp", "Источники данных"]
-    ]
-  },
   goodgrad: {
-    num: "04", title: "Гудград",
+    num: "03", title: "Гудград",
     desc: "Застройщик Ярославля: каталог новостроек и подбор квартир",
-    url: "https://goodgrad.ru/", domain: "goodgrad.ru",
     tags: ["Веб-дизайн", "Недвижимость"],
     shots: [
       ["assets/goodgrad-1.jpg", "Главный экран"],
@@ -468,25 +451,9 @@ const PROJECTS = {
       ["assets/goodgrad-6.jpg", "Управляющая компания"]
     ]
   },
-  tenderland: {
-    prototype: true,
-    num: "05", title: "TenderLand",
-    desc: "Система точного поиска и анализа тендеров",
-    url: "https://tenderland.ru/", domain: "tenderland.ru",
-    tags: ["Продуктовый дизайн", "SaaS"],
-    shots: [
-      ["assets/platforms/tenderland-1.webp", "Поиск закупок"],
-      ["assets/platforms/tenderland-2.webp", "Автопоиск"],
-      ["assets/platforms/tenderland-3.webp", "Карточка закупки"],
-      ["assets/platforms/tenderland-4.webp", "В работе"],
-      ["assets/platforms/tenderland-5.webp", "Проверка контрагента"],
-      ["assets/platforms/tenderland-6.webp", "Аналитика рынка"]
-    ]
-  },
   hopmalt: {
-    num: "06", title: "ХОПМОЛТ",
+    num: "04", title: "ХОПМОЛТ",
     desc: "Крафтовая пивоварня Ярославля: каталог живого пива",
-    url: "https://hopmalt.ru/", domain: "hopmalt.ru",
     tags: ["Бренд-сайт", "Крафт"],
     shots: [
       ["assets/hopmalt-1.jpg", "Главный экран"],
@@ -498,9 +465,9 @@ const PROJECTS = {
     ]
   },
   dj: {
-    live: "dj/", liveLabel: "Открыть визитку →",
-    num: "07", title: "DJ ZERJG",
-    desc: "Визитка диджея: история жанров от соула до органик-хауса",
+    live: "dj/", liveLabel: "Открыть визитную карточку →",
+    num: "05", title: "DJ ZERJG",
+    desc: "Визитная карточка диджея: история жанров от соула до органик-хауса",
     tags: ["Веб-дизайн", "Музыка"],
     shots: [
       ["assets/dj/dj-1.webp", "Главный экран"],
@@ -513,7 +480,7 @@ const PROJECTS = {
   },
   shop: {
     live: "shop/", liveLabel: "Открыть магазин →",
-    num: "08", title: "Телефон Телефоныч",
+    num: "06", title: "Телефон Телефоныч",
     desc: "Интернет-магазин смартфонов с бонусами, рассрочкой и trade-in",
     tags: ["Веб-дизайн", "E-commerce"],
     shots: [
@@ -526,7 +493,7 @@ const PROJECTS = {
     ]
   },
   webdev: {
-    num: "09", title: "WebDev",
+    num: "07", title: "WebDev",
     desc: "Учебная платформа курса веб-разработки: занятия, задания и проверка работ",
     tags: ["Продуктовый дизайн", "EdTech"],
     shots: [
@@ -542,7 +509,7 @@ const PROJECTS = {
   },
   school: {
     live: "school/", liveLabel: "Открыть сайт школы →",
-    num: "10", title: "Школа Дмитрия Никитина",
+    num: "08", title: "Школа Дмитрия Никитина",
     desc: "Концепт сайта школы английского языка в Ярославле: курсы для детей и взрослых, цены, команда и два офиса",
     tags: ["Веб-дизайн", "Образование"],
     shots: [
@@ -556,7 +523,7 @@ const PROJECTS = {
   },
   art: {
     live: "art/", liveLabel: "Открыть сайт →",
-    num: "11", title: "ART",
+    num: "09", title: "ART",
     desc: "Сайт апсайкл-бренда одежды: вещи из старых джинсов и льна в одном экземпляре, выбор конкретной куртки и паспорт вещи",
     tags: ["Веб-дизайн", "Мода"],
     shots: [
@@ -571,7 +538,7 @@ const PROJECTS = {
   },
   most: {
     live: "most/", liveLabel: "Открыть лендинг →",
-    num: "12", title: "МОСТ",
+    num: "10", title: "МОСТ",
     desc: "Музыкальная студия в Ярославле: уроки музыки, звукозапись и репетиционные базы",
     tags: ["Лендинг", "Музыкальная студия"],
     shots: [
@@ -586,18 +553,15 @@ const PROJECTS = {
     ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev", "school", "art", "most"];
+const ORDER = ["kord", "cifra", "goodgrad", "hopmalt", "dj", "shop", "webdev", "school", "art", "most"].filter(k => !PROJECTS[k].hidden);
 const key = new URLSearchParams(location.search).get("p");
-const id = PROJECTS[key] ? key : "kord";
+const id = ORDER.includes(key) ? key : ORDER[0];
 const p = PROJECTS[id];
 
 document.title = p.title + " — Игорь Пономарев";
 document.getElementById("pTitle").textContent = p.title;
 document.getElementById("pDesc").textContent = p.desc;
 document.getElementById("pTags").innerHTML = p.tags.map(t => "<span>" + t + "</span>").join("");
-const site = document.getElementById("pSite");
-if (p.url) site.href = p.url;
-else site.remove();
 if (p.live) {
   const live = document.getElementById("pPrototype");
   live.href = p.live;
@@ -608,7 +572,6 @@ if (p.prototype) {
   const prototype = document.getElementById("pPrototype");
   prototype.href = "prototypes/?p=" + id;
   prototype.hidden = false;
-  site.classList.remove("btn-primary");
   document.getElementById("pDesc").textContent += " · Концепт интерфейса";
 }
 

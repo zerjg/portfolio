@@ -70,8 +70,7 @@ function timeline([title, ...items]) {
 }
 
 function map(title) {
-  const isFactory = project === 'cifra';
-  const labels = isFactory ? ['Завод № 1', 'Северный квартал', 'Логопарк Восток'] : ['Центральный округ', 'Северный округ', 'Приволжский округ'];
+  const labels = ['Завод № 1', 'Северный квартал', 'Логопарк Восток'];
   return panel(title, `<div class="map">
     <svg viewBox="0 0 650 235" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${title}">
       <defs><pattern id="streets" width="48" height="38" patternUnits="userSpaceOnUse" patternTransform="rotate(-15)">
@@ -79,16 +78,15 @@ function map(title) {
       <rect width="650" height="235" fill="url(#streets)"/>
       <path d="M-20 198Q102 109 216 183T437 147T660 32" fill="none" stroke="#bddbea" stroke-width="28"/>
       <path d="M-10 66Q130 94 249 49L648 173M217 242L268 101L381 -10M0 154L147 111L657 94" fill="none" stroke="#fff" stroke-width="7"/>
-      ${isFactory ? '<path d="M104 150L183 124L230 132L267 93L330 61L448 101L512 143" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>' : ''}
+      <path d="M104 150L183 124L230 132L267 93L330 61L448 101L512 143" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
       ${[[104,150],[330,61],[512,143]].map(([x,y], i) => `<g transform="translate(${x} ${y})"><circle r="10" fill="var(--accent)" stroke="white" stroke-width="3"/><text x="14" y="-11" font-size="11" fill="#233644" stroke="white" stroke-width="3" paint-order="stroke">${labels[i]}</text></g>`).join('')}
-    </svg><span class="label pill">● ${isFactory ? 'Машины на линии' : 'Объекты мониторинга'}</span></div>`);
+    </svg><span class="label pill">● Машины на линии</span></div>`);
 }
 
 const renderers = {
   dashboard: ([summary, activity, distribution, register]) => metrics(summary) +
     `<div class="split">${chart(activity)}${breakdown(distribution)}</div>` + table(register, [], false),
   table: ([summary, register]) => metrics(summary) + table(register),
-  search: ([summary, results]) => metrics(summary) + table(results, ['44-ФЗ', '223-ФЗ']),
   map: ([[title, ...events], register]) => `<div class="split">${map(title)}${timeline(events)}</div>` + table(register, [], false),
   detail: ([summary, fields, events]) => metrics(summary) + `<div class="split">${table(fields, [], false)}${timeline(events)}</div>`
 };

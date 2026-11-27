@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Игорь Пономарев — дизайнер</title>
   <script>document.documentElement.classList.add('fonts-pending');</script>
-  <meta name="description" content="Портфолио Игоря Пономарева — веб-дизайн и цифровые продукты: Фабрика КОРД, Цифра, НПО Криста.">
+  <meta name="description" content="Портфолио Игоря Пономарева — веб-дизайн и цифровые продукты: Фабрика КОРД, Гудград, ХОПМОЛТ.">
   <link rel="preload" href="assets/fonts/russo-one-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/golos-text-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -145,6 +145,7 @@
       opacity: 0; transform: translateY(36px);
       transition: opacity .7s ease, transform .7s ease, box-shadow .25s ease;
     }
+    .project[hidden] { display: none; }
     .project.in { opacity: 1; transform: translateY(0); }
     .project.in:hover {
       box-shadow: inset 0 0 0 1px rgba(255,255,255,.45), inset 0 0 18px rgba(255,255,255,.16), 0 28px 70px rgba(0,0,0,.5);
@@ -169,15 +170,6 @@
       backdrop-filter: blur(18px) saturate(1.5);
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 8px 24px rgba(0,0,0,.35);
-    }
-    .domain-tag {
-      position: absolute; top: 12px; right: 12px; z-index: 4;
-      font-size: 11px; font-weight: 500; color: #fff;
-      text-shadow: 0 1px 6px rgba(0,0,0,.45);
-      background: linear-gradient(var(--glass-tint), var(--glass-tint)) var(--bg);
-      border: 1px solid rgba(255,255,255,.28);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
-      padding: 5px 12px; border-radius: 100px;
     }
     .project-info h3 { font-size: 20px; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
     .project-info p { color: #d6d5dd; font-size: 13.5px; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
@@ -251,7 +243,6 @@
 
       <a class="project" href="project.html?p=kord">
         <img class="project-img" src="assets/kord.jpg" alt="Сайт креативно-технологического квартала «Фабрика КОРД»" loading="lazy">
-        <span class="domain-tag">fabrikakord.com</span>
         <div class="project-info">
           <h3>Фабрика КОРД</h3>
           <p>Креативно-технологический квартал в Ярославле</p>
@@ -259,9 +250,9 @@
         </div>
       </a>
 
-      <a class="project" href="project.html?p=cifra">
+      <!-- Цифра скрыта. Чтобы вернуть карточку, уберите атрибут hidden и флаг hidden у cifra в project.html -->
+      <a class="project" href="project.html?p=cifra" hidden>
         <img class="project-img" src="assets/platforms/cifra-1.webp" alt="Цифра — сводка производства" loading="lazy">
-        <span class="domain-tag">cifra.ai</span>
         <div class="project-info">
           <h3>Цифра</h3>
           <p>SaaS-платформа управления бетонным заводом</p>
@@ -269,19 +260,8 @@
         </div>
       </a>
 
-      <a class="project" href="project.html?p=krista">
-        <img class="project-img" src="assets/platforms/krista-1.webp" alt="НПО Криста — показатели региона" loading="lazy">
-        <span class="domain-tag">krista.ru</span>
-        <div class="project-info">
-          <h3>НПО Криста</h3>
-          <p>Цифровые платформы для государственного управления</p>
-          <span class="project-link">Смотреть проект →</span>
-        </div>
-      </a>
-
       <a class="project" href="project.html?p=goodgrad">
         <img class="project-img" src="assets/goodgrad.jpg" alt="Сайт застройщика «Гудград» — каталог новостроек Ярославля" loading="lazy">
-        <span class="domain-tag">goodgrad.ru</span>
         <div class="project-info">
           <h3>Гудград</h3>
           <p>Застройщик Ярославля: каталог новостроек и подбор квартир</p>
@@ -289,19 +269,8 @@
         </div>
       </a>
 
-      <a class="project" href="project.html?p=tenderland">
-        <img class="project-img" src="assets/platforms/tenderland-1.webp" alt="TenderLand — поиск закупок" loading="lazy">
-        <span class="domain-tag">tenderland.ru</span>
-        <div class="project-info">
-          <h3>TenderLand</h3>
-          <p>Система точного поиска и анализа тендеров</p>
-          <span class="project-link">Смотреть проект →</span>
-        </div>
-      </a>
-
       <a class="project" href="project.html?p=hopmalt">
         <img class="project-img" src="assets/hopmalt.jpg" alt="Сайт крафтовой пивоварни ХОПМОЛТ (HOPMALT) в Ярославле" loading="lazy">
-        <span class="domain-tag">hopmalt.ru</span>
         <div class="project-info">
           <h3>ХОПМОЛТ</h3>
           <p>Крафтовая пивоварня Ярославля: каталог живого пива</p>
@@ -310,10 +279,10 @@
       </a>
 
       <a class="project" href="project.html?p=dj">
-        <img class="project-img" src="assets/dj/dj-1.webp" alt="DJ ZERJG — визитка с историей жанров" loading="lazy">
+        <img class="project-img" src="assets/dj/dj-1.webp" alt="DJ ZERJG — визитная карточка с историей жанров" loading="lazy">
         <div class="project-info">
           <h3>DJ ZERJG</h3>
-          <p>Визитка диджея: история жанров от соула до органик-хауса</p>
+          <p>Визитная карточка диджея: история жанров от соула до органик-хауса</p>
           <span class="project-link">Смотреть проект →</span>
         </div>
       </a>
@@ -387,11 +356,11 @@
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
-document.querySelectorAll(".project").forEach(p => io.observe(p));
+document.querySelectorAll(".project:not([hidden])").forEach(p => io.observe(p));
 
 // FLIP: плавный перенос карточек при смене числа колонок
 const grid = document.querySelector(".projects");
-const cards = [...grid.children];
+const cards = [...grid.children].filter(c => !c.hidden);
 const colCount = () => getComputedStyle(grid).gridTemplateColumns.split(" ").length;
 const rects = () => cards.map(c => c.getBoundingClientRect());
 let cols = colCount(), saved = rects(), raf = 0;

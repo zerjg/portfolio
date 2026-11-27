@@ -524,9 +524,24 @@ const PROJECTS = {
       ["assets/shop/shop-5.webp", "Карточка товара"],
       ["assets/shop/shop-6.webp", "Мобильная версия"]
     ]
+  },
+  webdev: {
+    num: "09", title: "WebDev",
+    desc: "Учебная платформа курса веб-разработки: занятия, задания и проверка работ",
+    tags: ["Продуктовый дизайн", "EdTech"],
+    shots: [
+      ["assets/webdev/webdev-1.webp", "Главная студента · тёмная тема"],
+      ["assets/webdev/webdev-2.webp", "Главная студента · светлая тема"],
+      ["assets/webdev/webdev-3.webp", "Главная преподавателя · светлая тема"],
+      ["assets/webdev/webdev-4.webp", "Главная преподавателя · тёмная тема"],
+      ["assets/webdev/webdev-5.webp", "Задание и попытки · светлая тема"],
+      ["assets/webdev/webdev-6.webp", "Журнал группы · тёмная тема"],
+      ["assets/webdev/webdev-7.webp", "Занятие · тёмная тема"],
+      ["assets/webdev/webdev-8.webp", "Проверка работы · светлая тема"]
+    ]
   }
 };
-const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop"];
+const ORDER = ["kord", "cifra", "krista", "goodgrad", "tenderland", "hopmalt", "dj", "shop", "webdev"];
 const key = new URLSearchParams(location.search).get("p");
 const id = PROJECTS[key] ? key : "kord";
 const p = PROJECTS[id];
